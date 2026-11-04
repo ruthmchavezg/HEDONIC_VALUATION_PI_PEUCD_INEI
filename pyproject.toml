@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hedonic-valuation-pi-peucd-inei"
+version = "1.0.0"
+description = "Pipeline de Valoración Hedónica Inmobiliaria — PEU-CD / INEI"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.0",
+    "pydantic>=2.0",
+    "playwright>=1.40",
+    "playwright-stealth>=1.0",
+    "tenacity>=8.0",
+    "pyarrow>=14.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["src*", "config*", "pipelines*"]
+
+[tool.setuptools.package-dir]
+"" = "."
+

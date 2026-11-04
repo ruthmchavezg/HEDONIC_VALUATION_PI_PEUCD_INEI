@@ -1,0 +1,6 @@
+playwright==1.49.0
+playwright-stealth==1.0.6
+pydantic==2.10.3
+tenacity==9.0.0
+pandas==2.2.3
+pyarrow==18.1.0

@@ -1,0 +1,141 @@
+Listado de rutas de carpetas para el volumen Nuevo vol
+El n£mero de serie del volumen es 4EE7-5DDE
+D:.
+³   .gitignore
+³   carpetas.bat
+³   CONTRIBUTING.md
+³   estructura.txt
+³   LICENSE
+³   mkdocs.yml
+³   pyproject.toml
+³   README.md
+³   requirements.txt
+³   
+ÃÄÄÄ.github
+³   ³   pull_request_template.md
+³   ³   
+³   ÃÄÄÄISSUE_TEMPLATE
+³   ³       bug_scraper.md
+³   ³       task_etapa.md
+³   ³       
+³   ÀÄÄÄworkflows
+³           01_cron_scraping_lunes_jueves.yml
+³           02_ci_lint_and_tests.yml
+³           03_deploy_docs.yml
+³           
+ÃÄÄÄconfig
+³       model_hyperparams.yaml
+³       nlp_lexicon.yaml
+³       portals_rules.yaml
+³       settings.py
+³       __init__.py
+³       
+ÃÄÄÄdata
+³   ÃÄÄÄexternal
+³   ³   ÃÄÄÄbcrp
+³   ³   ÃÄÄÄenaho
+³   ³   ÃÄÄÄmininter_datacrin
+³   ³   ÀÄÄÄosm
+³   ÃÄÄÄinterim
+³   ³   ÃÄÄÄcheckpoints
+³   ³   ÃÄÄÄportals_clean
+³   ³   ÀÄÄÄsocial_clean
+³   ÃÄÄÄprocessed
+³   ÀÄÄÄraw
+³       ÃÄÄÄportals
+³       ÃÄÄÄsessions
+³       ÀÄÄÄsocial
+ÃÄÄÄdocs
+³       api_reference.md
+³       architecture.md
+³       data_dictionary.md
+³       index.md
+³       installation.md
+³       
+ÃÄÄÄlogs
+³   ÃÄÄÄmodeling
+³   ÃÄÄÄprocessing
+³   ÀÄÄÄscraping
+ÃÄÄÄmodels
+³   ÃÄÄÄbaselines
+³   ÃÄÄÄensembles
+³   ÀÄÄÄmetrics
+ÃÄÄÄnotebooks
+³       01_auditoria_scraping_portales.ipynb
+³       02_eda_limpieza_y_outliers.ipynb
+³       03_nlp_extraccion_atributos.ipynb
+³       04_geoespacial_osm_distancias.ipynb
+³       05_modelamiento_hedonico_ml.ipynb
+³       
+ÃÄÄÄpipelines
+³       01_run_portals_scraper.py
+³       02_run_social_scraper.py
+³       03_run_cleaning_pipeline.py
+³       04_run_feature_engineering.py
+³       05_run_training_and_scoring.py
+³       __init__.py
+³       
+ÃÄÄÄreports
+³   ÃÄÄÄfigures
+³   ÀÄÄÄinforme_peu_cd
+ÃÄÄÄscripts
+³   ³   setup_environment.sh
+³   ³   
+³   ÀÄÄÄr_integration
+³           cruce_enaho_imputacion.R
+³           
+ÃÄÄÄsrc
+³   ³   __init__.py
+³   ³   
+³   ÃÄÄÄcleaning
+³   ³       deduplicator.py
+³   ³       outlier_detector.py
+³   ³       standardizer.py
+³   ³       __init__.py
+³   ³       
+³   ÃÄÄÄdashboard
+³   ³   ³   app.py
+³   ³   ³   __init__.py
+³   ³   ³   
+³   ³   ÀÄÄÄcomponents
+³   ³           __init__.py
+³   ³           
+³   ÃÄÄÄfeatures
+³   ³       geocoder.py
+³   ³       nlp_extractor.py
+³   ³       spatial_osm.py
+³   ³       __init__.py
+³   ³       
+³   ÃÄÄÄmodeling
+³   ³       dataset_splitter.py
+³   ³       econometric_hedonic.py
+³   ³       evaluation.py
+³   ³       ml_regressors.py
+³   ³       unlisted_valuator.py
+³   ³       __init__.py
+³   ³       
+³   ÃÄÄÄschemas
+³   ³       property_schema.py
+³   ³       schemas.py
+³   ³       social_schema.py
+³   ³       __init__.py
+³   ³       
+³   ÃÄÄÄscraping
+³   ³       bcrp_client.py
+³   ³       parsers.py
+³   ³       proxy_manager.py
+³   ³       stealth_fetcher.py
+³   ³       storage.py
+³   ³       __init__.py
+³   ³       
+³   ÀÄÄÄsocial_scraping
+³           facebook_scraper.py
+³           tiktok_scraper.py
+³           __init__.py
+³           
+ÀÄÄÄtests
+        test_parsers_regex.py
+        test_pydantic_schemas.py
+        test_spatial_distances.py
+        __init__.py
+        

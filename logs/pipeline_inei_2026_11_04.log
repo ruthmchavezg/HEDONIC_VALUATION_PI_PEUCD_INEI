@@ -1,0 +1,146 @@
+2026-11-04 15:18:32,451 [WARNING] [*] Aviso BCRP (<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1028)>). Usando tipo de cambio fallback: S/ 3.75
+2026-11-04 15:18:32,454 [INFO] [+] IDs históricos cargados en memoria para filtro incremental: 0 anuncios previos.
+2026-11-04 15:18:32,456 [INFO] [*] Buscando y validando proxies libres activos en tiempo real...
+2026-11-04 15:18:46,245 [INFO] [+] Pool de proxies libres listo: 0 proxies rápidos verificados.
+2026-11-04 15:21:22,587 [WARNING] [*] Aviso BCRP (<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1028)>). Usando tipo de cambio fallback: S/ 3.75
+2026-11-04 15:21:22,591 [INFO] [+] IDs históricos cargados en memoria para filtro incremental: 0 anuncios previos.
+2026-11-04 15:21:22,592 [INFO] [*] Buscando y validando proxies libres activos en tiempo real...
+2026-11-04 15:21:33,661 [INFO] [+] Pool de proxies libres listo: 0 proxies rápidos verificados.
+2026-11-04 15:21:41,593 [INFO] [*] El pool de proxies se agotó. Descargando un nuevo lote fresco en vivo...
+2026-11-04 15:21:41,615 [INFO] [*] Buscando y validando proxies libres activos en tiempo real...
+2026-11-04 15:21:54,084 [INFO] [+] Pool de proxies libres listo: 0 proxies rápidos verificados.
+2026-11-04 15:21:54,427 [INFO] [*] Contexto activo [Conexión Directa Stealth] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap...
+2026-11-04 15:21:54,427 [INFO] [BABILONIA] Iniciando recolección masiva para categoría: casa
+2026-11-04 15:21:54,428 [INFO] [+] [https://babilonia.pe] Recolectando enlaces - Página 1/999: https://babilonia.pe/inmuebles/casas-en-venta-en-lima
+2026-11-04 15:22:30,515 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-1219' coro=<BrowserContext.storage_state() running at D:\GITHUB\PEUCD\HEDONIC_VALUATION_PI_PEUCD_INEI\venv\Lib\site-packages\playwright\_impl\_browser_context.py:602> cb=[SyncBase._sync.<locals>.<lambda>() at D:\GITHUB\PEUCD\HEDONIC_VALUATION_PI_PEUCD_INEI\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111]>
+2026-11-04 15:22:30,516 [ERROR] Task was destroyed but it is pending!
+task: <Task pending name='Task-1218' coro=<Page.wait_for_timeout() done, defined at D:\GITHUB\PEUCD\HEDONIC_VALUATION_PI_PEUCD_INEI\venv\Lib\site-packages\playwright\_impl\_page.py:1072> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[SyncBase._sync.<locals>.<lambda>() at D:\GITHUB\PEUCD\HEDONIC_VALUATION_PI_PEUCD_INEI\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111, ProtocolCallback.__init__.<locals>.cb() at D:\GITHUB\PEUCD\HEDONIC_VALUATION_PI_PEUCD_INEI\venv\Lib\site-packages\playwright\_impl\_connection.py:198]>
+2026-11-04 16:15:19,224 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.466
+2026-11-04 16:15:19,225 [INFO] [+] IDs históricos cargados en memoria para filtro incremental: 0 anuncios previos.
+2026-11-04 16:15:19,226 [INFO] [*] Buscando y validando proxies libres activos en tiempo real...
+2026-11-04 16:15:30,833 [INFO] [+] Pool de proxies libres listo: 6 proxies rápidos verificados.
+2026-11-04 16:15:35,481 [INFO] [*] Contexto activo [Proxy Libre (http://8.211.194.78:143)] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap...
+2026-11-04 16:15:35,487 [INFO] [URBANIA] Iniciando recolección masiva para categoría: casa
+2026-11-04 16:15:35,497 [INFO] [+] [https://urbania.pe] Recolectando enlaces - Página 1/2: https://urbania.pe/buscar/venta-de-casas-en-lima
+2026-11-04 16:15:49,358 [WARNING] [!] El proxy libre http://8.211.194.78:143 falló. Cambiando automáticamente...
+2026-11-04 16:15:49,370 [INFO] [-] Proxy lento descartado (http://8.211.194.78:143). Quedan 5 en el pool.
+2026-11-04 16:15:50,076 [INFO] [*] Contexto activo [Proxy Libre (http://49.51.252.36:3128)] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2026-11-04 16:16:00,766 [WARNING] [!] El proxy libre http://49.51.252.36:3128 falló. Cambiando automáticamente...
+2026-11-04 16:16:00,810 [INFO] [-] Proxy lento descartado (http://49.51.252.36:3128). Quedan 4 en el pool.
+2026-11-04 16:16:02,084 [INFO] [*] Contexto activo [Proxy Libre (http://200.10.31.42:8081)] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap...
+2026-11-04 16:16:11,398 [WARNING] [!] Estado HTTP 403 en https://urbania.pe/buscar/venta-de-casas-en-lima.
+2026-11-04 16:16:11,432 [INFO] [-] Proxy lento descartado (http://200.10.31.42:8081). Quedan 3 en el pool.
+2026-11-04 16:16:12,212 [INFO] [*] Contexto activo [Proxy Libre (http://8.211.195.173:10001)] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2026-11-04 16:16:19,114 [INFO]     -> Acumulados hasta ahora: 0 enlaces únicos.
+2026-11-04 16:16:19,124 [INFO] [+] [https://urbania.pe] Recolectando enlaces - Página 2/2: https://urbania.pe/buscar/venta-de-casas-en-lima?page=2
+2026-11-04 16:16:33,319 [WARNING] [!] El proxy libre http://8.211.195.173:10001 falló. Cambiando automáticamente...
+2026-11-04 16:16:33,330 [INFO] [-] Proxy lento descartado (http://8.211.195.173:10001). Quedan 2 en el pool.
+2026-11-04 16:16:34,236 [INFO] [*] Contexto activo [Proxy Libre (http://160.19.19.100:8080)] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2026-11-04 16:16:48,489 [WARNING] [!] El proxy libre http://160.19.19.100:8080 falló. Cambiando automáticamente...
+2026-11-04 16:16:48,499 [INFO] [-] Proxy lento descartado (http://160.19.19.100:8080). Quedan 1 en el pool.
+2026-11-04 16:16:49,102 [INFO] [*] Contexto activo [Proxy Libre (http://47.238.60.156:8123)] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2026-11-04 16:17:05,301 [WARNING] [!] El proxy libre http://47.238.60.156:8123 falló. Cambiando automáticamente...
+2026-11-04 16:17:05,306 [INFO] [-] Proxy lento descartado (http://47.238.60.156:8123). Quedan 0 en el pool.
+2026-11-04 16:17:06,194 [INFO] [*] Contexto activo [Conexión Directa Stealth] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2026-11-04 16:19:13,578 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.466
+2026-11-04 16:19:13,581 [INFO] [+] IDs históricos cargados en memoria para filtro incremental: 0 anuncios previos.
+2026-11-04 16:19:13,582 [INFO] [*] Buscando y validando proxies libres activos en tiempo real...
+2026-11-04 16:19:23,853 [INFO] [+] Pool de proxies libres listo: 11 proxies rápidos verificados.
+2026-11-04 16:19:25,778 [INFO] [*] Contexto activo [Proxy Libre (http://103.51.205.114:8082)] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap...
+2026-11-04 16:19:25,807 [INFO] [BABILONIA] Iniciando recolección masiva para categoría: casa
+2026-11-04 16:19:25,809 [INFO] [+] [https://babilonia.pe] Recolectando enlaces - Página 1/2: https://babilonia.pe/inmuebles/casas-en-venta-en-lima
+2026-11-04 16:19:37,515 [WARNING] [!] El proxy libre http://103.51.205.114:8082 falló. Cambiando automáticamente...
+2026-11-04 16:19:37,539 [INFO] [-] Proxy lento descartado (http://103.51.205.114:8082). Quedan 10 en el pool.
+2026-11-04 16:19:37,957 [INFO] [*] Contexto activo [Proxy Libre (http://8.211.200.183:1081)] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2026-11-04 16:19:54,220 [WARNING] [!] El proxy libre http://8.211.200.183:1081 falló. Cambiando automáticamente...
+2026-11-04 16:19:54,231 [INFO] [-] Proxy lento descartado (http://8.211.200.183:1081). Quedan 9 en el pool.
+2026-11-04 16:19:54,640 [INFO] [*] Contexto activo [Proxy Libre (http://103.237.102.191:11111)] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2026-11-04 16:25:14,391 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.466
+2026-11-04 16:25:14,396 [INFO] [+] IDs históricos cargados en memoria para filtro incremental: 0 anuncios previos.
+2026-11-04 16:25:14,397 [INFO] [*] Buscando y validando proxies libres activos en tiempo real...
+2026-11-04 16:25:27,313 [INFO] [+] Pool de proxies libres listo: 6 proxies rápidos verificados.
+2026-11-04 16:25:29,458 [INFO] [*] Contexto activo [Proxy Libre (http://8.221.139.222:1029)] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2026-11-04 16:25:29,480 [INFO] [BABILONIA] Iniciando recolección masiva para categoría: casa
+2026-11-04 16:25:29,481 [INFO] [+] [https://babilonia.pe] Recolectando enlaces - Página 1/1: https://babilonia.pe/inmuebles/casas-en-venta-en-lima
+2026-11-04 16:25:34,428 [WARNING] [!] El proxy libre http://8.221.139.222:1029 falló. Cambiando automáticamente...
+2026-11-04 16:25:34,431 [INFO] [-] Proxy lento descartado (http://8.221.139.222:1029). Quedan 5 en el pool.
+2026-11-04 16:25:35,555 [INFO] [*] Contexto activo [Proxy Libre (http://38.58.66.167:999)] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap...
+2026-11-04 16:26:12,540 [INFO]     -> Acumulados hasta ahora: 14 enlaces únicos.
+2026-11-04 16:26:12,540 [INFO] [BABILONIA] Iniciando recolección masiva para categoría: departamento
+2026-11-04 16:26:12,541 [INFO] [+] [https://babilonia.pe] Recolectando enlaces - Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-venta-en-lima
+2026-11-04 16:26:38,662 [INFO]     -> Acumulados hasta ahora: 18 enlaces únicos.
+2026-11-04 16:26:38,662 [INFO] [BABILONIA] Iniciando recolección masiva para categoría: terreno
+2026-11-04 16:26:38,662 [INFO] [+] [https://babilonia.pe] Recolectando enlaces - Página 1/1: https://babilonia.pe/inmuebles/terrenos-en-venta-en-lima
+2026-11-04 16:27:07,007 [INFO]     -> Acumulados hasta ahora: 15 enlaces únicos.
+2026-11-04 16:27:07,009 [INFO] 
+[BABILONIA] Resumen Cosecha | Total catálogo web: 47 | Ya existentes en histórico: 0 | Nuevos a raspar hoy: 47
+2026-11-04 16:27:07,009 [INFO] [1/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-chorrillos-de-5-dormitorios-5-banios-300m2-area-510000-usd-de-katherine-cahuata-114116
+2026-11-04 16:27:18,745 [INFO] [2/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-san-isidro-de-3-dormitorios-3-banios-603m2-area-1350000-usd-de-exploria-grupo-inmobiliario-129601
+2026-11-04 16:27:33,387 [INFO] [3/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-la-molina-de-5-dormitorios-3-banios-2569m2-area-2550200-usd-de-agb-consultoria-inmobiliaria-176305
+2026-11-04 16:27:44,293 [INFO] [4/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-miraflores-de-4-dormitorios-4-banios-248m2-area-698000-usd-de-zegarra-ortiz-maria-teresa-sofia-159247
+2026-11-04 16:27:57,638 [INFO] [5/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-miraflores-de-4-dormitorios-3-banios-300m2-area-720000-usd-de-jose-luis-mejia-maza-143042
+2026-11-04 16:28:08,629 [INFO] [6/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-punta-hermosa-de-6-dormitorios-4-banios-500m2-area-550000-usd-de-lien-boutique-inmobiliaria-152318
+2026-11-04 16:28:30,121 [INFO] [7/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-san-borja-de-5-dormitorios-4-banios-357m2-area-826300-usd-de-remax-pro-130265
+2026-11-04 16:28:43,051 [INFO] [8/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-la-molina-de-5-dormitorios-4-banios-524m2-area-680000-usd-de-inmuebles-y-punto-93311
+2026-11-04 16:28:56,260 [INFO] [9/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-cieneguilla-de-5-dormitorios-6-banios-1164m2-area-850000-usd-de-aicardi-propiedades-125630
+2026-11-04 16:29:08,264 [INFO] [10/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-comas-de-6-dormitorios-3-banios-510m2-area-299000-usd-de-remax-iron-176310
+2026-11-04 16:29:25,762 [INFO] [11/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-pachacamac-de-4-dormitorios-5-banios-250m2-area-207000-usd-de-karen-carrera-inmobiliaria-147150
+2026-11-04 16:29:35,686 [INFO] [12/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-la-molina-de-4-dormitorios-4-banios-1200m2-area-1500000-usd-de-home-and-investments-systems-134770
+2026-11-04 16:29:44,734 [INFO] [13/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-la-molina-de-5-dormitorios-5-banios-700m2-area-819000-usd-de-inmobiliaria-crosby-142661
+2026-11-04 16:29:57,845 [WARNING] [!] El proxy libre http://38.58.66.167:999 falló. Cambiando automáticamente...
+2026-11-04 16:29:57,891 [INFO] [-] Proxy lento descartado (http://38.58.66.167:999). Quedan 4 en el pool.
+2026-11-04 16:29:59,521 [INFO] [*] Contexto activo [Proxy Libre (http://47.238.128.246:8060)] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap...
+2026-11-04 16:30:07,147 [WARNING] [!] El proxy libre http://47.238.128.246:8060 falló. Cambiando automáticamente...
+2026-11-04 16:30:07,194 [INFO] [-] Proxy lento descartado (http://47.238.128.246:8060). Quedan 3 en el pool.
+2026-11-04 16:30:08,331 [INFO] [*] Contexto activo [Proxy Libre (http://177.234.217.235:999)] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap...
+2026-11-04 16:30:25,630 [WARNING] [!] El proxy libre http://177.234.217.235:999 falló. Cambiando automáticamente...
+2026-11-04 16:30:25,631 [INFO] [-] Proxy lento descartado (http://177.234.217.235:999). Quedan 2 en el pool.
+2026-11-04 16:30:26,343 [INFO] [*] Contexto activo [Proxy Libre (http://47.92.219.102:8081)] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap...
+2026-11-04 16:30:26,346 [ERROR]   -> Error procesando https://babilonia.pe/inmueble/casa-en-venta-en-la-molina-de-5-dormitorios-5-banios-700m2-area-819000-usd-de-inmobiliaria-crosby-142661: Page.goto: net::ERR_TIMED_OUT at https://babilonia.pe/inmueble/casa-en-venta-en-la-molina-de-5-dormitorios-5-banios-700m2-area-819000-usd-de-inmobiliaria-crosby-142661
+Call log:
+  - navigating to "https://babilonia.pe/inmueble/casa-en-venta-en-la-molina-de-5-dormitorios-5-banios-700m2-area-819000-usd-de-inmobiliaria-crosby-142661", waiting until "domcontentloaded"
+
+2026-11-04 16:30:26,347 [INFO] [14/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-santiago-de-surco-de-4-dormitorios-7-banios-1130m2-area-1950000-usd-de-jeanne-de-los-rios-153641
+2026-11-04 16:30:32,388 [WARNING] [!] El proxy libre http://47.92.219.102:8081 falló. Cambiando automáticamente...
+2026-11-04 16:30:32,391 [INFO] [-] Proxy lento descartado (http://47.92.219.102:8081). Quedan 1 en el pool.
+2026-11-04 16:30:33,111 [INFO] [*] Contexto activo [Proxy Libre (http://161.22.33.169:999)] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWeb...
+2026-11-04 16:30:40,958 [WARNING] [!] El proxy libre http://161.22.33.169:999 falló. Cambiando automáticamente...
+2026-11-04 16:30:40,963 [INFO] [-] Proxy lento descartado (http://161.22.33.169:999). Quedan 0 en el pool.
+2026-11-04 16:30:41,685 [INFO] [*] Contexto activo [Conexión Directa Stealth] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap...
+2026-11-04 16:31:39,755 [INFO] [15/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-surquillo-de-2-dormitorios-2-banios-92m2-area-185000-usd-de-remax-pro-155497
+2026-11-04 16:32:23,670 [INFO] [16/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-miraflores-de-3-dormitorios-3-banios-118m2-area-262000-usd-de-karen-pooley-176894
+2026-11-04 16:33:20,729 [INFO] [17/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-san-borja-de-3-dormitorios-3-banios-220m2-area-329000-usd-de-createhogar-inmobiliaria-153663
+2026-11-04 16:34:13,941 [INFO] [18/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-los-olivos-de-4-dormitorios-2-banios-103m2-area-95000-usd-de-remax-pro-163076
+2026-11-04 16:35:01,938 [INFO] [19/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-barranco-de-3-dormitorios-2-banios-236m2-area-860000-usd-de-mw-investments-176910
+2026-11-04 16:35:46,343 [INFO] [20/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-santiago-de-surco-de-4-dormitorios-4-banios-160m2-area-298000-usd-de-remax-pro-144480
+2026-11-04 16:36:33,065 [INFO]   [!] Checkpoint guardado: 19 filas aseguradas en backup_emergencia_babilonia_2026-11-04.csv
+2026-11-04 16:36:33,066 [INFO] [21/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-miraflores-de-2-dormitorios-3-banios-104m2-area-230000-usd-de-remax-pro-163061
+2026-11-04 16:37:26,127 [INFO] [22/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-surquillo-de-2-dormitorios-1-banios-50m2-area-114161-usd-de-remax-pro-151227
+2026-11-04 16:37:38,769 [INFO] [23/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-miraflores-de-3-dormitorios-3-banios-260m2-area-545000-usd-de-lesca-inmobiliaria-168064
+2026-11-04 16:38:06,716 [INFO] [24/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-san-isidro-de-1-dormitorios-1-banios-57m2-area-165000-usd-de-remax-pro-157865
+2026-11-04 16:38:17,844 [INFO] [25/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-santiago-de-surco-de-3-dormitorios-2-banios-210m2-area-368000-usd-de-remax-pro-112514
+2026-11-04 16:38:28,579 [INFO] [26/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-san-borja-de-4-dormitorios-3-banios-185m2-area-273000-usd-de-claudia-silva-and-lisette-valdivia-enlace-propiedades-172501
+2026-11-04 16:39:04,596 [INFO] [27/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-miraflores-de-3-dormitorios-3-banios-157m2-area-300000-usd-de-romer-forero-137292
+2026-11-04 16:39:55,219 [INFO] [28/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-miraflores-de-3-dormitorios-3-banios-105m2-area-306031-usd-de-remax-pro-176948
+2026-11-04 16:40:29,298 [INFO] [29/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-santiago-de-surco-de-3-dormitorios-3-banios-271m2-area-570000-usd-de-aicardi-propiedades-122313
+2026-11-04 16:41:09,305 [INFO] [30/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-surquillo-de-4-dormitorios-3-banios-348m2-area-380000-usd-de-remax-pro-109825
+2026-11-04 16:41:57,228 [INFO] [31/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-pueblo-libre-de-3-dormitorios-2-banios-75m2-area-149710-usd-de-remax-pro-127190
+2026-11-04 16:42:34,343 [INFO] [32/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-san-borja-de-3-dormitorios-3-banios-135m2-area-250000-usd-de-remax-black-176898
+2026-11-04 16:42:47,813 [INFO] [33/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-surquillo-de-2-dormitorios-2-banios-92m2-area-185000-usd-de-remax-pro-155497
+2026-11-04 16:43:00,006 [INFO] [34/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-miraflores-de-3-dormitorios-3-banios-118m2-area-262000-usd-de-karen-pooley-176894
+2026-11-04 16:43:10,393 [INFO] [35/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/terreno-industrial-en-venta-en-chilca-de-3870m2-area-348303-usd-de-remax-pro-144032
+2026-11-04 16:43:20,844 [INFO] [36/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/local-comercial-en-venta-en-san-martin-de-porres-de-2-banios-525m2-area-308000-usd-de-remax-pro-149419
+2026-11-04 16:43:31,234 [INFO] [37/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-los-olivos-de-4-dormitorios-2-banios-103m2-area-95000-usd-de-remax-pro-163076
+2026-11-04 16:43:42,842 [INFO] [38/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-barranco-de-3-dormitorios-2-banios-236m2-area-860000-usd-de-mw-investments-176910
+2026-11-04 16:43:53,501 [INFO] [39/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-santiago-de-surco-de-4-dormitorios-4-banios-160m2-area-298000-usd-de-remax-pro-144480
+2026-11-04 16:44:04,028 [INFO] [40/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-san-isidro-de-1-dormitorios-1-banios-57m2-area-165000-usd-de-remax-pro-157865
+2026-11-04 16:44:13,256 [INFO]   [!] Checkpoint guardado: 39 filas aseguradas en backup_emergencia_babilonia_2026-11-04.csv
+2026-11-04 16:44:13,256 [INFO] [41/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/casa-en-venta-en-san-borja-de-5-dormitorios-4-banios-357m2-area-826300-usd-de-remax-pro-130265
+2026-11-04 16:44:23,188 [INFO] [42/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-san-borja-de-4-dormitorios-3-banios-185m2-area-273000-usd-de-claudia-silva-and-lisette-valdivia-enlace-propiedades-172501
+2026-11-04 16:44:33,177 [INFO] [43/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-santiago-de-surco-de-3-dormitorios-2-banios-210m2-area-368000-usd-de-remax-pro-112514
+2026-11-04 16:44:42,794 [INFO] [44/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-miraflores-de-3-dormitorios-3-banios-105m2-area-306031-usd-de-remax-pro-176948
+2026-11-04 16:44:53,578 [INFO] [45/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-surquillo-de-4-dormitorios-3-banios-348m2-area-380000-usd-de-remax-pro-109825
+2026-11-04 16:45:02,620 [INFO] [46/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-pueblo-libre-de-3-dormitorios-2-banios-75m2-area-149710-usd-de-remax-pro-127190
+2026-11-04 16:45:12,600 [INFO] [47/47] Extrayendo detalle nuevo (babilonia): https://babilonia.pe/inmueble/departamento-en-venta-en-san-borja-de-3-dormitorios-3-banios-135m2-area-250000-usd-de-remax-black-176898
+2026-11-04 16:45:23,951 [INFO] [✓] Exportación Gold exitosa: dataset_hedonico_babilonia_2026-11-04.csv | Total acumulado INEI: 46 filas.
