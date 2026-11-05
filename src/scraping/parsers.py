@@ -233,13 +233,24 @@ def recolectar_enlaces_portal(engine, perfil_portal: dict, url_semilla: str, max
         engine.page.wait_for_timeout(2000)
 
         nodos = engine.page.locator(selector_cards)
-        for i in range(nodos.count()):
-            nodo = nodos.nth(i)
-            ruta = nodo.get_attribute("data-to-posting") or nodo.get_attribute("href")
-            if ruta and filtro in ruta:
-                ruta_limpia = ruta.split("?")[0]
-                url_completa = urljoin(dominio, ruta_limpia)
-                enlaces_totales.add(url_completa)
+        
+        # Obtenemos la cantidad real de tarjetas detectadas
+        cantidad_tarjetas = nodos_enlaces.count()
+        
+        for i in range(cantidad_tarjetas):
+            try:
+                nodo = nodos_enlaces.nth(i)
+                # --- FIX: Timeout de 1 segundo para no congelar el script ---
+                ruta = nodo.get_attribute("data-to-posting", timeout=1000) or nodo.get_attribute("href", timeout=1000)
+                
+                if ruta:
+                    # Limpiamos la ruta para evitar parámetros extraños de rastreo
+                    ruta_limpia = ruta.split('?')[0]
+                    enlaces_totales.add(ruta_limpia)
+                    
+            except Exception:
+                # Si una tarjeta desaparece dinámicamente o no tiene enlace, la ignoramos al instante
+                continue
 
         logging.info(f"    -> Acumulados hasta ahora: {len(enlaces_totales)} enlaces únicos.")
         if pagina_actual == max_paginas:
