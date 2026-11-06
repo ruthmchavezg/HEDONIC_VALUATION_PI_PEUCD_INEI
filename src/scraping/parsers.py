@@ -1,126 +1,93 @@
-# [COMENTARIO] IMPORTACIÓN DE LIBRERÍAS
-# Lo que hace: Importa módulos estándar de Python para procesamiento de texto (re), estructuras de datos (json), registro de eventos (logging) y manejo de rutas web (urllib.parse), además de las expresiones regulares globales del proyecto.
-# Para qué sirve: Proporciona las herramientas fundamentales para analizar el código fuente, limpiar caracteres y leer los metadatos ocultos sin depender de librerías externas de terceros.
-# Metodología: Arquitectura guiada por configuración (Configuration-Driven) y uso de Biblioteca Estándar para asegurar bajo acoplamiento y alta eficiencia de ejecución[cite: 13, 14].
 import re
 import json
 import logging
-from urllib.parse import urljoin
-from config.settings import REGEX_PATTERNS
+from urllib.parse import urljoin, urlparse
+from config.settings import REGEX_PATTERNS, DISTRITOS_LIMA
 
-# [COMENTARIO] FUNCIÓN: extraer_texto_robusto_pw
-# Lo que hace: Inyecta y ejecuta una función en JavaScript directamente en el navegador (evaluación de página) para recorrer todos los nodos "hijos" de un elemento HTML, extrayendo únicamente el texto puro y filtrando botones inútiles.
-# Para qué sirve: Permite capturar las descripciones y características del inmueble ignorando etiquetas ocultas o basura visual del diseño, garantizando un texto limpio para el análisis NLP[cite: 14].
-# Metodología: Recorrido Recursivo del DOM (Recursive DOM Traversal) y Sanitización en el lado del cliente (Client-side Data Cleansing).
 def extraer_texto_robusto_pw(page, selectores: list) -> str:
-    """Tu extractor recursivo de nodos DOM que limpia texto e ignora botones de interfaz."""
     for selector in selectores:
         try:
             locator = page.locator(selector).first
             if locator.count() > 0:
-                textos_crudos = locator.evaluate("""
-                    (element) => {
-                        function getTexts(el) {
-                            let texts = [];
-                            for (let node of el.childNodes) {
-                                if (node.nodeType === 3) { 
-                                    texts.push(node.textContent);
-                                } else if (node.nodeType === 1) { 
-                                    texts = texts.concat(getTexts(node));
-                                }
-                            }
-                            return texts;
-                        }
-                        return getTexts(element);
-                    }
-                """)
-                if textos_crudos:
-                    textos_limpios = [re.sub(r'\s+', ' ', t).strip() for t in textos_crudos if t.strip()]
-                    ignorar = {'Leer descripción completa -', 'Ver más', 'Leer más', 'Ver descripción completa'}
-                    textos_filtrados = [t for t in textos_limpios if t not in ignorar]
-                    if textos_filtrados:
-                        return " | ".join(textos_filtrados)
+                texto = locator.inner_text(timeout=900)
+                if texto and texto.strip():
+                    limpio = re.sub(r'\s+', ' ', texto).strip()
+                    if len(limpio) > 2:
+                        return limpio
         except Exception:
             continue
     return "No especificado"
 
-# [COMENTARIO] FUNCIÓN: expandir_textos_ocultos
-# Lo que hace: Busca botones específicos en la pantalla ("Ver más", "Leer descripción completa"), hace scroll hasta ellos y los cliquea.
-# Para qué sirve: Despliega el texto completo de las descripciones que los portales suelen ocultar para ahorrar espacio visual, asegurando que no se pierda información valiosa.
-# Metodología: Interacción automatizada de Interfaz de Usuario (UI Automation) y Emulación Humana (simulando clics y tiempos de espera).
-def expandir_textos_ocultos(page):
-    """Expande botones de 'Ver más' o 'Leer más' tanto en Babilonia como en Urbania."""
+def extraer_texto_completo_pagina(page) -> str:
     try:
-        botones = page.locator('text="Ver más", text="Leer más", text="Leer descripción completa", text="Ver descripción completa"')
-        for i in range(botones.count()):
-            boton = botones.nth(i)
-            if boton.is_visible():
-                boton.scroll_into_view_if_needed()
-                boton.click(timeout=1500)
-                page.wait_for_timeout(500)
+        texto = page.evaluate("""
+            () => {
+                const clone = document.body.cloneNode(true);
+                clone.querySelectorAll('script, style, nav, footer, noscript, svg').forEach(e => e.remove());
+                return clone.innerText || '';
+            }
+        """)
+        return re.sub(r'\s+', ' ', texto).strip()
+    except Exception:
+        return ""
+
+def expandir_textos_ocultos(page):
+    try:
+        botones = page.locator('text="Ver más", text="Leer más", text="Leer descripción completa"')
+        if botones.count() > 0 and botones.first.is_visible(timeout=400):
+            botones.first.click(timeout=600)
     except Exception:
         pass
 
-# [COMENTARIO] FUNCIÓN: extraer_unidades_detalladas_pw
-# Lo que hace: Detecta si el anuncio es un proyecto con varias unidades (ej. edificio en venta), hace clic en cada pestaña (1 dorm, 2 dorm, etc.) y extrae el precio y características de cada sub-departamento.
-# Para qué sirve: Evita que un anuncio agrupe múltiples precios y áreas en una sola fila, desglosando cada unidad de forma independiente.
-# Metodología: Estructuración Tabular Atómica (1 fila = 1 inmueble tasable). Garantiza la integridad de la matriz econométrica para no sesgar el modelo hedónico con valores mezclados[cite: 14].
 def extraer_unidades_detalladas_pw(page) -> list:
-    """Extrae sub-unidades cuando el anuncio corresponde a un proyecto inmobiliario."""
     unidades_extraidas = []
-    pestanas = page.locator('button[class*="unit-selection-module__rooms-button"], [class*="project-units"] button')
-    if pestanas.count() == 0:
-        return []
+    try:
+        pestanas = page.locator('button[class*="unit-selection-module__rooms-button"], [class*="project-units"] button')
+        if pestanas.count() == 0:
+            return []
 
-    for i in range(pestanas.count()):
-        try:
-            pestana = pestanas.nth(i)
-            nombre_pestana = pestana.inner_text()
-            pestana.scroll_into_view_if_needed()
-            pestana.click()
-            page.wait_for_timeout(1200)
-            
-            tarjetas = page.locator('div[class*="unit-selection-module__cardContainer"], [class*="unit-card"]')
-            for j in range(tarjetas.count()):
-                tarjeta = tarjetas.nth(j)
-                tipo = tarjeta.locator('.unitPropertyType').inner_text() if tarjeta.locator('.unitPropertyType').count() > 0 else ""
-                precio = tarjeta.locator('.unitPrice').inner_text() if tarjeta.locator('.unitPrice').count() > 0 else ""
-                if precio:
-                    caracteristicas = tarjeta.locator('div[class*="unitFeatures"]').inner_text() if tarjeta.locator('div[class*="unitFeatures"]').count() > 0 else ""
-                    features_limpio = re.sub(r'\s+', ' ', caracteristicas).strip().replace('\n', ' | ')
-                    unidades_extraidas.append({
-                        "dormitorios": nombre_pestana.strip(),
-                        "tipo_unidad": tipo.strip(),
-                        "precio_unidad": precio.strip(),
-                        "detalles_unidad": features_limpio
-                    })
-        except Exception:
-            continue
+        for i in range(pestanas.count()):
+            try:
+                pestana = pestanas.nth(i)
+                nombre_pestana = pestana.inner_text(timeout=600)
+                pestana.click(timeout=800)
+                page.wait_for_timeout(400)
+                
+                tarjetas = page.locator('div[class*="unit-selection-module__cardContainer"], [class*="unit-card"]')
+                for j in range(tarjetas.count()):
+                    tarjeta = tarjetas.nth(j)
+                    tipo = tarjeta.locator('.unitPropertyType').inner_text(timeout=400) if tarjeta.locator('.unitPropertyType').count() > 0 else ""
+                    precio = tarjeta.locator('.unitPrice').inner_text(timeout=400) if tarjeta.locator('.unitPrice').count() > 0 else ""
+                    if precio:
+                        caracteristicas = tarjeta.locator('div[class*="unitFeatures"]').inner_text(timeout=400) if tarjeta.locator('div[class*="unitFeatures"]').count() > 0 else ""
+                        features_limpio = re.sub(r'\s+', ' ', caracteristicas).strip()
+                        unidades_extraidas.append({
+                            "dormitorios": nombre_pestana.strip(),
+                            "tipo_unidad": tipo.strip(),
+                            "precio_unidad": precio.strip(),
+                            "detalles_unidad": features_limpio
+                        })
+            except Exception:
+                continue
+    except Exception:
+        pass
     return unidades_extraidas
 
-# [COMENTARIO] FUNCIÓN: extraer_metadatos_json_oculto
-# Lo que hace: Lee el código fuente de la página buscando etiquetas script 'application/ld+json' y coordenadas incrustadas, extrayendo datos estructurados directamente del código en lugar de la vista.
-# Para qué sirve: Obtiene latitud y longitud exactas (indispensables para OpenStreetMap) y el precio en formato numérico puro, saltándose cualquier cambio cosmético en la web.
-# Metodología: Extracción de Estado Interno (Hidden JSON / Server-Side Rendering Hydration) e Intercepción de Datos Estructurados para mayor resiliencia ante rediseños del portal[cite: 14].
 def extraer_metadatos_json_oculto(page) -> dict:
-    """
-    Extrae datos estructurados ocultos (JSON-LD y objetos JS) de Babilonia y Urbania:
-    Coordenadas GPS (latitud, longitud), precio limpio, moneda y descripción.
-    """
     meta = {"latitud": None, "longitud": None, "precio_json": None, "moneda_json": None, "descripcion_json": None, "titulo_json": None}
     try:
         html = page.content()
-        
-        # 1. Buscar bloques <script type="application/ld+json">
         scripts = page.locator('script[type="application/ld+json"]')
         for i in range(scripts.count()):
             try:
-                raw_json = scripts.nth(i).inner_text()
+                raw_json = scripts.nth(i).inner_text(timeout=600)
                 data = json.loads(raw_json)
                 items = data if isinstance(data, list) else [data]
                 for item in items:
                     if not isinstance(item, dict):
                         continue
+                    if "@graph" in item and isinstance(item["@graph"], list):
+                        items.extend(item["@graph"])
                     if not meta["titulo_json"] and item.get("name"):
                         meta["titulo_json"] = str(item.get("name"))
                     if not meta["descripcion_json"] and item.get("description"):
@@ -139,58 +106,74 @@ def extraer_metadatos_json_oculto(page) -> dict:
                             p = offers.get("price") or offers.get("lowPrice")
                             c = offers.get("priceCurrency")
                             if p:
-                                meta["precio_json"] = float(p)
+                                meta["precio_json"] = float(str(p).replace(",", ""))
                             if c in ["USD", "PEN"]:
                                 meta["moneda_json"] = c
             except Exception:
                 continue
 
-        # 2. Respaldo Regex sobre HTML crudo para coordenadas GPS en Lima Metropolitana
         if not meta["latitud"]:
-            m_coord = re.search(r'"lat(?:itude)?"\s*:\s*(-1[123]\.\d+)\s*,\s*"(?:lng|lon|longitude)"\s*:\s*(-7[67]\.\d+)', html)
-            if m_coord:
-                meta["latitud"] = float(m_coord.group(1))
-                meta["longitud"] = float(m_coord.group(2))
-            else:
-                m_map = re.search(r'center=(-1[123]\.\d+)(?:%2C|,)(-7[67]\.\d+)', html)
-                if m_map:
-                    meta["latitud"] = float(m_map.group(1))
-                    meta["longitud"] = float(m_map.group(2))
+            patrones_coord = [
+                r'"lat(?:itude)?"\s*:\s*(-1[123]\.\d+)\s*,\s*"(?:lng|lon|longitude)"\s*:\s*(-7[67]\.\d+)',
+                r'center=(-1[123]\.\d+)(?:%2C|,)(-7[67]\.\d+)',
+                r'\[(-1[123]\.\d{4,}),\s*(-7[67]\.\d{4,})\]',
+                r'lat=(-1[123]\.\d+)&(?:amp;)?lng=(-7[67]\.\d+)'
+            ]
+            for pat in patrones_coord:
+                m_coord = re.search(pat, html)
+                if m_coord:
+                    meta["latitud"] = float(m_coord.group(1))
+                    meta["longitud"] = float(m_coord.group(2))
+                    break
     except Exception:
         pass
     return meta
 
-# [COMENTARIO] FUNCIÓN: limpiar_precio_moneda
-# Lo que hace: Analiza un texto de precio (ej. "S/ 150,000" o "USD 50.000") o el JSON oculto, extrae la moneda detectada y devuelve el valor matemático validado.
-# Para qué sirve: Filtra registros basura (precios menores a 1000) y separa la moneda del número, preparándolos para la conversión automática al tipo de cambio del BCRP.
-# Metodología: Limpieza de Datos (Data Cleansing) y Estandarización de divisas.
-def limpiar_precio_moneda(texto_precio: str, meta_json: dict) -> tuple:
-    """Obtiene moneda ('USD' o 'PEN') y monto numérico validado."""
-    if meta_json.get("precio_json") and meta_json["precio_json"] > 1000:
-        return meta_json.get("moneda_json") or "USD", float(meta_json["precio_json"])
-
-    if not texto_precio or texto_precio == "No especificado":
-        return None, None
-
-    bloque = texto_precio.split("·")[0].split("|")[0].upper()
-    moneda = "USD" if ("USD" in bloque or "US$" in bloque or "$" in bloque) else "PEN"
-    numeros = re.findall(r"\d+(?:[.,]\d{3})*(?:[.,]\d+)?", bloque)
-    if not numeros:
-        return None, None
-
-    monto_str = re.sub(r"[^\d]", "", numeros[0])
+def _limpiar_numero_monetario(cadena: str) -> float | None:
+    if not cadena:
+        return None
+    limpio = cadena.strip()
+    if re.search(r"[.,]\d{2}$", limpio):
+        limpio = limpio[:-3]
+    solo_digitos = re.sub(r"[^\d]", "", limpio)
     try:
-        monto = float(monto_str)
-        return (moneda, monto) if monto > 1000 else (None, None)
+        val = float(solo_digitos)
+        return val if val >= 100 else None
     except ValueError:
-        return None, None
+        return None
 
-# [COMENTARIO] FUNCIÓN: parsear_atributos_regex
-# Lo que hace: Ejecuta los patrones Regex (área, baños, dormitorios, antigüedad) definidos globalmente sobre un bloque de texto consolidado.
-# Para qué sirve: Transforma el texto crudo en columnas numéricas perfectas para alimentar la ecuación hedónica sin generar errores de tipo en los algoritmos de Machine Learning.
-# Metodología: Extracción de Información Estructurada (Pattern Matching / Regex Parsing) a partir de lenguaje natural no estructurado[cite: 14].
+def extraer_precios_soles_dolares(texto_precio: str, meta_json: dict, texto_completo: str = "") -> tuple[float | None, float | None]:
+    precio_soles = None
+    precio_dolares = None
+
+    fuente_prioritaria = f"{texto_precio or ''} | {texto_completo[:1200]}"
+
+    m_pen = re.search(r"(?:S/|S/\.|PEN)\s*(\d{1,3}(?:[.,]\d{3})+(?:[.,]\d{2})?|\d{3,6})", fuente_prioritaria, re.IGNORECASE)
+    if m_pen:
+        precio_soles = _limpiar_numero_monetario(m_pen.group(1))
+
+    m_usd = re.search(r"(?:US\$|USD|\$)\s*(\d{1,3}(?:[.,]\d{3})+(?:[.,]\d{2})?|\d{3,6})", fuente_prioritaria, re.IGNORECASE)
+    if m_usd:
+        precio_dolares = _limpiar_numero_monetario(m_usd.group(1))
+
+    if meta_json.get("precio_json") and meta_json["precio_json"] >= 100:
+        mon_json = meta_json.get("moneda_json")
+        if mon_json == "PEN" and precio_soles is None:
+            precio_soles = float(meta_json["precio_json"])
+        elif mon_json == "USD" and precio_dolares is None:
+            precio_dolares = float(meta_json["precio_json"])
+
+    return precio_soles, precio_dolares
+
+def detectar_distrito(ubicacion_str: str, titulo_str: str, texto_completo: str) -> str | None:
+    combinado = f"{ubicacion_str} | {titulo_str} | {texto_completo[:800]}".lower()
+    for d in DISTRITOS_LIMA:
+        if re.search(rf"\b{re.escape(d.lower())}\b", combinado):
+            return "Santiago de Surco" if d == "Surco" else ("Magdalena del Mar" if d == "Magdalena" else d)
+    partes = [x.strip() for x in (ubicacion_str or "").split(",") if x.strip() and x.strip() != "No especificado"]
+    return partes[-2] if len(partes) >= 2 else (partes[0] if partes else None)
+
 def parsear_atributos_regex(texto_combinado: str) -> dict:
-    """Extrae las variables estructurales numéricas mediante las Regex del proyecto."""
     t = (texto_combinado or "").lower()
     m_tot = REGEX_PATTERNS["area_total"].search(t)
     m_con = REGEX_PATTERNS["area_construida"].search(t)
@@ -198,86 +181,135 @@ def parsear_atributos_regex(texto_combinado: str) -> dict:
     m_ban = REGEX_PATTERNS["banos"].search(t)
     m_est = REGEX_PATTERNS["estacionamientos"].search(t)
     m_ant = REGEX_PATTERNS["antiguedad"].search(t)
+    m_man = REGEX_PATTERNS["mantenimiento"].search(t)
 
     antiguedad = int(m_ant.group(1)) if m_ant else (0 if ("estreno" in t or "en construcción" in t) else None)
+    area_tot = float(m_tot.group(1).replace(",", ".")) if m_tot else None
+    area_con = float(m_con.group(1).replace(",", ".")) if m_con else area_tot
+    mant = float(re.sub(r"[^\d]", "", m_man.group(1))) if m_man else None
 
     return {
-        "area_total_m2": float(m_tot.group(1).replace(",", ".")) if m_tot else None,
-        "area_construida_m2": float(m_con.group(1).replace(",", ".")) if m_con else None,
+        "area_total_m2": area_tot,
+        "area_construida_m2": area_con,
         "dormitorios_num": int(m_dor.group(1)) if m_dor else None,
         "banos_num": int(m_ban.group(1)) if m_ban else None,
         "estacionamientos_num": int(m_est.group(1)) if m_est else None,
         "antiguedad_anos": antiguedad,
+        "mantenimiento_soles": mant,
     }
 
-# [COMENTARIO] FUNCIÓN: recolectar_enlaces_portal
-# Lo que hace: Navega a la URL de listado principal (ej. Casas en Lima), hace un scroll progresivo para cargar todos los elementos dinámicos, captura las URLs de las tarjetas, y luego detecta el botón de "Siguiente" para avanzar a la próxima página y repetir el ciclo.
-# Para qué sirve: Genera el catálogo completo de anuncios disponibles en el portal para posteriormente recorrerlos uno por uno y aplicar el filtro incremental de duplicados.
-# Metodología: Rastreo Web Secuencial (Web Crawling) con simulación de comportamiento humano (Jitter Gaussiano) para evadir bloqueos de IP y forzar el renderizado de carga diferida (Lazy Loading)[cite: 14].
+def _es_url_inmueble_valida(url_completa: str, dominio: str, filtros: list) -> bool:
+    if not url_completa.startswith(dominio):
+        return False
+    parsed = urlparse(url_completa)
+    path = parsed.path.lower()
+    exclusiones = [
+        "/login", "/registro", "/contacto", "/blog", "/noticias",
+        "/agentes", "/resultados/", "/buscar/", "/alquiler/casas",
+        "/alquiler/departamentos", "/alquiler/habitaciones", "/inmuebles/"
+    ]
+    if path in ["/", ""] or any(x in path for x in exclusiones):
+        return False
+    if any(f.lower() in url_completa.lower() for f in filtros):
+        if re.search(r"\d{4,}", url_completa) or len(path.strip("/").split("/")) >= 2:
+            return True
+    return False
+
 def recolectar_enlaces_portal(engine, perfil_portal: dict, url_semilla: str, max_paginas: int) -> list:
-    """Recolecta enlaces de propiedades haciendo scroll hasta el fondo y manejando paginación."""
-    enlaces_totales = set()
+    enlaces_ordenados = []
+    enlaces_vistos = set()
     url_actual = url_semilla
     dominio = perfil_portal["dominio"]
     selector_cards = perfil_portal["selector_enlaces_listado"]
-    filtro = perfil_portal["filtro_url_inmueble"]
+    filtros = perfil_portal["filtro_url_inmueble"]
 
     for pagina_actual in range(1, max_paginas + 1):
-        logging.info(f"[+] [{dominio}] Recolectando enlaces - Página {pagina_actual}/{max_paginas}: {url_actual}")
-        engine.navegar_seguro(url_actual)
-
-        # Scroll progresivo hasta el fondo para activar carga diferida (Lazy Loading) y paginación
-        engine.page.evaluate("window.scrollTo(0, document.body.scrollHeight * 0.5);")
-        engine.page.wait_for_timeout(1200)
-        engine.page.evaluate("window.scrollTo(0, document.body.scrollHeight);")
-        engine.page.wait_for_timeout(2000)
-
-        nodos = engine.page.locator(selector_cards)
-        
-        # Obtenemos la cantidad real de tarjetas detectadas
-        cantidad_tarjetas = nodos_enlaces.count()
-        
-        for i in range(cantidad_tarjetas):
-            try:
-                nodo = nodos_enlaces.nth(i)
-                # --- FIX: Timeout de 1 segundo para no congelar el script ---
-                ruta = nodo.get_attribute("data-to-posting", timeout=1000) or nodo.get_attribute("href", timeout=1000)
-                
-                if ruta:
-                    # Limpiamos la ruta para evitar parámetros extraños de rastreo
-                    ruta_limpia = ruta.split('?')[0]
-                    enlaces_totales.add(ruta_limpia)
-                    
-            except Exception:
-                # Si una tarjeta desaparece dinámicamente o no tiene enlace, la ignoramos al instante
-                continue
-
-        logging.info(f"    -> Acumulados hasta ahora: {len(enlaces_totales)} enlaces únicos.")
-        if pagina_actual == max_paginas:
+        logging.info(f"[+] [{dominio}] Página {pagina_actual}/{max_paginas}: {url_actual}")
+        try:
+            engine.navegar_seguro(url_actual)
+        except Exception as e:
+            logging.warning(f"[!] Error cargando listado {url_actual}: {e}")
             break
 
-        # Intentar avanzar a la siguiente página
+        try:
+            rutas_crudas = []
+            # Extracción ultrarrápida por BeautifulSoup si se usó curl_cffi (Adiós Cloudflare)
+            if getattr(engine, "_usando_cffi", False):
+                soup = engine.soup()
+                elementos = soup.select(selector_cards) if selector_cards else soup.select('a[href]')
+                for el in elementos:
+                    r = el.get("data-to-posting") or el.get("href")
+                    if r:
+                        rutas_crudas.append(r)
+                # Respaldo Regex en HTML crudo si soup no halló suficientes
+                if len(rutas_crudas) < 3:
+                    html_raw = engine.content()
+                    for f in filtros:
+                        hallados = re.findall(rf'["\']((?:https?://{re.escape(urlparse(dominio).netloc)})?/[a-zA-Z0-9_/-]*{re.escape(f.strip("/"))}[a-zA-Z0-9_/-]+(?:\.html)?)["\']', html_raw)
+                        rutas_crudas.extend(hallados)
+            else:
+                # Extracción interactiva estándar mediante Playwright
+                try:
+                    engine.page.wait_for_selector(selector_cards, timeout=3000)
+                except Exception:
+                    engine.page.wait_for_timeout(1000)
+
+                rutas_crudas = engine.page.evaluate("""
+                    (selector) => {
+                        let els = [];
+                        try {
+                            els = Array.from(document.querySelectorAll(selector));
+                        } catch (e) {
+                            els = [];
+                        }
+                        const todas = els.length > 0 ? els : Array.from(document.querySelectorAll('a[href], [data-to-posting]'));
+                        return todas.map(el => el.getAttribute('data-to-posting') || el.getAttribute('href')).filter(Boolean);
+                    }
+                """, selector_cards)
+
+            nuevos_en_pagina = 0
+            for ruta in rutas_crudas:
+                ruta_abs = urljoin(dominio, ruta.split("?")[0].strip())
+                if _es_url_inmueble_valida(ruta_abs, dominio, filtros):
+                    if ruta_abs not in enlaces_vistos:
+                        enlaces_vistos.add(ruta_abs)
+                        enlaces_ordenados.append(ruta_abs)
+                        nuevos_en_pagina += 1
+
+            logging.info(f"    -> +{nuevos_en_pagina} enlaces en esta página | Total acumulados: {len(enlaces_ordenados)}")
+            if nuevos_en_pagina == 0 and pagina_actual > 1:
+                break
+        except Exception as e:
+            logging.warning(f"    [!] Error extrayendo enlaces: {e}")
+
+        if pagina_actual >= max_paginas:
+            break
+
+        # Paginación
         avanzado = False
-        for sel_next in perfil_portal["selector_siguiente_pagina"]:
-            boton_sig = engine.page.locator(sel_next).first
-            if boton_sig.count() > 0 and boton_sig.is_visible():
-                href_sig = boton_sig.get_attribute("href")
-                if href_sig and not href_sig.startswith("javascript"):
-                    url_actual = urljoin(dominio, href_sig)
-                    avanzado = True
-                    break
-                else:
-                    # En SPAs como Babilonia donde el botón actualiza la URL por JS
-                    boton_sig.scroll_into_view_if_needed()
-                    boton_sig.click()
-                    engine.page.wait_for_timeout(3000)
-                    url_actual = engine.page.url
-                    avanzado = True
-                    break
+        if not getattr(engine, "_usando_cffi", False):
+            for sel_next in perfil_portal["selector_siguiente_pagina"]:
+                try:
+                    boton_sig = engine.page.locator(sel_next).first
+                    if boton_sig.count() > 0 and boton_sig.is_visible(timeout=500):
+                        href_sig = boton_sig.get_attribute("href", timeout=500)
+                        if href_sig and not href_sig.startswith("javascript") and href_sig != "#":
+                            url_actual = urljoin(dominio, href_sig)
+                            avanzado = True
+                            break
+                except Exception:
+                    continue
 
         if not avanzado:
-            # Respaldo por parámetro de página estándar
-            sep = "&" if "?" in url_semilla else "?"
-            url_actual = f"{url_semilla}{sep}page={pagina_actual + 1}"
+            patron = perfil_portal.get("patron_paginacion", "?page={page}")
+            if patron == "-pagina-{page}.html" and url_semilla.endswith(".html"):
+                url_actual = url_semilla.replace(".html", f"-pagina-{pagina_actual + 1}.html")
+            elif patron.startswith("/"):
+                url_actual = url_semilla.rstrip("/") + patron.format(page=pagina_actual + 1)
+            elif patron.startswith("&"):
+                url_actual = f"{url_semilla}{patron.format(page=pagina_actual + 1)}"
+            else:
+                sep = "&" if "?" in url_semilla else "?"
+                url_actual = f"{url_semilla}{sep}page={pagina_actual + 1}"
 
-    return list(enlaces_totales)
+    return enlaces_ordenados

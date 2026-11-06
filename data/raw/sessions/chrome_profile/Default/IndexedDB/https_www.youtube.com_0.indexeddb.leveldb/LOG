@@ -1,0 +1,4 @@
+2026/11/06-15:48:19.092 2bec Creating DB D:\GITHUB\PEUCD\HEDONIC_VALUATION_PI_PEUCD_INEI\data\raw\sessions\chrome_profile\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb since it was missing.
+2026/11/06-15:48:19.100 2bec Reusing MANIFEST D:\GITHUB\PEUCD\HEDONIC_VALUATION_PI_PEUCD_INEI\data\raw\sessions\chrome_profile\Default\IndexedDB\https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/11/06-15:48:19.349 2958 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/11/06-15:48:19.365 2958 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)

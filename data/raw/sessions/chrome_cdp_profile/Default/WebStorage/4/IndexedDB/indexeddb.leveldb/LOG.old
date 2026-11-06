@@ -1,0 +1,10 @@
+2026/11/06-16:18:33.409 1d28 Creating DB D:\GITHUB\PEUCD\HEDONIC_VALUATION_PI_PEUCD_INEI\data\raw\sessions\chrome_cdp_profile\Default\WebStorage\4\IndexedDB\indexeddb.leveldb since it was missing.
+2026/11/06-16:18:33.418 1d28 Reusing MANIFEST D:\GITHUB\PEUCD\HEDONIC_VALUATION_PI_PEUCD_INEI\data\raw\sessions\chrome_cdp_profile\Default\WebStorage\4\IndexedDB\indexeddb.leveldb/MANIFEST-000001
+2026/11/06-16:18:33.812 3d00 Level-0 table #5: started
+2026/11/06-16:18:33.817 3d00 Level-0 table #5: 3439 bytes OK
+2026/11/06-16:18:33.820 3d00 Delete type=0 #3
+2026/11/06-16:18:33.820 3d00 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/11/06-16:18:33.827 3d00 Level-0 table #7: started
+2026/11/06-16:18:33.830 3d00 Level-0 table #7: 1609 bytes OK
+2026/11/06-16:18:33.834 3d00 Delete type=0 #4
+2026/11/06-16:18:33.834 338c Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)

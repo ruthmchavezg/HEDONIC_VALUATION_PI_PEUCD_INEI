@@ -1,0 +1,1010 @@
+2026-11-06 14:43:18,864 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-06 14:46:41,086 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-06 14:46:41,088 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 14:46:53,210 [INFO] [*] Contexto activo [Directo Stealth Rápido] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) ...
+2026-11-06 14:46:53,271 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-06 14:46:53,277 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-06 14:47:00,755 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 14:47:00,784 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-06 14:47:00,795 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-06 14:47:12,413 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 14:47:12,423 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-06 14:47:12,429 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-06 14:47:20,521 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 14:47:20,523 [INFO] 
+[BABILONIA] Enlaces totales: 3 | Ya en Base Maestra: 1 | Pendientes por raspar: 2
+2026-11-06 14:47:20,523 [INFO] [1/2] Extrayendo (babilonia): https://babilonia.pe/inmueble/casa-en-alquiler-en-santiago-de-surco-de-5-dormitorios-4-banios-220m2-area-2850-usd-de-vivencias-real-estate-175606
+2026-11-06 14:47:25,759 [INFO] [2/2] Extrayendo (babilonia): https://babilonia.pe/inmueble/departamento-en-alquiler-en-barranco-de-2-dormitorios-2-banios-70m2-area-1000-usd-de-lesca-inmobiliaria-168137
+2026-11-06 14:47:30,381 [INFO]   [✓] Guardado incremental Silver (babilonia): +2 anuncios | Total Base Maestra: 2
+2026-11-06 14:47:32,231 [INFO] [+] Estado Histórico Silver cargado: 1 inmuebles únicos ya registrados.
+2026-11-06 14:47:34,355 [INFO] [*] Contexto activo [Directo Stealth Rápido] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 14:47:34,432 [INFO] [PROPERATI] Buscando alquileres de: casa
+2026-11-06 14:47:34,447 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/casa/alquiler
+2026-11-06 14:47:42,493 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 14:47:42,493 [INFO] [PROPERATI] Buscando alquileres de: departamento
+2026-11-06 14:47:42,493 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/departamento/alquiler
+2026-11-06 14:47:50,017 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 14:47:50,017 [INFO] [PROPERATI] Buscando alquileres de: habitacion
+2026-11-06 14:47:50,017 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/habitacion/alquiler
+2026-11-06 14:47:55,836 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 14:47:55,837 [INFO] 
+[PROPERATI] Enlaces totales: 2 | Ya en Base Maestra: 0 | Pendientes por raspar: 2
+2026-11-06 14:47:55,837 [INFO] [1/2] Extrayendo (properati): https://www.properati.com.pe/detalle/14032-32-4c9f-81c50cd5edc1-1a044f4-9f79-74c8
+2026-11-06 14:48:02,259 [INFO] [2/2] Extrayendo (properati): https://www.properati.com.pe/detalle/14032-32-ab8-e9e0ae594306-1a0ef04-838f-777e
+2026-11-06 14:48:07,476 [INFO]   [✓] Guardado incremental Silver (properati): +2 anuncios | Total Base Maestra: 2
+2026-11-06 14:48:09,337 [INFO] [+] Estado Histórico Silver cargado: 2 inmuebles únicos ya registrados.
+2026-11-06 14:48:11,875 [INFO] [*] Contexto activo [Directo Stealth Rápido] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 14:48:11,923 [INFO] [LAENCONTRE] Buscando alquileres de: casa
+2026-11-06 14:48:11,929 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list
+2026-11-06 14:48:19,763 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 14:48:19,763 [INFO] [LAENCONTRE] Buscando alquileres de: departamento
+2026-11-06 14:48:19,763 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list
+2026-11-06 14:48:28,012 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 14:48:28,012 [INFO] [LAENCONTRE] Buscando alquileres de: habitacion
+2026-11-06 14:48:28,013 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list
+2026-11-06 14:48:35,899 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 14:48:35,900 [INFO] 
+[LAENCONTRE] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 14:48:35,901 [INFO] [1/3] Extrayendo (laencontre): https://www.laencontre.com.pe/inmueble/ef60-ab84-1a10e9b-44172da7cc96-7751
+2026-11-06 14:48:40,710 [INFO] [2/3] Extrayendo (laencontre): https://www.laencontre.com.pe/inmueble/51dd-8156-1a16481-cff87a23d926-7197
+2026-11-06 14:48:45,456 [INFO] [3/3] Extrayendo (laencontre): https://www.laencontre.com.pe/inmueble/7cf8-bd1c-1a19019-d04d53b9d16d-7860
+2026-11-06 14:48:51,354 [INFO]   [✓] Guardado incremental Silver (laencontre): +3 anuncios | Total Base Maestra: 3
+2026-11-06 14:48:53,462 [INFO] [+] Estado Histórico Silver cargado: 3 inmuebles únicos ya registrados.
+2026-11-06 14:48:56,380 [INFO] [*] Contexto activo [Directo Stealth Rápido] | UA: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) ...
+2026-11-06 14:48:56,387 [INFO] [REMAX] Buscando alquileres de: casa
+2026-11-06 14:48:56,390 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/casa-en+alquiler-lima-pro/
+2026-11-06 14:48:57,749 [WARNING] [!] Estado HTTP 403 en https://www.remax.pe/casa-en+alquiler-lima-pro/. Activando evasión...
+2026-11-06 14:48:57,777 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:49:13,258 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:49:26,817 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 14:49:26,817 [INFO] [REMAX] Buscando alquileres de: departamento
+2026-11-06 14:49:26,817 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/departamentos-en+alquiler-lima-dist/
+2026-11-06 14:49:28,867 [WARNING] [!] Estado HTTP 403 en https://www.remax.pe/departamentos-en+alquiler-lima-dist/. Activando evasión...
+2026-11-06 14:49:28,889 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:49:44,177 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:49:57,688 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 14:49:57,688 [INFO] [REMAX] Buscando alquileres de: habitacion
+2026-11-06 14:49:57,689 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/habitacion-en+alquiler-lima-pro/
+2026-11-06 14:49:59,377 [WARNING] [!] Estado HTTP 403 en https://www.remax.pe/habitacion-en+alquiler-lima-pro/. Activando evasión...
+2026-11-06 14:49:59,398 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:50:14,362 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:50:26,285 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 14:50:26,286 [INFO] 
+[REMAX] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 14:50:27,826 [INFO] [+] Estado Histórico Silver cargado: 3 inmuebles únicos ya registrados.
+2026-11-06 14:50:30,539 [INFO] [*] Contexto activo [Directo Stealth Rápido] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 14:50:30,608 [INFO] [CENTURY21] Buscando alquileres de: casa
+2026-11-06 14:50:30,608 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 14:50:38,244 [WARNING]     [!] Error extrayendo enlaces del DOM: Page.evaluate: SyntaxError: Failed to execute 'querySelectorAll' on 'Document': 'a[href*="/propiedad/"], a:has-text("Ver Detalle"), div[class*="card"] a[href]' is not a valid selector.
+    at eval (eval at evaluate (:234:30), <anonymous>:2:53)
+    at UtilityScript.evaluate (<anonymous>:241:19)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2026-11-06 14:50:38,244 [INFO] [CENTURY21] Buscando alquileres de: departamento
+2026-11-06 14:50:38,244 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 14:50:46,456 [WARNING]     [!] Error extrayendo enlaces del DOM: Page.evaluate: SyntaxError: Failed to execute 'querySelectorAll' on 'Document': 'a[href*="/propiedad/"], a:has-text("Ver Detalle"), div[class*="card"] a[href]' is not a valid selector.
+    at eval (eval at evaluate (:234:30), <anonymous>:2:53)
+    at UtilityScript.evaluate (<anonymous>:241:19)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2026-11-06 14:50:46,456 [INFO] [CENTURY21] Buscando alquileres de: habitacion
+2026-11-06 14:50:46,456 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 14:50:51,667 [WARNING]     [!] Error extrayendo enlaces del DOM: Page.evaluate: SyntaxError: Failed to execute 'querySelectorAll' on 'Document': 'a[href*="/propiedad/"], a:has-text("Ver Detalle"), div[class*="card"] a[href]' is not a valid selector.
+    at eval (eval at evaluate (:234:30), <anonymous>:2:53)
+    at UtilityScript.evaluate (<anonymous>:241:19)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+2026-11-06 14:50:51,667 [INFO] 
+[CENTURY21] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 14:50:53,034 [INFO] [+] Estado Histórico Silver cargado: 3 inmuebles únicos ya registrados.
+2026-11-06 14:50:55,762 [INFO] [*] Contexto activo [Directo Stealth Rápido] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 14:50:55,814 [INFO] [URBANIA] Buscando alquileres de: casa
+2026-11-06 14:50:55,821 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-06 14:51:04,286 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 14:51:04,293 [INFO] [URBANIA] Buscando alquileres de: departamento
+2026-11-06 14:51:04,294 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-06 14:51:06,712 [WARNING] [!] Estado HTTP 403 en https://urbania.pe/buscar/alquiler-de-departamentos-en-lima. Activando evasión...
+2026-11-06 14:51:06,742 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:51:22,439 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:51:35,300 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 14:51:35,303 [INFO] [URBANIA] Buscando alquileres de: habitacion
+2026-11-06 14:51:35,340 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-06 14:51:36,980 [WARNING] [!] Estado HTTP 403 en https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima. Activando evasión...
+2026-11-06 14:51:37,005 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:51:52,434 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:52:04,848 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 14:52:04,850 [INFO] 
+[URBANIA] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 14:52:07,043 [INFO] [+] Estado Histórico Silver cargado: 3 inmuebles únicos ya registrados.
+2026-11-06 14:52:10,071 [INFO] [*] Contexto activo [Directo Stealth Rápido] | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 14:52:10,072 [INFO] [ADONDEVIVIR] Buscando alquileres de: casa
+2026-11-06 14:52:10,073 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-06 14:52:17,658 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 14:52:17,666 [INFO] [ADONDEVIVIR] Buscando alquileres de: departamento
+2026-11-06 14:52:17,666 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-06 14:52:19,930 [WARNING] [!] Estado HTTP 403 en https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html. Activando evasión...
+2026-11-06 14:52:19,970 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:52:35,924 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:52:48,690 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 14:52:48,691 [INFO] [ADONDEVIVIR] Buscando alquileres de: habitacion
+2026-11-06 14:52:48,691 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-06 14:52:50,309 [WARNING] [!] Estado HTTP 403 en https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html. Activando evasión...
+2026-11-06 14:52:50,327 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:53:05,556 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:53:18,997 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 14:53:18,999 [INFO] 
+[ADONDEVIVIR] Enlaces totales: 1 | Ya en Base Maestra: 0 | Pendientes por raspar: 1
+2026-11-06 14:53:19,000 [INFO] [1/1] Extrayendo (adondevivir): https://www.adondevivir.com/propiedades/clasificado/alclcain-casa-en-alquiler-san-felipe-comas-160-m-sup2--151289375.html
+2026-11-06 14:53:20,646 [WARNING] [!] Estado HTTP 403 en https://www.adondevivir.com/propiedades/clasificado/alclcain-casa-en-alquiler-san-felipe-comas-160-m-sup2--151289375.html. Activando evasión...
+2026-11-06 14:53:20,735 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:53:38,213 [WARNING] [!] Desafío Cloudflare detectado. Aplicando protocolo de espera y evasión...
+2026-11-06 14:53:49,667 [INFO]   [✓] Guardado incremental Silver (adondevivir): +1 anuncios | Total Base Maestra: 4
+2026-11-06 15:12:44,138 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-06 15:12:44,142 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 15:12:46,428 [INFO] [*] Contexto Persistente Chrome Activo | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 15:12:46,430 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-06 15:12:46,432 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-06 15:12:50,752 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 15:12:50,757 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-06 15:12:50,757 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-06 15:12:56,992 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 15:12:57,058 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-06 15:12:57,070 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-06 15:13:01,277 [INFO]     -> +11 enlaces en esta página | Total acumulados: 11
+2026-11-06 15:13:01,280 [INFO] 
+[BABILONIA] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 15:13:01,280 [INFO] [1/3] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-san-borja-de-10-dormitorios-4-banios-418m2-area-3500-usd-de-ziom-grupo-inmobiliario-sac-176138
+2026-11-06 15:13:05,992 [INFO] [2/3] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-cercado-de-lima-de-5-dormitorios-3-banios-175m2-area-442-usd-de-karin-huaman-agente-139135
+2026-11-06 15:13:10,002 [INFO] [3/3] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-18m2-area-192-usd-de-gina-moore-149013
+2026-11-06 15:13:14,481 [INFO]   [✓] Guardado incremental Silver (babilonia): +3 anuncios | Total Base Maestra: 3
+2026-11-06 15:13:15,126 [INFO] [+] Estado Histórico Silver cargado: 3 inmuebles únicos ya registrados.
+2026-11-06 15:13:17,098 [INFO] [*] Contexto Persistente Chrome Activo | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 15:13:17,099 [INFO] [PROPERATI] Buscando alquileres de: casa
+2026-11-06 15:13:17,099 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/casa/alquiler
+2026-11-06 15:13:20,545 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:13:20,545 [INFO] [PROPERATI] Buscando alquileres de: departamento
+2026-11-06 15:13:20,546 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/departamento/alquiler
+2026-11-06 15:13:23,383 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:13:23,383 [INFO] [PROPERATI] Buscando alquileres de: habitacion
+2026-11-06 15:13:23,383 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/alquiler?q=habitacion%20lima
+2026-11-06 15:13:26,507 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:13:26,507 [INFO] 
+[PROPERATI] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 15:13:27,297 [INFO] [+] Estado Histórico Silver cargado: 3 inmuebles únicos ya registrados.
+2026-11-06 15:13:29,158 [INFO] [*] Contexto Persistente Chrome Activo | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 15:13:29,159 [INFO] [LAENCONTRE] Buscando alquileres de: casa
+2026-11-06 15:13:29,159 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list
+2026-11-06 15:13:35,733 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:13:35,734 [INFO] [LAENCONTRE] Buscando alquileres de: departamento
+2026-11-06 15:13:35,734 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list
+2026-11-06 15:13:39,799 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:13:39,802 [INFO] [LAENCONTRE] Buscando alquileres de: habitacion
+2026-11-06 15:13:39,815 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list
+2026-11-06 15:13:44,281 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:13:44,305 [INFO] 
+[LAENCONTRE] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 15:13:44,321 [INFO] [1/3] Extrayendo (laencontre - casa): https://www.laencontre.com.pe/inmueble/59c1-87ad-1a13627-13ca3038070-7155
+2026-11-06 15:13:48,972 [INFO] [2/3] Extrayendo (laencontre - departamento): https://www.laencontre.com.pe/inmueble/6d47-9a8e-1a1a092-bcb83d321679-77db
+2026-11-06 15:13:52,823 [INFO] [3/3] Extrayendo (laencontre - habitacion): https://www.laencontre.com.pe/inmueble/cdee-8878-19c3e41-f8e7a5085fb6-77e7
+2026-11-06 15:13:56,818 [INFO]   [✓] Guardado incremental Silver (laencontre): +3 anuncios | Total Base Maestra: 6
+2026-11-06 15:13:57,635 [INFO] [+] Estado Histórico Silver cargado: 6 inmuebles únicos ya registrados.
+2026-11-06 15:13:59,377 [INFO] [*] Contexto Persistente Chrome Activo | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 15:13:59,377 [INFO] [REMAX] Buscando alquileres de: casa
+2026-11-06 15:13:59,378 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-06 15:14:00,473 [WARNING] [!] Reto Cloudflare activo. Intentando pase rápido (3s)...
+2026-11-06 15:14:08,512 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:14:08,512 [INFO] [REMAX] Buscando alquileres de: departamento
+2026-11-06 15:14:08,513 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-06 15:14:09,979 [WARNING] [!] Reto Cloudflare activo. Intentando pase rápido (3s)...
+2026-11-06 15:14:16,822 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:14:16,822 [INFO] [REMAX] Buscando alquileres de: habitacion
+2026-11-06 15:14:16,823 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-06 15:14:19,083 [WARNING] [!] Reto Cloudflare activo. Intentando pase rápido (3s)...
+2026-11-06 15:14:23,104 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:14:23,105 [INFO] 
+[REMAX] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 15:14:23,968 [INFO] [+] Estado Histórico Silver cargado: 6 inmuebles únicos ya registrados.
+2026-11-06 15:14:25,740 [INFO] [*] Contexto Persistente Chrome Activo | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 15:14:25,742 [INFO] [CENTURY21] Buscando alquileres de: casa
+2026-11-06 15:14:25,748 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 15:14:33,664 [INFO]     -> +6 enlaces en esta página | Total acumulados: 6
+2026-11-06 15:14:33,683 [INFO] [CENTURY21] Buscando alquileres de: departamento
+2026-11-06 15:14:33,683 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 15:14:39,809 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:14:39,809 [INFO] [CENTURY21] Buscando alquileres de: habitacion
+2026-11-06 15:14:39,810 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 15:14:43,015 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:14:43,017 [INFO] 
+[CENTURY21] Enlaces totales: 1 | Ya en Base Maestra: 0 | Pendientes por raspar: 1
+2026-11-06 15:14:43,017 [INFO] [1/1] Extrayendo (century21 - casa): https://century21.pe/propiedad/42870_impulsa-tu-negocio-y-hogar-en-pucusana-amplio-predio-con-potencial-comercial
+2026-11-06 15:14:51,026 [INFO]   [✓] Guardado incremental Silver (century21): +1 anuncios | Total Base Maestra: 7
+2026-11-06 15:14:51,803 [INFO] [+] Estado Histórico Silver cargado: 7 inmuebles únicos ya registrados.
+2026-11-06 15:14:53,562 [INFO] [*] Contexto Persistente Chrome Activo | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 15:14:53,563 [INFO] [URBANIA] Buscando alquileres de: casa
+2026-11-06 15:14:53,564 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-06 15:14:58,865 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:14:58,865 [INFO] [URBANIA] Buscando alquileres de: departamento
+2026-11-06 15:14:58,865 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-06 15:15:03,120 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:15:03,121 [INFO] [URBANIA] Buscando alquileres de: habitacion
+2026-11-06 15:15:03,121 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-06 15:15:05,005 [WARNING] [!] Reto Cloudflare activo. Intentando pase rápido (3s)...
+2026-11-06 15:15:12,307 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:15:12,308 [INFO] 
+[URBANIA] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 15:15:12,965 [INFO] [+] Estado Histórico Silver cargado: 7 inmuebles únicos ya registrados.
+2026-11-06 15:15:14,954 [INFO] [*] Contexto Persistente Chrome Activo | UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW...
+2026-11-06 15:15:14,954 [INFO] [ADONDEVIVIR] Buscando alquileres de: casa
+2026-11-06 15:15:14,954 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-06 15:15:21,857 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:15:21,859 [INFO] [ADONDEVIVIR] Buscando alquileres de: departamento
+2026-11-06 15:15:21,859 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-06 15:15:23,976 [WARNING] [!] Reto Cloudflare activo. Intentando pase rápido (3s)...
+2026-11-06 15:15:28,373 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:15:28,374 [INFO] [ADONDEVIVIR] Buscando alquileres de: habitacion
+2026-11-06 15:15:28,375 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-06 15:15:29,295 [WARNING] [!] Reto Cloudflare activo. Intentando pase rápido (3s)...
+2026-11-06 15:15:36,245 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:15:36,247 [INFO] 
+[ADONDEVIVIR] Enlaces totales: 1 | Ya en Base Maestra: 0 | Pendientes por raspar: 1
+2026-11-06 15:15:36,248 [INFO] [1/1] Extrayendo (adondevivir - casa): https://www.adondevivir.com/propiedades/clasificado/alclcain-alquiler-casa-de-playa-en-santa-maria-del-mar-con-151461627.html
+2026-11-06 15:15:37,685 [WARNING] [!] Reto Cloudflare activo. Intentando pase rápido (3s)...
+2026-11-06 15:15:41,726 [INFO]   [✓] Guardado incremental Silver (adondevivir): +1 anuncios | Total Base Maestra: 8
+2026-11-06 15:36:08,558 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-06 15:36:08,568 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 15:36:10,603 [INFO] [*] Contexto Nativo Chrome Activo (Huella TLS/UA Original)
+2026-11-06 15:36:10,603 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-06 15:36:10,604 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-06 15:36:19,319 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 15:36:19,319 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-06 15:36:19,320 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-06 15:36:29,382 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 15:36:29,382 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-06 15:36:29,383 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-06 15:36:36,922 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 15:36:36,923 [INFO] 
+[BABILONIA] Enlaces totales: 3 | Ya en Base Maestra: 1 | Pendientes por raspar: 2
+2026-11-06 15:36:36,923 [INFO] [1/2] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-san-isidro-de-16-dormitorios-15-banios-2400m2-area-17000-usd-de-isabel-saavedra-agente-157572
+2026-11-06 15:36:42,314 [INFO] [2/2] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-lince-de-3-dormitorios-2-banios-89m2-area-911-usd-de-lien-boutique-inmobiliaria-176374
+2026-11-06 15:36:47,524 [INFO]   [✓] Guardado incremental Silver (babilonia): +2 anuncios | Total Base Maestra: 2
+2026-11-06 15:36:48,260 [INFO] [+] Estado Histórico Silver cargado: 2 inmuebles únicos ya registrados.
+2026-11-06 15:36:50,440 [INFO] [*] Contexto Nativo Chrome Activo (Huella TLS/UA Original)
+2026-11-06 15:36:50,441 [INFO] [PROPERATI] Buscando alquileres de: casa
+2026-11-06 15:36:50,441 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/casa/alquiler
+2026-11-06 15:36:57,951 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:36:57,951 [INFO] [PROPERATI] Buscando alquileres de: departamento
+2026-11-06 15:36:57,952 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/departamento/alquiler
+2026-11-06 15:37:03,065 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:37:03,065 [INFO] [PROPERATI] Buscando alquileres de: habitacion
+2026-11-06 15:37:03,066 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/alquiler
+2026-11-06 15:37:08,490 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:37:08,491 [INFO] 
+[PROPERATI] Enlaces totales: 3 | Ya en Base Maestra: 1 | Pendientes por raspar: 2
+2026-11-06 15:37:08,491 [INFO] [1/2] Extrayendo (properati - casa): https://www.properati.com.pe/detalle/14032-32-b3c7-8ff86e5b77d5-1a1559c-b248-780c
+2026-11-06 15:37:14,213 [INFO] [2/2] Extrayendo (properati - departamento): https://www.properati.com.pe/detalle/14032-32-b93e-fabb0743651d-1a1521e-97e4-7248
+2026-11-06 15:37:17,974 [INFO]   [✓] Guardado incremental Silver (properati): +2 anuncios | Total Base Maestra: 4
+2026-11-06 15:37:18,673 [INFO] [+] Estado Histórico Silver cargado: 4 inmuebles únicos ya registrados.
+2026-11-06 15:37:20,725 [INFO] [*] Contexto Nativo Chrome Activo (Huella TLS/UA Original)
+2026-11-06 15:37:20,727 [INFO] [LAENCONTRE] Buscando alquileres de: casa
+2026-11-06 15:37:20,729 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list
+2026-11-06 15:37:32,242 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:37:32,242 [INFO] [LAENCONTRE] Buscando alquileres de: departamento
+2026-11-06 15:37:32,243 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list
+2026-11-06 15:37:43,689 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:37:43,689 [INFO] [LAENCONTRE] Buscando alquileres de: habitacion
+2026-11-06 15:37:43,690 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list
+2026-11-06 15:37:54,872 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:37:54,873 [INFO] 
+[LAENCONTRE] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 15:37:54,873 [INFO] [1/3] Extrayendo (laencontre - casa): https://www.laencontre.com.pe/inmueble/8288-ad73-19fce82-a556846d3a8c-740f
+2026-11-06 15:38:01,129 [INFO] [2/3] Extrayendo (laencontre - departamento): https://www.laencontre.com.pe/inmueble/cc10-8d19-1a1a9f6-5d3ee43591d8-7226
+2026-11-06 15:38:06,106 [INFO] [3/3] Extrayendo (laencontre - habitacion): https://www.laencontre.com.pe/inmueble/9ae7-8958-1a0c5ec-953cae24ecca-7cc7
+2026-11-06 15:38:11,018 [INFO]   [✓] Guardado incremental Silver (laencontre): +3 anuncios | Total Base Maestra: 7
+2026-11-06 15:38:12,585 [INFO] [+] Estado Histórico Silver cargado: 7 inmuebles únicos ya registrados.
+2026-11-06 15:38:14,383 [INFO] [*] Contexto Nativo Chrome Activo (Huella TLS/UA Original)
+2026-11-06 15:38:14,405 [INFO] [REMAX] Buscando alquileres de: casa
+2026-11-06 15:38:14,409 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/propiedades?operacion=alquiler&tipo=casa&departamento=lima
+2026-11-06 15:38:16,377 [WARNING] [!] Desafío Cloudflare detectado. Resolviendo automáticamente...
+2026-11-06 15:38:36,202 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:38:36,207 [INFO] [REMAX] Buscando alquileres de: departamento
+2026-11-06 15:38:36,207 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/propiedades?operacion=alquiler&tipo=departamento&departamento=lima
+2026-11-06 15:38:37,437 [WARNING] [!] Desafío Cloudflare detectado. Resolviendo automáticamente...
+2026-11-06 15:38:59,892 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:38:59,892 [INFO] [REMAX] Buscando alquileres de: habitacion
+2026-11-06 15:38:59,892 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/propiedades?operacion=alquiler&departamento=lima
+2026-11-06 15:39:01,533 [WARNING] [!] Desafío Cloudflare detectado. Resolviendo automáticamente...
+2026-11-06 15:39:24,031 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:39:24,031 [INFO] 
+[REMAX] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 15:39:24,872 [INFO] [+] Estado Histórico Silver cargado: 7 inmuebles únicos ya registrados.
+2026-11-06 15:39:26,774 [INFO] [*] Contexto Nativo Chrome Activo (Huella TLS/UA Original)
+2026-11-06 15:39:26,775 [INFO] [CENTURY21] Buscando alquileres de: casa
+2026-11-06 15:39:26,775 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 15:39:33,161 [INFO]     -> +6 enlaces en esta página | Total acumulados: 6
+2026-11-06 15:39:33,162 [INFO] [CENTURY21] Buscando alquileres de: departamento
+2026-11-06 15:39:33,162 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 15:39:39,783 [INFO]     -> +100 enlaces en esta página | Total acumulados: 100
+2026-11-06 15:39:39,783 [INFO] [CENTURY21] Buscando alquileres de: habitacion
+2026-11-06 15:39:39,783 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima/recamaras_1
+2026-11-06 15:39:45,722 [INFO]     -> +32 enlaces en esta página | Total acumulados: 32
+2026-11-06 15:39:45,723 [INFO] 
+[CENTURY21] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 15:39:45,724 [INFO] [1/3] Extrayendo (century21 - casa): https://century21.pe/propiedad/46192_casa-espaciosa-e-iluminada-en-cercado-de-lima
+2026-11-06 15:39:50,361 [INFO] [2/3] Extrayendo (century21 - departamento): https://century21.pe/propiedad/46834_departamento-amoblado-en-alquiler-miraflores
+2026-11-06 15:39:54,169 [INFO] [3/3] Extrayendo (century21 - habitacion): https://century21.pe/propiedad/47460_alquiler-mini-departamento-amoblado-calle-las-aguilas-en-surquillo-san-isidro
+2026-11-06 15:39:58,476 [INFO]   [✓] Guardado incremental Silver (century21): +3 anuncios | Total Base Maestra: 10
+2026-11-06 15:39:59,318 [INFO] [+] Estado Histórico Silver cargado: 10 inmuebles únicos ya registrados.
+2026-11-06 15:40:01,201 [INFO] [*] Contexto Nativo Chrome Activo (Huella TLS/UA Original)
+2026-11-06 15:40:01,209 [INFO] [URBANIA] Buscando alquileres de: casa
+2026-11-06 15:40:01,225 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-06 15:40:03,370 [WARNING] [!] Desafío Cloudflare detectado. Resolviendo automáticamente...
+2026-11-06 15:40:25,922 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:40:25,922 [INFO] [URBANIA] Buscando alquileres de: departamento
+2026-11-06 15:40:25,923 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-06 15:40:27,581 [WARNING] [!] Desafío Cloudflare detectado. Resolviendo automáticamente...
+2026-11-06 15:40:47,411 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:40:47,412 [INFO] [URBANIA] Buscando alquileres de: habitacion
+2026-11-06 15:40:47,412 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-06 15:40:49,051 [WARNING] [!] Desafío Cloudflare detectado. Resolviendo automáticamente...
+2026-11-06 15:41:08,571 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:41:08,572 [INFO] 
+[URBANIA] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 15:41:09,145 [INFO] [+] Estado Histórico Silver cargado: 10 inmuebles únicos ya registrados.
+2026-11-06 15:41:11,127 [INFO] [*] Contexto Nativo Chrome Activo (Huella TLS/UA Original)
+2026-11-06 15:41:11,128 [INFO] [ADONDEVIVIR] Buscando alquileres de: casa
+2026-11-06 15:41:11,128 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-06 15:41:12,371 [WARNING] [!] Desafío Cloudflare detectado. Resolviendo automáticamente...
+2026-11-06 15:41:35,003 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:41:35,004 [INFO] [ADONDEVIVIR] Buscando alquileres de: departamento
+2026-11-06 15:41:35,004 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-06 15:41:36,064 [WARNING] [!] Desafío Cloudflare detectado. Resolviendo automáticamente...
+2026-11-06 15:41:55,984 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:41:55,985 [INFO] [ADONDEVIVIR] Buscando alquileres de: habitacion
+2026-11-06 15:41:55,985 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-06 15:41:57,712 [WARNING] [!] Desafío Cloudflare detectado. Resolviendo automáticamente...
+2026-11-06 15:42:15,104 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:42:15,105 [INFO] 
+[ADONDEVIVIR] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 15:46:27,672 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-06 15:46:27,676 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 15:46:29,511 [INFO] [*] Contexto Nativo Chrome Activo (Sin inyección CDP)
+2026-11-06 15:46:29,512 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-06 15:46:29,513 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-06 15:46:36,384 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 15:46:36,385 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-06 15:46:36,393 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-06 15:46:46,550 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 15:46:46,652 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-06 15:46:46,708 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-06 15:46:54,106 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 15:46:54,113 [INFO] 
+[BABILONIA] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 15:46:54,113 [INFO] [1/3] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-san-borja-de-10-dormitorios-4-banios-418m2-area-3500-usd-de-ziom-grupo-inmobiliario-sac-166901
+2026-11-06 15:46:57,783 [INFO] [2/3] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-2-dormitorios-3-banios-110m2-area-1550-usd-de-ecka-inmobiliaria-177159
+2026-11-06 15:47:01,531 [INFO] [3/3] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/departamento-en-alquiler-en-cercado-de-lima-de-5-dormitorios-3-banios-175m2-area-442-usd-de-karin-huaman-agente-139135
+2026-11-06 15:47:05,414 [INFO]   [✓] Guardado incremental Silver (babilonia): +3 anuncios | Total Base Maestra: 3
+2026-11-06 15:47:06,180 [INFO] [+] Estado Histórico Silver cargado: 3 inmuebles únicos ya registrados.
+2026-11-06 15:47:08,408 [INFO] [*] Contexto Nativo Chrome Activo (Sin inyección CDP)
+2026-11-06 15:47:08,425 [INFO] [PROPERATI] Buscando alquileres de: casa
+2026-11-06 15:47:08,443 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/casa/alquiler
+2026-11-06 15:47:14,402 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:47:14,403 [INFO] [PROPERATI] Buscando alquileres de: departamento
+2026-11-06 15:47:14,403 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/departamento/alquiler
+2026-11-06 15:47:18,911 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:47:18,911 [INFO] [PROPERATI] Buscando alquileres de: habitacion
+2026-11-06 15:47:18,912 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/alquiler
+2026-11-06 15:47:24,247 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:47:24,248 [INFO] 
+[PROPERATI] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 15:47:24,248 [INFO] [1/3] Extrayendo (properati - casa): https://www.properati.com.pe/detalle/14032-32-eceb-a83391df1b2a-199de8f-9343-77ed
+2026-11-06 15:47:28,300 [INFO] [2/3] Extrayendo (properati - departamento): https://www.properati.com.pe/detalle/14032-32-66b4-bfac2bd23f7e-19a3159-b2f1-753f
+2026-11-06 15:47:31,858 [INFO] [3/3] Extrayendo (properati - habitacion): https://www.properati.com.pe/detalle/14032-32-f169-98aa4d3d7254-19a312f-a364-75bc
+2026-11-06 15:47:35,514 [INFO]   [✓] Guardado incremental Silver (properati): +3 anuncios | Total Base Maestra: 6
+2026-11-06 15:47:36,210 [INFO] [+] Estado Histórico Silver cargado: 6 inmuebles únicos ya registrados.
+2026-11-06 15:47:38,142 [INFO] [*] Contexto Nativo Chrome Activo (Sin inyección CDP)
+2026-11-06 15:47:38,143 [INFO] [LAENCONTRE] Buscando alquileres de: casa
+2026-11-06 15:47:38,144 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list
+2026-11-06 15:47:49,498 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:47:49,499 [INFO] [LAENCONTRE] Buscando alquileres de: departamento
+2026-11-06 15:47:49,499 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list
+2026-11-06 15:48:00,598 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:48:00,599 [INFO] [LAENCONTRE] Buscando alquileres de: habitacion
+2026-11-06 15:48:00,599 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list
+2026-11-06 15:48:11,114 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 15:48:11,115 [INFO] 
+[LAENCONTRE] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 15:48:11,115 [INFO] [1/3] Extrayendo (laencontre - casa): https://www.laencontre.com.pe/inmueble/ed51-93a9-199def5-a83391df1b90-7853
+2026-11-06 15:48:14,831 [INFO] [2/3] Extrayendo (laencontre - departamento): https://www.laencontre.com.pe/inmueble/671a-b357-19a31bf-bfac2bd23fe4-75a5
+2026-11-06 15:48:19,560 [INFO] [3/3] Extrayendo (laencontre - habitacion): https://www.laencontre.com.pe/inmueble/36a6-b234-1a0ca75-b3a9bb8cfa63-744a
+2026-11-06 15:48:23,529 [INFO]   [✓] Guardado incremental Silver (laencontre): +3 anuncios | Total Base Maestra: 9
+2026-11-06 15:48:24,304 [INFO] [+] Estado Histórico Silver cargado: 9 inmuebles únicos ya registrados.
+2026-11-06 15:48:26,136 [INFO] [*] Contexto Nativo Chrome Activo (Sin inyección CDP)
+2026-11-06 15:48:26,137 [INFO] [REMAX] Buscando alquileres de: casa
+2026-11-06 15:48:26,138 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/propiedades?operacion=alquiler&tipo=casa&departamento=lima
+2026-11-06 15:48:27,853 [WARNING] [!] Desafío Cloudflare detectado. Ejecutando bypass Turnstile...
+2026-11-06 15:49:04,060 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:49:04,060 [INFO] [REMAX] Buscando alquileres de: departamento
+2026-11-06 15:49:04,061 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/propiedades?operacion=alquiler&tipo=departamento&departamento=lima
+2026-11-06 15:49:05,576 [WARNING] [!] Desafío Cloudflare detectado. Ejecutando bypass Turnstile...
+2026-11-06 15:49:39,954 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:49:39,955 [INFO] [REMAX] Buscando alquileres de: habitacion
+2026-11-06 15:49:39,955 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/propiedades?operacion=alquiler&departamento=lima
+2026-11-06 15:49:41,494 [WARNING] [!] Desafío Cloudflare detectado. Ejecutando bypass Turnstile...
+2026-11-06 15:50:16,924 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:50:16,924 [INFO] 
+[REMAX] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 15:50:17,977 [INFO] [+] Estado Histórico Silver cargado: 9 inmuebles únicos ya registrados.
+2026-11-06 15:50:19,797 [INFO] [*] Contexto Nativo Chrome Activo (Sin inyección CDP)
+2026-11-06 15:50:19,798 [INFO] [CENTURY21] Buscando alquileres de: casa
+2026-11-06 15:50:19,799 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 15:50:26,197 [INFO]     -> +6 enlaces en esta página | Total acumulados: 6
+2026-11-06 15:50:26,197 [INFO] [CENTURY21] Buscando alquileres de: departamento
+2026-11-06 15:50:26,198 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 15:50:32,602 [INFO]     -> +100 enlaces en esta página | Total acumulados: 100
+2026-11-06 15:50:32,602 [INFO] [CENTURY21] Buscando alquileres de: habitacion
+2026-11-06 15:50:32,602 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima/recamaras_1
+2026-11-06 15:50:37,623 [INFO]     -> +32 enlaces en esta página | Total acumulados: 32
+2026-11-06 15:50:37,626 [INFO] 
+[CENTURY21] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 15:50:37,627 [INFO] [1/3] Extrayendo (century21 - casa): https://century21.pe/propiedad/47399_alquilo-casa-en-chacarilla
+2026-11-06 15:50:41,471 [INFO] [2/3] Extrayendo (century21 - departamento): https://century21.pe/propiedad/47712_alquiler-departamento-magdalena-del-mar-limite-con-san-isidro
+2026-11-06 15:50:45,644 [INFO] [3/3] Extrayendo (century21 - habitacion): https://century21.pe/propiedad/47711_alquilo-departamento-san-miguel
+2026-11-06 15:50:49,425 [INFO]   [✓] Guardado incremental Silver (century21): +3 anuncios | Total Base Maestra: 12
+2026-11-06 15:50:50,171 [INFO] [+] Estado Histórico Silver cargado: 12 inmuebles únicos ya registrados.
+2026-11-06 15:50:52,058 [INFO] [*] Contexto Nativo Chrome Activo (Sin inyección CDP)
+2026-11-06 15:50:52,059 [INFO] [URBANIA] Buscando alquileres de: casa
+2026-11-06 15:50:52,059 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-06 15:50:53,616 [WARNING] [!] Desafío Cloudflare detectado. Ejecutando bypass Turnstile...
+2026-11-06 15:51:28,709 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:51:28,709 [INFO] [URBANIA] Buscando alquileres de: departamento
+2026-11-06 15:51:28,710 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-06 15:51:30,295 [WARNING] [!] Desafío Cloudflare detectado. Ejecutando bypass Turnstile...
+2026-11-06 15:52:05,059 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:52:05,059 [INFO] [URBANIA] Buscando alquileres de: habitacion
+2026-11-06 15:52:05,059 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-06 15:52:06,235 [WARNING] [!] Desafío Cloudflare detectado. Ejecutando bypass Turnstile...
+2026-11-06 15:52:41,096 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:52:41,096 [INFO] 
+[URBANIA] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 15:52:41,726 [INFO] [+] Estado Histórico Silver cargado: 12 inmuebles únicos ya registrados.
+2026-11-06 15:52:43,593 [INFO] [*] Contexto Nativo Chrome Activo (Sin inyección CDP)
+2026-11-06 15:52:43,593 [INFO] [ADONDEVIVIR] Buscando alquileres de: casa
+2026-11-06 15:52:43,594 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-06 15:52:45,032 [WARNING] [!] Desafío Cloudflare detectado. Ejecutando bypass Turnstile...
+2026-11-06 15:53:21,193 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:53:21,193 [INFO] [ADONDEVIVIR] Buscando alquileres de: departamento
+2026-11-06 15:53:21,193 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-06 15:53:22,477 [WARNING] [!] Desafío Cloudflare detectado. Ejecutando bypass Turnstile...
+2026-11-06 15:53:58,015 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:53:58,015 [INFO] [ADONDEVIVIR] Buscando alquileres de: habitacion
+2026-11-06 15:53:58,016 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-06 15:53:59,303 [WARNING] [!] Desafío Cloudflare detectado. Ejecutando bypass Turnstile...
+2026-11-06 15:54:34,715 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 15:54:34,716 [INFO] 
+[ADONDEVIVIR] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 16:16:09,373 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-06 16:16:09,378 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:16:13,947 [INFO] [*] Conectado a navegador nativo vía CDP (Portátil Multi-OS)
+2026-11-06 16:16:13,948 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-06 16:16:13,948 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-06 16:16:24,138 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 16:16:24,139 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-06 16:16:24,142 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-06 16:16:28,802 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 16:16:28,802 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-06 16:16:28,802 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-06 16:16:33,151 [INFO]     -> +11 enlaces en esta página | Total acumulados: 11
+2026-11-06 16:16:33,152 [INFO] 
+[BABILONIA] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:16:33,152 [INFO] [1/3] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-5-dormitorios-4-banios-1200m2-area-3000-usd-de--my-property--162167
+2026-11-06 16:16:39,044 [INFO] [2/3] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-2-dormitorios-3-banios-110m2-area-1550-usd-de-ecka-inmobiliaria-177159
+2026-11-06 16:16:43,170 [INFO] [3/3] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-santiago-de-surco-de-1-dormitorios-1-banios-12m2-area-225-usd-de-doramerlovende-67549
+2026-11-06 16:16:47,012 [INFO]   [✓] Guardado incremental Silver (babilonia): +3 anuncios | Total Base Maestra: 3
+2026-11-06 16:16:47,090 [INFO] [+] Estado Histórico Silver cargado: 3 inmuebles únicos ya registrados.
+2026-11-06 16:16:48,490 [INFO] [*] Conectado a navegador nativo vía CDP (Portátil Multi-OS)
+2026-11-06 16:16:48,491 [INFO] [PROPERATI] Buscando alquileres de: casa
+2026-11-06 16:16:48,491 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/casa/alquiler
+2026-11-06 16:17:04,853 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:17:04,854 [INFO] [PROPERATI] Buscando alquileres de: departamento
+2026-11-06 16:17:04,857 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/departamento/alquiler
+2026-11-06 16:17:10,184 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:17:10,185 [INFO] [PROPERATI] Buscando alquileres de: habitacion
+2026-11-06 16:17:10,185 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/habitacion/alquiler
+2026-11-06 16:17:22,378 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:17:22,378 [INFO]     [*] Sin resultados en https://www.properati.com.pe/s/lima/habitacion/alquiler. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:17:22,378 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/alquiler?q=cuarto
+2026-11-06 16:17:27,577 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:17:27,578 [INFO] 
+[PROPERATI] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:17:27,579 [INFO] [1/3] Extrayendo (properati - casa): https://www.properati.com.pe/detalle/14032-32-eceb-a83391df1b2a-199de8f-9343-77ed
+2026-11-06 16:17:38,515 [INFO] [2/3] Extrayendo (properati - departamento): https://www.properati.com.pe/detalle/14032-32-66b4-bfac2bd23f7e-19a3159-b2f1-753f
+2026-11-06 16:17:43,918 [INFO] [3/3] Extrayendo (properati - habitacion): https://www.properati.com.pe/detalle/14032-32-f169-98aa4d3d7254-19a312f-a364-75bc
+2026-11-06 16:17:48,301 [INFO]   [✓] Guardado incremental Silver (properati): +3 anuncios | Total Base Maestra: 6
+2026-11-06 16:17:48,375 [INFO] [+] Estado Histórico Silver cargado: 6 inmuebles únicos ya registrados.
+2026-11-06 16:17:49,745 [INFO] [*] Conectado a navegador nativo vía CDP (Portátil Multi-OS)
+2026-11-06 16:17:49,768 [INFO] [LAENCONTRE] Buscando alquileres de: casa
+2026-11-06 16:17:49,793 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list
+2026-11-06 16:18:02,970 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:18:02,971 [INFO] [LAENCONTRE] Buscando alquileres de: departamento
+2026-11-06 16:18:02,971 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list
+2026-11-06 16:18:14,370 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:18:14,370 [INFO] [LAENCONTRE] Buscando alquileres de: habitacion
+2026-11-06 16:18:14,370 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list
+2026-11-06 16:18:25,408 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:18:25,409 [INFO] 
+[LAENCONTRE] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:18:25,409 [INFO] [1/3] Extrayendo (laencontre - casa): https://www.laencontre.com.pe/inmueble/ed51-93a9-199def5-a83391df1b90-7853
+2026-11-06 16:18:29,607 [INFO] [2/3] Extrayendo (laencontre - departamento): https://www.laencontre.com.pe/inmueble/671a-b357-19a31bf-bfac2bd23fe4-75a5
+2026-11-06 16:18:34,151 [INFO] [3/3] Extrayendo (laencontre - habitacion): https://www.laencontre.com.pe/inmueble/36a6-b234-1a0ca75-b3a9bb8cfa63-744a
+2026-11-06 16:18:37,580 [INFO]   [✓] Guardado incremental Silver (laencontre): +3 anuncios | Total Base Maestra: 9
+2026-11-06 16:18:37,628 [INFO] [+] Estado Histórico Silver cargado: 9 inmuebles únicos ya registrados.
+2026-11-06 16:18:38,679 [INFO] [*] Conectado a navegador nativo vía CDP (Portátil Multi-OS)
+2026-11-06 16:18:38,680 [INFO] [REMAX] Buscando alquileres de: casa
+2026-11-06 16:18:38,680 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-06 16:18:39,779 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:19:03,184 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:19:03,184 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:19:03,184 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/
+2026-11-06 16:19:04,055 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:19:27,475 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:19:27,475 [INFO]     [*] Sin resultados en https://www.remax.pe/. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:19:27,475 [INFO] [REMAX] Buscando alquileres de: departamento
+2026-11-06 16:19:27,476 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-06 16:19:28,408 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:19:51,663 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:19:51,663 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:19:51,663 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/
+2026-11-06 16:19:52,587 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:20:16,047 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:20:16,047 [INFO]     [*] Sin resultados en https://www.remax.pe/. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:20:16,047 [INFO] [REMAX] Buscando alquileres de: habitacion
+2026-11-06 16:20:16,047 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-06 16:20:16,902 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:20:40,132 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:20:40,133 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:20:40,133 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima
+2026-11-06 16:20:41,067 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:21:04,326 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:21:04,326 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:21:04,326 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/
+2026-11-06 16:21:05,631 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:21:29,326 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:21:29,327 [INFO]     [*] Sin resultados en https://www.remax.pe/. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:21:29,327 [INFO] 
+[REMAX] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 16:21:29,370 [INFO] [+] Estado Histórico Silver cargado: 9 inmuebles únicos ya registrados.
+2026-11-06 16:21:30,506 [INFO] [*] Conectado a navegador nativo vía CDP (Portátil Multi-OS)
+2026-11-06 16:21:30,507 [INFO] [CENTURY21] Buscando alquileres de: casa
+2026-11-06 16:21:30,507 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 16:21:37,886 [INFO]     -> +6 enlaces en esta página | Total acumulados: 6
+2026-11-06 16:21:37,886 [INFO] [CENTURY21] Buscando alquileres de: departamento
+2026-11-06 16:21:37,886 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 16:21:43,675 [INFO]     -> +100 enlaces en esta página | Total acumulados: 100
+2026-11-06 16:21:43,675 [INFO] [CENTURY21] Buscando alquileres de: habitacion
+2026-11-06 16:21:43,675 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 16:21:53,891 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:21:53,891 [INFO]     [*] Sin resultados en https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:21:53,891 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima/recamaras_1
+2026-11-06 16:21:58,586 [INFO]     -> +32 enlaces en esta página | Total acumulados: 32
+2026-11-06 16:21:58,589 [INFO] 
+[CENTURY21] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:21:58,589 [INFO] [1/3] Extrayendo (century21 - casa): https://century21.pe/propiedad/47399_alquilo-casa-en-chacarilla
+2026-11-06 16:22:03,286 [INFO] [2/3] Extrayendo (century21 - departamento): https://century21.pe/propiedad/47712_alquiler-departamento-magdalena-del-mar-limite-con-san-isidro
+2026-11-06 16:22:08,304 [INFO] [3/3] Extrayendo (century21 - habitacion): https://century21.pe/propiedad/47711_alquilo-departamento-san-miguel
+2026-11-06 16:22:12,149 [INFO]   [✓] Guardado incremental Silver (century21): +3 anuncios | Total Base Maestra: 12
+2026-11-06 16:22:12,192 [INFO] [+] Estado Histórico Silver cargado: 12 inmuebles únicos ya registrados.
+2026-11-06 16:22:13,153 [INFO] [*] Conectado a navegador nativo vía CDP (Portátil Multi-OS)
+2026-11-06 16:22:13,154 [INFO] [URBANIA] Buscando alquileres de: casa
+2026-11-06 16:22:13,154 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-06 16:22:18,351 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:22:18,351 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-casas-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:22:18,351 [INFO] [URBANIA] Buscando alquileres de: departamento
+2026-11-06 16:22:18,351 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-06 16:22:19,795 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:22:43,336 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:22:43,336 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-departamentos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:22:43,336 [INFO] [URBANIA] Buscando alquileres de: habitacion
+2026-11-06 16:22:43,336 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-06 16:22:44,599 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:23:08,103 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:23:08,103 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:23:08,103 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-cuartos-en-lima
+2026-11-06 16:23:09,445 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:23:32,645 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:23:32,646 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-cuartos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:23:32,646 [INFO] 
+[URBANIA] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 16:23:32,677 [INFO] [+] Estado Histórico Silver cargado: 12 inmuebles únicos ya registrados.
+2026-11-06 16:23:33,608 [INFO] [*] Conectado a navegador nativo vía CDP (Portátil Multi-OS)
+2026-11-06 16:23:33,609 [INFO] [ADONDEVIVIR] Buscando alquileres de: casa
+2026-11-06 16:23:33,609 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-06 16:23:40,296 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:23:40,301 [INFO] [ADONDEVIVIR] Buscando alquileres de: departamento
+2026-11-06 16:23:40,301 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-06 16:23:41,660 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:24:05,301 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:24:05,302 [INFO]     [*] Sin resultados en https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:24:05,302 [INFO] [ADONDEVIVIR] Buscando alquileres de: habitacion
+2026-11-06 16:24:05,302 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-06 16:24:06,690 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:24:30,197 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:24:30,197 [INFO]     [*] Sin resultados en https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:24:30,198 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/cuartos-en-alquiler-en-lima.html
+2026-11-06 16:24:31,469 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:24:55,169 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:24:55,169 [INFO]     [*] Sin resultados en https://www.adondevivir.com/cuartos-en-alquiler-en-lima.html. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:24:55,170 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/inmuebles-en-alquiler-en-lima-q-habitacion.html
+2026-11-06 16:24:56,285 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:25:20,147 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:25:20,147 [INFO]     [*] Sin resultados en https://www.adondevivir.com/inmuebles-en-alquiler-en-lima-q-habitacion.html. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:25:20,148 [INFO] 
+[ADONDEVIVIR] Enlaces totales: 1 | Ya en Base Maestra: 0 | Pendientes por raspar: 1
+2026-11-06 16:25:20,148 [INFO] [1/1] Extrayendo (adondevivir - casa): https://www.adondevivir.com/propiedades/clasificado/alclcain-se-alquila-casa-amoblada-para-empresas-o-ofcinas-de-150802210.html
+2026-11-06 16:25:21,251 [INFO]     [*] Esperando validación automática de sesión en navegador nativo...
+2026-11-06 16:25:39,104 [INFO]   [✓] Guardado incremental Silver (adondevivir): +1 anuncios | Total Base Maestra: 13
+2026-11-06 16:29:17,098 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-06 16:29:17,099 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:29:18,651 [INFO] [*] Conectado a Google Chrome Limpio vía CDP (Sin alertas de automatización)
+2026-11-06 16:29:18,651 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-06 16:29:18,652 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-06 16:29:23,986 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 16:29:23,995 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-06 16:29:23,997 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-06 16:29:30,138 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 16:29:30,157 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-06 16:29:30,188 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-06 16:29:41,750 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 16:29:41,759 [INFO] 
+[BABILONIA] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:29:41,760 [INFO] [1/3] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-5-dormitorios-4-banios-1200m2-area-3000-usd-de--my-property--162167
+2026-11-06 16:29:46,469 [INFO] [2/3] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-2-dormitorios-3-banios-110m2-area-1550-usd-de-ecka-inmobiliaria-177159
+2026-11-06 16:29:51,162 [INFO] [3/3] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-2-dormitorios-1-banios-28m2-area-565-usd-de-arquitectura-inmobiliaria-real-estate-161747
+2026-11-06 16:29:55,371 [INFO]   [✓] Guardado incremental Silver (babilonia): +3 anuncios | Total Base Maestra: 3
+2026-11-06 16:29:55,448 [INFO] [+] Estado Histórico Silver cargado: 3 inmuebles únicos ya registrados.
+2026-11-06 16:29:56,789 [INFO] [*] Conectado a Google Chrome Limpio vía CDP (Sin alertas de automatización)
+2026-11-06 16:29:56,790 [INFO] [PROPERATI] Buscando alquileres de: casa
+2026-11-06 16:29:56,791 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/casa/alquiler
+2026-11-06 16:30:02,385 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:30:02,385 [INFO] [PROPERATI] Buscando alquileres de: departamento
+2026-11-06 16:30:02,386 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/departamento/alquiler
+2026-11-06 16:30:06,684 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:30:06,684 [INFO] [PROPERATI] Buscando alquileres de: habitacion
+2026-11-06 16:30:06,684 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/habitacion/alquiler
+2026-11-06 16:30:15,935 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:30:15,935 [INFO]     [*] Sin resultados en https://www.properati.com.pe/s/lima/habitacion/alquiler. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:30:15,935 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/alquiler?q=cuarto
+2026-11-06 16:30:20,526 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:30:20,533 [INFO] 
+[PROPERATI] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:30:20,537 [INFO] [1/3] Extrayendo (properati - casa): https://www.properati.com.pe/detalle/14032-32-eceb-a83391df1b2a-199de8f-9343-77ed
+2026-11-06 16:30:24,023 [INFO] [2/3] Extrayendo (properati - departamento): https://www.properati.com.pe/detalle/14032-32-66b4-bfac2bd23f7e-19a3159-b2f1-753f
+2026-11-06 16:30:27,112 [INFO] [3/3] Extrayendo (properati - habitacion): https://www.properati.com.pe/detalle/14032-32-f169-98aa4d3d7254-19a312f-a364-75bc
+2026-11-06 16:30:30,225 [INFO]   [✓] Guardado incremental Silver (properati): +3 anuncios | Total Base Maestra: 6
+2026-11-06 16:30:30,284 [INFO] [+] Estado Histórico Silver cargado: 6 inmuebles únicos ya registrados.
+2026-11-06 16:30:31,278 [INFO] [*] Conectado a Google Chrome Limpio vía CDP (Sin alertas de automatización)
+2026-11-06 16:30:31,278 [INFO] [LAENCONTRE] Buscando alquileres de: casa
+2026-11-06 16:30:31,280 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list
+2026-11-06 16:30:43,312 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:30:43,313 [INFO] [LAENCONTRE] Buscando alquileres de: departamento
+2026-11-06 16:30:43,313 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list
+2026-11-06 16:30:53,713 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:30:53,714 [INFO] [LAENCONTRE] Buscando alquileres de: habitacion
+2026-11-06 16:30:53,714 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list
+2026-11-06 16:31:04,080 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:31:04,081 [INFO] 
+[LAENCONTRE] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:31:04,081 [INFO] [1/3] Extrayendo (laencontre - casa): https://www.laencontre.com.pe/inmueble/ed51-93a9-199def5-a83391df1b90-7853
+2026-11-06 16:31:07,841 [INFO] [2/3] Extrayendo (laencontre - departamento): https://www.laencontre.com.pe/inmueble/671a-b357-19a31bf-bfac2bd23fe4-75a5
+2026-11-06 16:31:12,145 [INFO] [3/3] Extrayendo (laencontre - habitacion): https://www.laencontre.com.pe/inmueble/36a6-b234-1a0ca75-b3a9bb8cfa63-744a
+2026-11-06 16:31:15,903 [INFO]   [✓] Guardado incremental Silver (laencontre): +3 anuncios | Total Base Maestra: 9
+2026-11-06 16:31:15,955 [INFO] [+] Estado Histórico Silver cargado: 9 inmuebles únicos ya registrados.
+2026-11-06 16:31:17,105 [INFO] [*] Conectado a Google Chrome Limpio vía CDP (Sin alertas de automatización)
+2026-11-06 16:31:17,106 [INFO] [REMAX] Buscando alquileres de: casa
+2026-11-06 16:31:17,106 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-06 16:31:18,503 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:31:18,503 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:31:18,503 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:31:18,504 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:31:41,796 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:31:41,796 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:31:41,796 [INFO] [REMAX] Buscando alquileres de: departamento
+2026-11-06 16:31:41,797 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-06 16:31:43,109 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:31:43,110 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:31:43,110 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:31:43,110 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:32:06,445 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:32:06,445 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:32:06,446 [INFO] [REMAX] Buscando alquileres de: habitacion
+2026-11-06 16:32:06,446 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-06 16:32:07,488 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:32:07,488 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:32:07,488 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:32:07,488 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:32:30,975 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:32:30,975 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:32:30,981 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima
+2026-11-06 16:32:32,198 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:32:32,199 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:32:32,199 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:32:32,200 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:32:55,645 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:32:55,645 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:32:55,645 [INFO] 
+[REMAX] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 16:32:55,708 [INFO] [+] Estado Histórico Silver cargado: 9 inmuebles únicos ya registrados.
+2026-11-06 16:32:56,963 [INFO] [*] Conectado a Google Chrome Limpio vía CDP (Sin alertas de automatización)
+2026-11-06 16:32:56,964 [INFO] [CENTURY21] Buscando alquileres de: casa
+2026-11-06 16:32:56,964 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 16:33:02,139 [INFO]     -> +6 enlaces en esta página | Total acumulados: 6
+2026-11-06 16:33:02,139 [INFO] [CENTURY21] Buscando alquileres de: departamento
+2026-11-06 16:33:02,139 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 16:33:08,320 [INFO]     -> +100 enlaces en esta página | Total acumulados: 100
+2026-11-06 16:33:08,320 [INFO] [CENTURY21] Buscando alquileres de: habitacion
+2026-11-06 16:33:08,320 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 16:33:17,519 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:33:17,520 [INFO]     [*] Sin resultados en https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:33:17,520 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima/recamaras_1
+2026-11-06 16:33:23,192 [INFO]     -> +32 enlaces en esta página | Total acumulados: 32
+2026-11-06 16:33:23,198 [INFO] 
+[CENTURY21] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:33:23,203 [INFO] [1/3] Extrayendo (century21 - casa): https://century21.pe/propiedad/47399_alquilo-casa-en-chacarilla
+2026-11-06 16:33:27,577 [INFO] [2/3] Extrayendo (century21 - departamento): https://century21.pe/propiedad/47712_alquiler-departamento-magdalena-del-mar-limite-con-san-isidro
+2026-11-06 16:33:31,339 [INFO] [3/3] Extrayendo (century21 - habitacion): https://century21.pe/propiedad/47711_alquilo-departamento-san-miguel
+2026-11-06 16:33:35,119 [INFO]   [✓] Guardado incremental Silver (century21): +3 anuncios | Total Base Maestra: 12
+2026-11-06 16:33:35,190 [INFO] [+] Estado Histórico Silver cargado: 12 inmuebles únicos ya registrados.
+2026-11-06 16:33:36,431 [INFO] [*] Conectado a Google Chrome Limpio vía CDP (Sin alertas de automatización)
+2026-11-06 16:33:36,432 [INFO] [URBANIA] Buscando alquileres de: casa
+2026-11-06 16:33:36,433 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-06 16:33:37,983 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:33:37,984 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:33:37,984 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:33:37,984 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:34:01,496 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:34:01,497 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-casas-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:34:01,497 [INFO] [URBANIA] Buscando alquileres de: departamento
+2026-11-06 16:34:01,497 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-06 16:34:02,548 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:34:02,548 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:34:02,548 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:34:02,549 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:34:26,419 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:34:26,423 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-departamentos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:34:26,424 [INFO] [URBANIA] Buscando alquileres de: habitacion
+2026-11-06 16:34:26,424 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-06 16:34:27,760 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:34:27,761 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:34:27,762 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:34:27,763 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:34:51,128 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:34:51,128 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:34:51,128 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-cuartos-en-lima
+2026-11-06 16:34:52,080 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:34:52,080 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:34:52,080 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:34:52,080 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:35:15,268 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:35:15,269 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-cuartos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:35:15,269 [INFO] 
+[URBANIA] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 16:35:15,313 [INFO] [+] Estado Histórico Silver cargado: 12 inmuebles únicos ya registrados.
+2026-11-06 16:35:16,361 [INFO] [*] Conectado a Google Chrome Limpio vía CDP (Sin alertas de automatización)
+2026-11-06 16:35:16,362 [INFO] [ADONDEVIVIR] Buscando alquileres de: casa
+2026-11-06 16:35:16,362 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-06 16:35:17,460 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:35:17,460 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:35:17,460 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:35:17,461 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:35:32,494 [INFO]     [✓] Cloudflare superado con éxito por el usuario.
+2026-11-06 16:35:41,353 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:35:41,354 [INFO]     [*] Sin resultados en https://www.adondevivir.com/casas-en-alquiler-en-lima.html. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:35:41,355 [INFO] [ADONDEVIVIR] Buscando alquileres de: departamento
+2026-11-06 16:35:41,355 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-06 16:35:42,485 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:35:42,485 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:35:42,485 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:35:42,485 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:36:06,100 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:36:06,100 [INFO]     [*] Sin resultados en https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:36:06,100 [INFO] [ADONDEVIVIR] Buscando alquileres de: habitacion
+2026-11-06 16:36:06,100 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-06 16:36:07,307 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:36:07,307 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:36:07,308 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:36:07,308 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:36:30,835 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:36:30,835 [INFO]     [*] Sin resultados en https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:36:30,835 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/cuartos-en-alquiler-en-lima.html
+2026-11-06 16:36:31,876 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:36:31,876 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:36:31,877 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:36:31,877 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:36:55,306 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:36:55,306 [INFO]     [*] Sin resultados en https://www.adondevivir.com/cuartos-en-alquiler-en-lima.html. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:36:55,307 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/inmuebles-en-alquiler-en-lima-q-habitacion.html
+2026-11-06 16:36:56,178 [WARNING] 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2026-11-06 16:36:56,179 [WARNING] [!] CLOUDFLARE DETECTADO: Por favor, haz clic en 'Verifique que es un humano' en la ventana del navegador.
+2026-11-06 16:36:56,179 [WARNING] [!] Tienes 15 segundos para resolverlo manualmente. Se guardará la sesión para las siguientes veces.
+2026-11-06 16:36:56,180 [WARNING] !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+2026-11-06 16:37:19,288 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:37:19,288 [INFO]     [*] Sin resultados en https://www.adondevivir.com/inmuebles-en-alquiler-en-lima-q-habitacion.html. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:37:19,288 [INFO] 
+[ADONDEVIVIR] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 16:50:03,641 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-06 16:50:03,666 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:50:25,528 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-06 16:50:25,547 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:50:44,186 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-06 16:50:44,189 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:50:46,706 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-06 16:50:46,796 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-06 16:50:50,136 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 16:50:50,146 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-06 16:50:50,147 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-06 16:50:52,023 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-06 16:50:52,026 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-06 16:50:52,027 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-06 16:50:53,810 [INFO]     -> +11 enlaces en esta página | Total acumulados: 11
+2026-11-06 16:50:53,839 [INFO] 
+[BABILONIA] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:50:53,848 [INFO] [1/3] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-5-dormitorios-4-banios-1200m2-area-3000-usd-de--my-property--162167
+2026-11-06 16:50:55,646 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-5-dormitorios-4-banios-1200m2-area-3000-usd-de--my-property--162167: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:50:55,652 [INFO] [2/3] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-2-dormitorios-3-banios-110m2-area-1550-usd-de-ecka-inmobiliaria-177159
+2026-11-06 16:50:57,159 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-2-dormitorios-3-banios-110m2-area-1550-usd-de-ecka-inmobiliaria-177159: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:50:57,160 [INFO] [3/3] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-santiago-de-surco-de-1-dormitorios-1-banios-12m2-area-225-usd-de-doramerlovende-67549
+2026-11-06 16:50:58,553 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-santiago-de-surco-de-1-dormitorios-1-banios-12m2-area-225-usd-de-doramerlovende-67549: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:50:59,612 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:51:02,119 [INFO] [PROPERATI] Buscando alquileres de: casa
+2026-11-06 16:51:02,134 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/casa/alquiler
+2026-11-06 16:51:07,119 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:51:07,127 [INFO] [PROPERATI] Buscando alquileres de: departamento
+2026-11-06 16:51:07,128 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/departamento/alquiler
+2026-11-06 16:51:10,070 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:51:10,074 [INFO] [PROPERATI] Buscando alquileres de: habitacion
+2026-11-06 16:51:10,074 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/habitacion/alquiler
+2026-11-06 16:51:14,727 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:51:14,727 [INFO]     [*] Sin resultados en https://www.properati.com.pe/s/lima/habitacion/alquiler. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:51:14,728 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/alquiler?q=cuarto
+2026-11-06 16:51:17,534 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:51:17,535 [INFO] 
+[PROPERATI] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:51:17,537 [INFO] [1/3] Extrayendo (properati - casa): https://www.properati.com.pe/detalle/14032-32-eceb-a83391df1b2a-199de8f-9343-77ed
+2026-11-06 16:51:19,779 [ERROR]   -> Error aislando anuncio https://www.properati.com.pe/detalle/14032-32-eceb-a83391df1b2a-199de8f-9343-77ed: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:51:19,779 [INFO] [2/3] Extrayendo (properati - departamento): https://www.properati.com.pe/detalle/14032-32-66b4-bfac2bd23f7e-19a3159-b2f1-753f
+2026-11-06 16:51:21,291 [ERROR]   -> Error aislando anuncio https://www.properati.com.pe/detalle/14032-32-66b4-bfac2bd23f7e-19a3159-b2f1-753f: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:51:21,291 [INFO] [3/3] Extrayendo (properati - habitacion): https://www.properati.com.pe/detalle/14032-32-f169-98aa4d3d7254-19a312f-a364-75bc
+2026-11-06 16:51:22,624 [ERROR]   -> Error aislando anuncio https://www.properati.com.pe/detalle/14032-32-f169-98aa4d3d7254-19a312f-a364-75bc: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:51:23,999 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:51:26,283 [INFO] [LAENCONTRE] Buscando alquileres de: casa
+2026-11-06 16:51:26,301 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list
+2026-11-06 16:51:35,619 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:51:35,620 [INFO] [LAENCONTRE] Buscando alquileres de: departamento
+2026-11-06 16:51:35,620 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list
+2026-11-06 16:51:43,400 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:51:43,400 [INFO] [LAENCONTRE] Buscando alquileres de: habitacion
+2026-11-06 16:51:43,400 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list
+2026-11-06 16:51:50,233 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:51:50,234 [INFO] 
+[LAENCONTRE] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:51:50,234 [INFO] [1/3] Extrayendo (laencontre - casa): https://www.laencontre.com.pe/inmueble/ed51-93a9-199def5-a83391df1b90-7853
+2026-11-06 16:51:51,794 [ERROR]   -> Error aislando anuncio https://www.laencontre.com.pe/inmueble/ed51-93a9-199def5-a83391df1b90-7853: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:51:51,794 [INFO] [2/3] Extrayendo (laencontre - departamento): https://www.laencontre.com.pe/inmueble/671a-b357-19a31bf-bfac2bd23fe4-75a5
+2026-11-06 16:51:53,537 [ERROR]   -> Error aislando anuncio https://www.laencontre.com.pe/inmueble/671a-b357-19a31bf-bfac2bd23fe4-75a5: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:51:53,548 [INFO] [3/3] Extrayendo (laencontre - habitacion): https://www.laencontre.com.pe/inmueble/36a6-b234-1a0ca75-b3a9bb8cfa63-744a
+2026-11-06 16:51:54,973 [ERROR]   -> Error aislando anuncio https://www.laencontre.com.pe/inmueble/36a6-b234-1a0ca75-b3a9bb8cfa63-744a: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:51:55,847 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:51:58,149 [INFO] [REMAX] Buscando alquileres de: casa
+2026-11-06 16:51:58,168 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-06 16:51:58,174 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-06 16:51:58,444 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-06 16:52:02,882 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:52:02,893 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:52:02,893 [INFO] [REMAX] Buscando alquileres de: departamento
+2026-11-06 16:52:02,894 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-06 16:52:02,894 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-06 16:52:03,131 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-06 16:52:07,389 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:52:07,395 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:52:07,398 [INFO] [REMAX] Buscando alquileres de: habitacion
+2026-11-06 16:52:07,399 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-06 16:52:07,400 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-06 16:52:07,710 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-06 16:52:11,940 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:52:11,940 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:52:11,941 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima
+2026-11-06 16:52:11,941 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima
+2026-11-06 16:52:12,172 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-06 16:52:16,470 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:52:16,473 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:52:16,473 [INFO] 
+[REMAX] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 16:52:17,954 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:52:20,210 [INFO] [CENTURY21] Buscando alquileres de: casa
+2026-11-06 16:52:20,226 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 16:52:23,936 [INFO]     -> +6 enlaces en esta página | Total acumulados: 6
+2026-11-06 16:52:23,940 [INFO] [CENTURY21] Buscando alquileres de: departamento
+2026-11-06 16:52:23,942 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 16:52:28,457 [INFO]     -> +100 enlaces en esta página | Total acumulados: 100
+2026-11-06 16:52:28,457 [INFO] [CENTURY21] Buscando alquileres de: habitacion
+2026-11-06 16:52:28,458 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-06 16:52:33,235 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:52:33,235 [INFO]     [*] Sin resultados en https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:52:33,235 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima/recamaras_1
+2026-11-06 16:52:36,035 [INFO]     -> +32 enlaces en esta página | Total acumulados: 32
+2026-11-06 16:52:36,036 [INFO] 
+[CENTURY21] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:52:36,037 [INFO] [1/3] Extrayendo (century21 - casa): https://century21.pe/propiedad/47399_alquilo-casa-en-chacarilla
+2026-11-06 16:52:37,106 [ERROR]   -> Error aislando anuncio https://century21.pe/propiedad/47399_alquilo-casa-en-chacarilla: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:52:37,106 [INFO] [2/3] Extrayendo (century21 - departamento): https://century21.pe/propiedad/47712_alquiler-departamento-magdalena-del-mar-limite-con-san-isidro
+2026-11-06 16:52:38,239 [ERROR]   -> Error aislando anuncio https://century21.pe/propiedad/47712_alquiler-departamento-magdalena-del-mar-limite-con-san-isidro: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:52:38,240 [INFO] [3/3] Extrayendo (century21 - habitacion): https://century21.pe/propiedad/47711_alquilo-departamento-san-miguel
+2026-11-06 16:52:39,287 [ERROR]   -> Error aislando anuncio https://century21.pe/propiedad/47711_alquilo-departamento-san-miguel: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:52:39,712 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:52:47,426 [INFO] [URBANIA] Buscando alquileres de: casa
+2026-11-06 16:52:47,462 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-06 16:52:47,471 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-06 16:52:49,065 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:52:49,065 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-casas-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:52:49,066 [INFO] [URBANIA] Buscando alquileres de: departamento
+2026-11-06 16:52:49,066 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-06 16:52:49,066 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-06 16:52:50,282 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:52:50,283 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-departamentos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:52:50,283 [INFO] [URBANIA] Buscando alquileres de: habitacion
+2026-11-06 16:52:50,283 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-06 16:52:50,283 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-06 16:52:51,483 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:52:51,483 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:52:51,483 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-cuartos-en-lima
+2026-11-06 16:52:51,483 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-cuartos-en-lima
+2026-11-06 16:52:53,823 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-06 16:52:53,823 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-cuartos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-06 16:52:53,824 [INFO] 
+[URBANIA] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-06 16:52:54,484 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-06 16:52:56,493 [INFO] [ADONDEVIVIR] Buscando alquileres de: casa
+2026-11-06 16:52:56,497 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-06 16:52:56,500 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-06 16:52:57,959 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:52:57,959 [INFO] [ADONDEVIVIR] Buscando alquileres de: departamento
+2026-11-06 16:52:57,959 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-06 16:52:57,960 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-06 16:52:58,901 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:52:58,901 [INFO] [ADONDEVIVIR] Buscando alquileres de: habitacion
+2026-11-06 16:52:58,901 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-06 16:52:58,902 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-06 16:53:00,194 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-06 16:53:00,195 [INFO] 
+[ADONDEVIVIR] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-06 16:53:00,196 [INFO] [1/3] Extrayendo (adondevivir - casa): https://www.adondevivir.com/propiedades/clasificado/alclcain-alquilo-casa-de-2-pisos-para-empresas-alonso-de-151479092.html
+2026-11-06 16:53:00,196 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/clasificado/alclcain-alquilo-casa-de-2-pisos-para-empresas-alonso-de-151479092.html
+2026-11-06 16:53:01,178 [ERROR]   -> Error aislando anuncio https://www.adondevivir.com/propiedades/clasificado/alclcain-alquilo-casa-de-2-pisos-para-empresas-alonso-de-151479092.html: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:53:01,178 [INFO] [2/3] Extrayendo (adondevivir - departamento): https://www.adondevivir.com/propiedades/proyecto/ememefin-alquiler-de-departamentos-en-san-isidro-nomad-living-91214947.html
+2026-11-06 16:53:01,178 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/proyecto/ememefin-alquiler-de-departamentos-en-san-isidro-nomad-living-91214947.html
+2026-11-06 16:53:01,906 [ERROR]   -> Error aislando anuncio https://www.adondevivir.com/propiedades/proyecto/ememefin-alquiler-de-departamentos-en-san-isidro-nomad-living-91214947.html: name 'extraer_texto_robusto_pw' is not defined
+2026-11-06 16:53:01,907 [INFO] [3/3] Extrayendo (adondevivir - habitacion): https://www.adondevivir.com/propiedades/proyecto/ememvein-palm-living-67055120.html
+2026-11-06 16:53:01,907 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/proyecto/ememvein-palm-living-67055120.html
+2026-11-06 16:53:03,312 [ERROR]   -> Error aislando anuncio https://www.adondevivir.com/propiedades/proyecto/ememvein-palm-living-67055120.html: name 'extraer_texto_robusto_pw' is not defined
