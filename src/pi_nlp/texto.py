@@ -5,7 +5,16 @@ import html
 import re
 import unicodedata
 
-VACIOS = {"", "no especificado", "nan", "none", "null", "n/a"}
+VACIOS = {
+    "",
+    "no especificado",
+    "nan",
+    "none",
+    "null",
+    "n/a",
+    "[]",
+    "{}"
+}
 
 
 def es_vacio(valor) -> bool:

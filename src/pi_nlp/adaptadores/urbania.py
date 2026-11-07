@@ -1,4 +1,5 @@
-"""Adaptador de Urbania (scraper de Giorgio: una fila por anuncio con descripción completa)."""
+
+"""Adaptador de Urbania para transformar los datos extraídos del portal al esquema común."""
 from __future__ import annotations
 
 import pandas as pd
@@ -8,11 +9,15 @@ from .base import Adaptador
 
 
 def _unir(*valores) -> str | None:
-    """Une textos no vacíos y distintos (en Urbania varias columnas repiten el mismo contenido)."""
+    """Une textos no vacíos y distintos, conservando el contenido original."""
     vistos: list[str] = []
+
     for v in valores:
-        if not es_vacio(v) and str(v) not in vistos:
-            vistos.append(str(v))
+        if not es_vacio(v):
+            texto = str(v).strip()
+            if texto not in vistos:
+                vistos.append(texto)
+
     return " | ".join(vistos) or None
 
 
@@ -21,13 +26,53 @@ class AdaptadorUrbania(Adaptador):
 
     def a_esquema(self, crudo: pd.DataFrame) -> pd.DataFrame:
         df = pd.DataFrame(index=crudo.index)
+
+        # Identificación y datos principales del anuncio
         df["url"] = crudo["url"]
         df["titulo"] = crudo.get("titulo")
         df["descripcion"] = crudo.get("descripcion")
         df["precio_texto"] = crudo.get("precio_general")
         df["ubicacion_texto"] = crudo.get("ubicacion")
-        df["caracteristicas_texto"] = [
-            _unir(a, b) for a, b in zip(crudo.get("caracteristicas_dinamicas"), crudo.get("datos_principales_generales"))
+
+        # Consolidación de características disponibles en Urbania.
+        # Algunas columnas solo existen en el archivo de departamentos.
+        columnas_caracteristicas = [
+            "datos_principales_generales",
+            "caracteristicas_generales",
+            "servicios",
+            "ambientes",
+            "exteriores",
+            "comodidades_proyecto",
+            "otras_caracteristicas_proyecto",
+            "unidades_detalladas",
         ]
-        df["fecha_captura"] = crudo["fecha_captura"] if "fecha_captura" in crudo else None
+
+        columnas_disponibles = [
+            crudo[col] if col in crudo.columns
+            else pd.Series(None, index=crudo.index)
+            for col in columnas_caracteristicas
+        ]
+
+        df["caracteristicas_texto"] = [
+            _unir(*valores)
+            for valores in zip(*columnas_disponibles)
+        ]
+
+        # Texto complementario de la tarjeta del anuncio
+        df["texto_tarjeta"] = [
+            _unir(titulo, precio, ubicacion)
+            for titulo, precio, ubicacion in zip(
+                df["titulo"],
+                df["precio_texto"],
+                df["ubicacion_texto"],
+            )
+        ]
+
+        # Fecha de captura, si está disponible
+        df["fecha_captura"] = (
+            crudo["fecha_captura"]
+            if "fecha_captura" in crudo.columns
+            else None
+        )
+
         return self._finalizar(df)

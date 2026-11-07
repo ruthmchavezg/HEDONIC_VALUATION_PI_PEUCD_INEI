@@ -1,1 +1,11 @@
 carpetas.bat
+
+# Datos locales
+data/raw/
+data/interim/
+data/processed/
+
+# Archivos temporales
+__pycache__/
+*.py[cod]
+.pytest_cache/

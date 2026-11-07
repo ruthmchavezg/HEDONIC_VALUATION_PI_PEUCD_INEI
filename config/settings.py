@@ -60,8 +60,14 @@ USER_AGENTS = [
 # - Metodología: Procesamiento de Lenguaje Natural (NLP) y normalización tipológica. Transforma texto crudo no estructurado en las variables estructurales discretas que exige la matriz (X) del modelo de regresión hedónica[cite: 11, 14].
 REGEX_PATTERNS = {
     "id_anuncio": re.compile(r"(?:-|_id_|/)(\d{5,12})(?:\.html|/|$)"),
-    "area_total": re.compile(r"(\d+(?:[.,]\d+)?)\s*m²\s*(?:totales|total|de terreno|terreno)?", re.IGNORECASE),
-    "area_construida": re.compile(r"(\d+(?:[.,]\d+)?)\s*m²\s*(?:construidos|techados|cubiertos|construida)", re.IGNORECASE),
+    "area_total": re.compile(
+    r"(\d+(?:[.,]\d+)?)\s*m(?:2|²)\s*(?:totales|total|de\s+terreno|terreno)\b",
+    re.IGNORECASE
+),
+    "area_construida": re.compile(
+    r"(\d+(?:[.,]\d+)?)\s*m(?:2|²)\s*(?:construidos|techados|cubiertos|construida)\b",
+    re.IGNORECASE
+),
     "dormitorios": re.compile(r"(\d+)\s*(?:dorm|hab|cuarto)", re.IGNORECASE),
     "banos": re.compile(r"(\d+)\s*(?:baño|bano)", re.IGNORECASE),
     "estacionamientos": re.compile(r"(\d+)\s*(?:estac|cochera|garaje)", re.IGNORECASE),

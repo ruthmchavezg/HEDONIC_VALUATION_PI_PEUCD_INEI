@@ -138,3 +138,5 @@ def anonimizar(texto: str | None) -> ResultadoAnonimizacion:
 
     t = RE_MONTO.sub(_sub_monto, t)
     return ResultadoAnonimizacion(t, n_tel, n_mail, n_url, n_cont, montos)
+
+# Módulo NLP integrado al repositorio del Proyecto Integrador.

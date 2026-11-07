@@ -1,0 +1,26 @@
+# Lexicón inicial (v0) de atributos no estructurados.
+# Términos en minúscula y sin tildes.
+# Debe revisarse con el equipo y la muestra anotada (N3/N6).
+
+negadores: ["sin", "no", "nada", "ni", "nunca", "tampoco", "carece"]
+ventana_negacion: 4
+
+atributos:
+  amoblado: [amoblado, amoblada, amueblado, amueblada, full amoblado, equipado con muebles]
+  piscina: [piscina, jacuzzi]
+  jardin: [jardin, jardines, area verde, areas verdes]
+  terraza: [terraza, balcon]
+  seguridad: [seguridad, vigilancia, guardiania, serenazgo, camaras, condominio cerrado, garita]
+  ascensor: [ascensor, elevador]
+  mascotas: [mascotas, pet friendly, se aceptan mascotas]
+  vista_mar: [vista al mar, frente al mar, vista panoramica al mar]
+  lavanderia: [lavanderia, cuarto de lavado]
+  cuarto_servicio: [cuarto de servicio, dormitorio de servicio, bano de servicio]
+  aire_acondicionado: [aire acondicionado]
+  gimnasio: [gimnasio, gym]
+  cerca_transporte: [metropolitano, metro de lima, paradero, avenida principal, av. principal]
+  cerca_comercio: [supermercado, centro comercial, mall, mercado, bodega]
+  cerca_colegios: [colegio, colegios, universidad, instituto]
+  cerca_parques: [parque, parques, areas verdes cercanas]
+  a_estrenar: [a estrenar, estreno, recien construido]
+  remodelado: [remodelado, remodelada, renovado, renovada, refaccionado]

@@ -1,0 +1,84 @@
+# Distritos de Lima Metropolitana (43), en minúscula y sin tildes, más alias frecuentes.
+# "lima" a secas es ambiguo (Cercado de Lima vs. nombre de la ciudad) y NO se asigna como distrito.
+lima_metropolitana:
+  - ancon
+  - ate
+  - barranco
+  - brena
+  - carabayllo
+  - cercado de lima
+  - chaclacayo
+  - chorrillos
+  - cieneguilla
+  - comas
+  - el agustino
+  - independencia
+  - jesus maria
+  - la molina
+  - la victoria
+  - lince
+  - los olivos
+  - lurigancho
+  - lurin
+  - magdalena del mar
+  - miraflores
+  - pachacamac
+  - pucusana
+  - pueblo libre
+  - puente piedra
+  - punta hermosa
+  - punta negra
+  - rimac
+  - san bartolo
+  - san borja
+  - san isidro
+  - san juan de lurigancho
+  - san juan de miraflores
+  - san luis
+  - san martin de porres
+  - san miguel
+  - santa anita
+  - santa maria del mar
+  - santa rosa
+  - santiago de surco
+  - surquillo
+  - villa el salvador
+  - villa maria del triunfo
+
+alias:
+  surco: santiago de surco
+  chosica: lurigancho
+  lurigancho chosica: lurigancho
+  lima cercado: cercado de lima
+  magdalena: magdalena del mar
+  jesus maria: jesus maria
+  sjl: san juan de lurigancho
+  smp: san martin de porres
+  sjm: san juan de miraflores
+  vmt: villa maria del triunfo
+  ves: villa el salvador
+  santa beatriz: cercado de lima
+  huampani i: lurigancho
+  playa arica: lurin
+
+callao:
+  - callao
+  - bellavista
+  - la perla
+  - la punta
+  - carmen de la legua reynoso
+  - ventanilla
+  - mi peru
+
+fuera_de_lima_metropolitana:
+  - canete
+  - asia
+  - huaral
+  - huarochiri
+  - canta
+  - barranca
+  - huaura
+  - mala
+  - chilca
+  - san vicente de canete
+  - imperial

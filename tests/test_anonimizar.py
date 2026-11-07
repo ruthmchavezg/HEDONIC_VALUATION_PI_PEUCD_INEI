@@ -62,3 +62,40 @@ def test_conserva_caracteristicas_despues_de_contactanos():
     assert "Terraza" in resultado.texto
     assert "piscina" in resultado.texto
     assert "gimnasio" in resultado.texto
+def test_anonimiza_precio_en_soles():
+    resultado = anonimizar("Alquiler mensual: S/ 2,500")
+
+    assert "<MONTO>" in resultado.texto
+    assert "2,500" not in resultado.texto
+    assert resultado.montos[0]["valor"] == 2500
+    assert resultado.montos[0]["moneda"] == "PEN"
+
+
+def test_anonimiza_precio_en_dolares():
+    resultado = anonimizar("Alquiler mensual: USD 800")
+
+    assert "<MONTO>" in resultado.texto
+    assert "800" not in resultado.texto
+    assert resultado.montos[0]["valor"] == 800
+    assert resultado.montos[0]["moneda"] == "USD"
+
+
+def test_distingue_garantia():
+    resultado = anonimizar("Garantía: S/ 2,500")
+
+    assert "<MONTO_GARANTIA>" in resultado.texto
+    assert resultado.montos[0]["tipo"] == "garantia"
+
+
+def test_distingue_mantenimiento():
+    resultado = anonimizar("Mantenimiento: S/ 200")
+
+    assert "<MONTO_MANTENIMIENTO>" in resultado.texto
+    assert resultado.montos[0]["tipo"] == "mantenimiento"
+
+
+def test_conserva_area_inmobiliaria():
+    resultado = anonimizar("Departamento de 80 m²")
+
+    assert "80 m²" in resultado.texto
+    assert resultado.montos == []
