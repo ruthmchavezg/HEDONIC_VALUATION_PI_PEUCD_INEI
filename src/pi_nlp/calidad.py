@@ -34,6 +34,10 @@ def banderas(fila: dict, cfg: dict) -> dict:
 
     areas = [fila.get(k) for k in ("area_titulo_m2", "area_terreno_m2", "area_construida_m2", "area_total_m2")]
     out["flag_area_atipica"] = any(a is not None and (a <= 0 or a > cfg["area_max_m2"]) for a in areas)
+    out["flag_area_sospechosamente_pequena"] = any(
+        a is not None and 0 < a <= cfg["area_min_revision_m2"]
+        for a in areas
+    )
 
     out["flag_texto_corto"] = len(fila.get("descripcion_anon") or "") < cfg["texto_min_chars"]
     out["flag_contradiccion"] = bool(

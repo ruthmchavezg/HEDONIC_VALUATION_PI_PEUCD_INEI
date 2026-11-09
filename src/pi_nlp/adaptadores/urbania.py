@@ -44,7 +44,6 @@ class AdaptadorUrbania(Adaptador):
             "exteriores",
             "comodidades_proyecto",
             "otras_caracteristicas_proyecto",
-            "unidades_detalladas",
         ]
 
         columnas_disponibles = [
@@ -54,7 +53,17 @@ class AdaptadorUrbania(Adaptador):
         ]
 
         df["caracteristicas_texto"] = [
-            _unir(*valores)
+            _unir(
+                *(
+                    valor
+                    for columna, valor in zip(columnas_caracteristicas, valores)
+                    if not (
+                        columna == "datos_principales_generales"
+                        and isinstance(valor, str)
+                        and "unidades" in valor.lower()
+                    )
+                )
+            )
             for valores in zip(*columnas_disponibles)
         ]
 

@@ -50,7 +50,7 @@ RE_AREA_CONSTRUIDA = re.compile(
 )
 
 RE_AREA_TOTAL = re.compile(
-    rf"area\s*total\s*[:\-]?\s*{_AREA}|{_AREA}\s*tot\b"
+    rf"(?:area|superficie)\s*total\s*[:\-]?\s*{_AREA}|{_AREA}\s*tot\b"
 )
 
 RE_AREA_TITULO = re.compile(_AREA)
