@@ -35,7 +35,6 @@ class AdaptadorUrbania(Adaptador):
         df["ubicacion_texto"] = crudo.get("ubicacion")
 
         # Consolidación de características disponibles en Urbania.
-        # Algunas columnas solo existen en el archivo de departamentos.
         columnas_caracteristicas = [
             "datos_principales_generales",
             "caracteristicas_generales",
@@ -84,4 +83,22 @@ class AdaptadorUrbania(Adaptador):
             else None
         )
 
-        return self._finalizar(df)
+        resultado = self._finalizar(df)
+
+        # Priorizar la modalidad explícita del precio publicado en Urbania.
+        precio_original = crudo.get(
+            "precio_general",
+            pd.Series("", index=crudo.index)
+        ).fillna("").astype(str)
+
+        modalidad_precio = precio_original.str.extract(
+            r"^\s*(alquiler|venta)\b",
+            flags=__import__("re").IGNORECASE,
+            expand=False
+        ).str.lower()
+
+        resultado["modalidad_url"] = modalidad_precio.combine_first(
+            resultado["modalidad_url"]
+        )
+
+        return resultado

@@ -24,7 +24,7 @@ from .extraccion import extraer_campos
 from .geografia import clasificar_distrito
 from .lexicon import extraer_atributos
 from .logging_utils import get_logger
-from .precio import parsear_precio
+from .precio import asignar_precio_desde_montos, parsear_precio
 from .texto import limpiar_texto
 from .temporalidad import clasificar_temporalidad
 
@@ -66,6 +66,12 @@ def _procesar_fila(r: pd.Series, cfg_cal: dict, cfg_ext: dict) -> dict:
         "id_anuncio": r["id_anuncio"],
         "portal": r["portal"],
         "fecha_captura": r["fecha_captura"],
+
+        # Trazabilidad de fuentes con identificadores propios.
+        "id_contenido": r.get("id_contenido"),
+        "tipo_inmueble_fuente": r.get("tipo_inmueble_fuente"),
+        "fecha_publicacion": r.get("fecha_publicacion"),
+
         "modalidad": (
         r["modalidad_url"]
         if pd.notna(r["modalidad_url"]) and str(r["modalidad_url"]).strip()
@@ -84,8 +90,21 @@ def _procesar_fila(r: pd.Series, cfg_cal: dict, cfg_ext: dict) -> dict:
         )
     )
 
-    # Extracción del precio publicado: se conservan ambas monedas
-    fila.update(parsear_precio(precio_txt))
+
+    # Extracción del precio publicado según la fuente
+    if r["portal"] == "tiktok":
+        montos_detectados = (
+            a_tit.montos
+            + a_des.montos
+            + a_car.montos
+        )
+
+        fila.update(
+            asignar_precio_desde_montos(montos_detectados)
+        )
+    else:
+        fila.update(parsear_precio(precio_txt))
+
 
     # Clasificación geográfica
     fila["distrito"], fila["ambito"] = clasificar_distrito(
@@ -102,6 +121,18 @@ def _procesar_fila(r: pd.Series, cfg_cal: dict, cfg_ext: dict) -> dict:
             cfg_ext,
         )
     )
+    # Homologación del tipo de inmueble informado por la fuente.
+    tipo_fuente = limpiar_texto(r.get("tipo_inmueble_fuente"))
+
+    homologacion_tipos = {
+        "casa": "casa",
+        "departamento": "departamento",
+        "habitacion": "cuarto",
+    }
+
+    fila["tipo_inmueble_homologado"] = homologacion_tipos.get(
+        tipo_fuente
+    )
 
     # Extracción de atributos mediante el lexicón
     fila.update(
@@ -117,11 +148,16 @@ def _procesar_fila(r: pd.Series, cfg_cal: dict, cfg_ext: dict) -> dict:
     fila["flag_contacto_en_texto"] = contacto > 0
 
     fila["flag_fuga_precio"] = fuga_precio(
-        a_des.montos + a_tit.montos,
-        fila["precio_pen_pub"],
-        fila["precio_usd_pub"],
-        cfg_cal["tolerancia_fuga"],
-    )
+    a_des.montos + a_tit.montos + a_car.montos,
+    fila["precio_pen_pub"],
+    fila["precio_usd_pub"],
+    cfg_cal["tolerancia_fuga"],
+    [
+        a_tit.texto,
+        a_des.texto,
+        a_car.texto,
+    ],
+)
 
     fila.update(banderas(fila, cfg_cal))
 
@@ -245,6 +281,14 @@ def ejecutar(
 
     df = pd.DataFrame(filas)
 
+    # Preservar identificadores de TikTok como texto
+    if "id_contenido" in df.columns:
+        df["id_contenido"] = pd.array(
+            [fila.get("id_contenido") for fila in filas],
+            dtype="string",
+        )
+
+
     # Identificación de duplicados sin eliminarlos
     df = marcar_duplicados(df, cfg["dedup"])
 
@@ -260,6 +304,7 @@ def ejecutar(
         "area_titulo_m2",
         "area_terreno_m2",
         "area_construida_m2",
+        "area_techada_m2",
         "area_total_m2",
         "n_pisos",
         "piso_departamento",

@@ -42,15 +42,23 @@ _AREA = r"(\d[\d.,]*)\s*m2"
 
 RE_AREA_TERRENO = re.compile(
     rf"(?:\ba\.?\s*t\.?\s*[:\-]?|area\s*(?:de\s*)?terreno\s*[:\-]?|terreno\s*(?:de|:)?)\s*{_AREA}"
+    rf"|{_AREA}\s*(?:de\s*)?(?:area\s*)?terreno\b"
 )
 
 RE_AREA_CONSTRUIDA = re.compile(
-    rf"(?:\ba\.?\s*c\.?\s*[:\-]?|area\s*(?:de\s*)?(?:construida|techada)\s*[:\-]?|construccion\s*(?:de|:)?)\s*{_AREA}"
-    rf"|{_AREA}\s*(?:de\s*)?(?:area\s*)?(?:construid|techad|cub\b)"
+    rf"(?:\ba\.?\s*c\.?\s*[:\-]?|area\s*(?:de\s*)?construida\s*[:\-]?|construccion\s*(?:de|:)?)\s*{_AREA}"
+    rf"|{_AREA}\s*(?:de\s*)?(?:area\s*)?construid"
+)
+
+RE_AREA_TECHADA = re.compile(
+    rf"(?:area\s*(?:de\s*)?techada\s*[:\-]?)\s*{_AREA}"
+    rf"|{_AREA}\s*(?:de\s*)?(?:area\s*)?techad"
 )
 
 RE_AREA_TOTAL = re.compile(
-    rf"(?:area|superficie)\s*total\s*[:\-]?\s*{_AREA}|{_AREA}\s*tot\b"
+    rf"(?:area|superficie)\s*total\s*[:\-]?\s*{_AREA}"
+    rf"|{_AREA}\s*tot\b"
+    rf"|{_AREA}\s*(?:de\s*)?(?:area\s*)?total\b"
 )
 
 RE_AREA_TITULO = re.compile(_AREA)
@@ -252,6 +260,7 @@ def extraer_campos(
     out["area_titulo_m2"] = _primera_area(RE_AREA_TITULO, t)
     out["area_terreno_m2"] = _primera_area(RE_AREA_TERRENO, unido)
     out["area_construida_m2"] = _primera_area(RE_AREA_CONSTRUIDA, unido)
+    out["area_techada_m2"] = _primera_area(RE_AREA_TECHADA, unido)
     out["area_total_m2"] = _primera_area(RE_AREA_TOTAL, unido)
 
     # 3. Tipo de inmueble

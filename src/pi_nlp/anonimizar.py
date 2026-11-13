@@ -1,10 +1,12 @@
+
 """Anonimización y enmascarado de montos.
 
 Dos objetivos distintos:
 1. Privacidad: quitar teléfonos, correos, URLs y nombres de contacto (Ley 29733).
-2. Fuga de información: los montos escritos en el texto pueden revelar la renta (variable objetivo),
-   así que se enmascaran antes de cualquier representación del texto. Se conservan aparte
-   (``montos``) solo para auditar la fuga, nunca como insumo del modelo.
+2. Fuga de información: los montos escritos en el texto pueden revelar la renta
+   (variable objetivo), así que se enmascaran antes de cualquier representación
+   del texto. Se conservan aparte (montos) solo para auditar la fuga, nunca como
+   insumo del modelo.
 """
 from __future__ import annotations
 
@@ -15,13 +17,19 @@ from .texto import normalizar, parse_numero
 
 RE_EMAIL = re.compile(r"[\w.\-+]+@[\w\-]+(?:\.[\w\-]+)+")
 RE_URL = re.compile(r"(?:https?://|www\.)\S+", re.I)
-# Celular peruano (9 dígitos que empiezan en 9) con separadores variados: 9.2.7.8..., 987 654 321, +51 987-654-321
+
+# Celular peruano (9 dígitos que empiezan en 9) con separadores variados.
 RE_TEL = re.compile(r"(?<![\d.,])(?:\+?51[\s.\-]?)?9(?:[\s.\-]?\d){8}(?![\d])")
+
 RE_CONTACTO_DOS_PUNTOS = re.compile(
     r"(?P<pre>\b(?:contacto|contactar a|contactarse con|asesor(?:a)?(?: comercial)?|informes?|atiende|llamar a|ver con)\s*:\s*)(?P<resto>.+)$",
     re.I,
 )
-RE_CONTACTO_SOLO = re.compile(r"\W*(?:contacto|asesor(?:a)?(?: comercial)?|informes?)\W*", re.I)
+
+RE_CONTACTO_SOLO = re.compile(
+    r"\b(?:contacto|asesor(?:a)?(?: comercial)?|informes?)\b",
+    re.I,
+)
 
 # Nombre de una persona después de expresiones explícitas de contacto.
 RE_NOMBRE_TRAS_CONTACTO = re.compile(
@@ -41,12 +49,32 @@ RE_NOMBRE_ANTES_CARGO = re.compile(
 )
 
 RE_MONTO = re.compile(
-    r"(?P<mon>US\$|USD|\$|S/\.?|PEN)\s*(?P<v>\d{1,3}(?:[.,]\d{3})+(?:[.,]\d{1,2})?|\d{3,}(?:[.,]\d{1,2})?)"
-    r"|(?P<v2>\d{1,3}(?:[.,]\d{3})+|\d{3,})\s*(?P<mon2>US\$|USD|dolares|dólares|soles)\b",
+    r"(?P<mon>US\$|USD|\$|S/\.?|PEN)\s*"
+    r"(?P<v>\d{1,3}(?:[.,]\d{3})+(?:[.,]\d{1,2})?"
+    r"|\d+(?:[.,]\d+)?)(?:\s*(?P<mult1>k|mil))?"
+    r"|(?P<v2>\d{1,3}(?:[.,]\d{3})+|\d+(?:[.,]\d+)?)"
+    r"\s*(?P<mult2>k|mil)?\s*"
+    r"(?P<mon2>US\$|USD|dolares|dólares|soles)\b",
     re.I,
 )
-CTX_GARANTIA = re.compile(r"garant|deposito|adelanto|mes de adelanto")
-CTX_MANTENIMIENTO = re.compile(r"mantenim|gastos comunes|arbitrios|cuota|mensualidad de mant")
+
+CTX_GARANTIA = re.compile(
+    r"garant|deposito|adelanto|mes de adelanto"
+)
+
+CTX_MANTENIMIENTO = re.compile(
+    r"mantenim|gastos comunes|arbitrios|cuota|mensualidad de mant"
+)
+
+CTX_VENTA = re.compile(
+    r"\b(?:venta|vendo|vender|se vende)\b"
+)
+
+CTX_ALQUILER = re.compile(
+    r"\b(?:alquiler|alquilo|alquilar|alquila|alquilan|"
+    r"alquilamos|arrendamiento|arrendar|renta|rentamos)\b"
+    r"|renta\s+mensual"
+)
 
 
 @dataclass
@@ -56,7 +84,7 @@ class ResultadoAnonimizacion:
     n_correos: int = 0
     n_urls: int = 0
     n_contactos: int = 0
-    montos: list[dict] = field(default_factory=list)  # solo para auditoría de fuga
+    montos: list[dict] = field(default_factory=list)
 
 
 def _moneda(tok: str) -> str:
@@ -64,7 +92,6 @@ def _moneda(tok: str) -> str:
     if t in ("US$", "USD", "$", "DOLARES", "DÓLARES"):
         return "USD"
     return "PEN"
-
 
 
 def _enmascarar_contactos(texto: str) -> tuple[str, int]:
@@ -109,11 +136,11 @@ def _enmascarar_contactos(texto: str) -> tuple[str, int]:
     return " | ".join(segs), n
 
 
-
 def anonimizar(texto: str | None) -> ResultadoAnonimizacion:
-    """Anonimiza datos personales y enmascara montos. Devuelve el texto y conteos de lo hallado."""
+    """Anonimiza datos personales y enmascara montos."""
     if not texto:
         return ResultadoAnonimizacion(texto=texto)
+
     t = texto
     t, n_mail = RE_EMAIL.subn("<CORREO>", t)
     t, n_url = RE_URL.subn("<URL>", t)
@@ -123,20 +150,73 @@ def anonimizar(texto: str | None) -> ResultadoAnonimizacion:
     montos: list[dict] = []
 
     def _sub_monto(m: re.Match) -> str:
-        valor = parse_numero(m.group("v") or m.group("v2"))
+        numero = m.group("v") or m.group("v2")
+        multiplicador = m.group("mult1") or m.group("mult2")
+
+        valor = parse_numero(numero)
+
+        if valor is not None and multiplicador:
+            valor *= 1000
+            valor = float(valor)
+
         mon = _moneda(m.group("mon") or m.group("mon2"))
-        # El contexto se limita a la cláusula actual (no cruza '.', ';' ni '|') para no heredar la etiqueta del monto anterior.
-        ctx = normalizar(re.split(r"[.;|]\s", t[max(0, m.start() - 40): m.start()])[-1])
-        if CTX_GARANTIA.search(ctx):
+
+        # Se analiza el contexto anterior y posterior al monto
+        # dentro de su propia cláusula.
+        inicio = max(
+            t.rfind(sep, 0, m.start())
+            for sep in (",", ";", "|", ".")
+        ) + 1
+
+        fin_candidatos = [
+            pos
+            for sep in (",", ";", "|", ".")
+            if (pos := t.find(sep, m.end())) != -1
+        ]
+        fin = min(fin_candidatos) if fin_candidatos else len(t)
+
+        clausula = t[inicio:fin]
+
+        prefijo = normalizar(clausula[:m.start() - inicio])
+        sufijo = normalizar(clausula[m.end() - inicio:])
+
+        contexto = f"{prefijo} {sufijo}"
+
+        if CTX_GARANTIA.search(contexto):
             tipo, tag = "garantia", "<MONTO_GARANTIA>"
-        elif CTX_MANTENIMIENTO.search(ctx):
+
+        elif CTX_MANTENIMIENTO.search(contexto):
             tipo, tag = "mantenimiento", "<MONTO_MANTENIMIENTO>"
+
+        elif CTX_VENTA.search(contexto):
+            tipo, tag = "venta", "<MONTO_VENTA>"
+
+        elif CTX_ALQUILER.search(contexto):
+            tipo, tag = "alquiler", "<MONTO_ALQUILER>"
+
+        elif re.search(r"\bprecio\b", prefijo):
+            tipo, tag = "alquiler", "<MONTO_ALQUILER>"
+
+
         else:
             tipo, tag = "otro", "<MONTO>"
-        montos.append({"valor": valor, "moneda": mon, "tipo": tipo})
+
+        montos.append({
+            "valor": valor,
+            "moneda": mon,
+            "tipo": tipo,
+            "texto_original": m.group(0),
+            "etiqueta": tag,
+            "enmascarado": True,
+        })
+
         return tag
 
     t = RE_MONTO.sub(_sub_monto, t)
-    return ResultadoAnonimizacion(t, n_tel, n_mail, n_url, n_cont, montos)
+
+    return ResultadoAnonimizacion(
+        t, n_tel, n_mail, n_url, n_cont, montos
+    )
+
 
 # Módulo NLP integrado al repositorio del Proyecto Integrador.

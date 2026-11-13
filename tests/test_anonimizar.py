@@ -62,19 +62,25 @@ def test_conserva_caracteristicas_despues_de_contactanos():
     assert "Terraza" in resultado.texto
     assert "piscina" in resultado.texto
     assert "gimnasio" in resultado.texto
+
 def test_anonimiza_precio_en_soles():
     resultado = anonimizar("Alquiler mensual: S/ 2,500")
 
-    assert "<MONTO>" in resultado.texto
+    assert "<MONTO_ALQUILER>" in resultado.texto
+    assert resultado.montos[0]["tipo"] == "alquiler"
     assert "2,500" not in resultado.texto
-    assert resultado.montos[0]["valor"] == 2500
+    assert resultado.montos[0]  ["valor"] == 2500
     assert resultado.montos[0]["moneda"] == "PEN"
+    assert resultado.montos[0]["texto_original"] == "S/ 2,500"
+    assert resultado.montos[0]["etiqueta"] == "<MONTO_ALQUILER>"
+    assert resultado.montos[0]["enmascarado"] is True
 
 
 def test_anonimiza_precio_en_dolares():
     resultado = anonimizar("Alquiler mensual: USD 800")
 
-    assert "<MONTO>" in resultado.texto
+    assert "<MONTO_ALQUILER>" in resultado.texto
+    assert resultado.montos[0]["tipo"] == "alquiler"
     assert "800" not in resultado.texto
     assert resultado.montos[0]["valor"] == 800
     assert resultado.montos[0]["moneda"] == "USD"
@@ -99,3 +105,101 @@ def test_conserva_area_inmobiliaria():
 
     assert "80 m²" in resultado.texto
     assert resultado.montos == []
+
+def test_distingue_garantia_y_mantenimiento_en_misma_oracion():
+    resultado = anonimizar(
+        "Garantía de S/ 1,500 y mantenimiento de S/ 200."
+    )
+
+    assert resultado.montos[0]["tipo"] == "garantia"
+    assert resultado.montos[1]["tipo"] == "mantenimiento"
+
+
+def test_distingue_alquiler_y_garantia():
+    resultado = anonimizar(
+        "Alquiler S/ 1,500, dos meses de garantía S/ 3,000."
+    )
+
+    assert resultado.montos[0]["tipo"] == "alquiler"
+    assert resultado.montos[1]["tipo"] == "garantia"
+
+
+def test_identifica_monto_en_contexto_de_venta():
+    resultado = anonimizar(
+        "Departamento en venta a USD 85,000."
+    )
+
+    assert resultado.montos[0]["tipo"] == "venta"
+    assert "<MONTO_VENTA>" in resultado.texto
+
+
+def test_no_hereda_contexto_de_garantia_a_mantenimiento():
+    resultado = anonimizar(
+        "Garantía S/ 1,500; mantenimiento S/ 200."
+    )
+
+    assert resultado.montos[0]["tipo"] == "garantia"
+    assert resultado.montos[1]["tipo"] == "mantenimiento"
+
+def test_detecta_precio_con_sufijo_k():
+    resultado = anonimizar("Alquiler mensual: S/ 1.5k")
+
+    assert resultado.montos[0]["valor"] == 1500
+    assert resultado.montos[0]["moneda"] == "PEN"
+    assert resultado.montos[0]["tipo"] == "alquiler"
+
+
+def test_detecta_precio_con_sufijo_mil():
+    resultado = anonimizar("Alquiler mensual: S/ 1,5 mil")
+
+    assert resultado.montos[0]["valor"] == 1500
+    assert resultado.montos[0]["moneda"] == "PEN"
+    assert resultado.montos[0]["tipo"] == "alquiler"
+
+
+def test_detecta_precio_sin_simbolo_de_moneda():
+    resultado = anonimizar("Alquiler mensual: 1500 soles")
+
+    assert resultado.montos[0]["valor"] == 1500
+    assert resultado.montos[0]["moneda"] == "PEN"
+    assert resultado.montos[0]["tipo"] == "alquiler"
+
+
+def test_detecta_precio_en_dolares_sin_simbolo():
+    resultado = anonimizar("Alquiler mensual: 450 dolares")
+
+    assert resultado.montos[0]["valor"] == 450
+    assert resultado.montos[0]["moneda"] == "USD"
+    assert resultado.montos[0]["tipo"] == "alquiler"
+
+def test_identifica_alquiler_con_contexto_posterior():
+    resultado = anonimizar("S/ 1,500 por alquiler")
+
+    assert resultado.montos[0]["tipo"] == "alquiler"
+
+
+def test_precio_sin_contexto_explicito_se_considera_alquiler():
+    resultado = anonimizar("Precio: S/ 1,500")
+
+    assert resultado.montos[0]["tipo"] == "alquiler"
+
+
+def test_precio_de_venta_no_se_clasifica_como_alquiler():
+    resultado = anonimizar("Precio de venta: USD 85,000")
+
+    assert resultado.montos[0]["tipo"] == "venta"
+
+
+def test_identifica_venta_con_contexto_posterior():
+    resultado = anonimizar("USD 85,000 por venta")
+
+    assert resultado.montos[0]["tipo"] == "venta"
+
+
+def test_separa_contextos_de_venta_y_alquiler():
+    resultado = anonimizar(
+        "Venta USD 85,000; alquiler S/ 2,500"
+    )
+
+    assert resultado.montos[0]["tipo"] == "venta"
+    assert resultado.montos[1]["tipo"] == "alquiler"
