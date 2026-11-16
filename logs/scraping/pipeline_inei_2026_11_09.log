@@ -1,0 +1,556 @@
+2026-11-09 07:26:01,855 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-09 07:26:01,866 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:26:14,014 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-09 07:26:14,026 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-09 07:26:16,231 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-09 07:26:16,232 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-09 07:26:16,232 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-09 07:26:17,772 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-09 07:26:17,774 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-09 07:26:17,775 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-09 07:26:19,091 [INFO]     -> +11 enlaces en esta página | Total acumulados: 11
+2026-11-09 07:26:19,098 [INFO] 
+[BABILONIA] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 07:26:19,099 [INFO] [1/3] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-callahuanca-de-5-dormitorios-6-banios-1000m2-area-575-usd-de-citify-inmobiliaria-154213
+2026-11-09 07:26:20,509 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-callahuanca-de-5-dormitorios-6-banios-1000m2-area-575-usd-de-citify-inmobiliaria-154213: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:26:20,513 [INFO] [2/3] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-miguel-de-1-dormitorios-1-banios-30m2-area-353-usd-de-inmobiliaria-galls-bienes-raices-174143
+2026-11-09 07:26:22,081 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-miguel-de-1-dormitorios-1-banios-30m2-area-353-usd-de-inmobiliaria-galls-bienes-raices-174143: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:26:22,093 [INFO] [3/3] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-42m2-area-263-usd-de-chaparro-correa-maria-carmela-172028
+2026-11-09 07:26:23,123 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-42m2-area-263-usd-de-chaparro-correa-maria-carmela-172028: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:26:24,097 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:26:25,990 [INFO] [PROPERATI] Buscando alquileres de: casa
+2026-11-09 07:26:25,994 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/casa/alquiler
+2026-11-09 07:26:30,494 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:26:30,495 [INFO] [PROPERATI] Buscando alquileres de: departamento
+2026-11-09 07:26:30,495 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/departamento/alquiler
+2026-11-09 07:26:33,828 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:26:33,856 [INFO] [PROPERATI] Buscando alquileres de: habitacion
+2026-11-09 07:26:33,857 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/habitacion/alquiler
+2026-11-09 07:26:38,429 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:26:38,429 [INFO]     [*] Sin resultados en https://www.properati.com.pe/s/lima/habitacion/alquiler. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:26:38,429 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/alquiler?q=cuarto
+2026-11-09 07:26:41,637 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:26:41,639 [INFO] 
+[PROPERATI] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 07:26:41,640 [INFO] [1/3] Extrayendo (properati - casa): https://www.properati.com.pe/detalle/14032-32-eceb-a83391df1b2a-199de8f-9343-77ed
+2026-11-09 07:26:43,742 [ERROR]   -> Error aislando anuncio https://www.properati.com.pe/detalle/14032-32-eceb-a83391df1b2a-199de8f-9343-77ed: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:26:43,743 [INFO] [2/3] Extrayendo (properati - departamento): https://www.properati.com.pe/detalle/14032-32-66b4-bfac2bd23f7e-19a3159-b2f1-753f
+2026-11-09 07:26:45,433 [ERROR]   -> Error aislando anuncio https://www.properati.com.pe/detalle/14032-32-66b4-bfac2bd23f7e-19a3159-b2f1-753f: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:26:45,433 [INFO] [3/3] Extrayendo (properati - habitacion): https://www.properati.com.pe/detalle/14032-32-f169-98aa4d3d7254-19a312f-a364-75bc
+2026-11-09 07:26:46,871 [ERROR]   -> Error aislando anuncio https://www.properati.com.pe/detalle/14032-32-f169-98aa4d3d7254-19a312f-a364-75bc: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:26:47,774 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:26:49,604 [INFO] [LAENCONTRE] Buscando alquileres de: casa
+2026-11-09 07:26:49,605 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list
+2026-11-09 07:26:58,473 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:26:58,473 [INFO] [LAENCONTRE] Buscando alquileres de: departamento
+2026-11-09 07:26:58,473 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list
+2026-11-09 07:27:05,975 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:27:05,975 [INFO] [LAENCONTRE] Buscando alquileres de: habitacion
+2026-11-09 07:27:05,975 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list
+2026-11-09 07:27:12,876 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:27:12,877 [INFO] 
+[LAENCONTRE] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 07:27:12,877 [INFO] [1/3] Extrayendo (laencontre - casa): https://www.laencontre.com.pe/inmueble/ed51-93a9-199def5-a83391df1b90-7853
+2026-11-09 07:27:14,504 [ERROR]   -> Error aislando anuncio https://www.laencontre.com.pe/inmueble/ed51-93a9-199def5-a83391df1b90-7853: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:27:14,505 [INFO] [2/3] Extrayendo (laencontre - departamento): https://www.laencontre.com.pe/inmueble/671a-b357-19a31bf-bfac2bd23fe4-75a5
+2026-11-09 07:27:16,172 [ERROR]   -> Error aislando anuncio https://www.laencontre.com.pe/inmueble/671a-b357-19a31bf-bfac2bd23fe4-75a5: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:27:16,176 [INFO] [3/3] Extrayendo (laencontre - habitacion): https://www.laencontre.com.pe/inmueble/36a6-b234-1a0ca75-b3a9bb8cfa63-744a
+2026-11-09 07:27:17,549 [ERROR]   -> Error aislando anuncio https://www.laencontre.com.pe/inmueble/36a6-b234-1a0ca75-b3a9bb8cfa63-744a: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:27:18,376 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:27:20,318 [INFO] [REMAX] Buscando alquileres de: casa
+2026-11-09 07:27:20,323 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-09 07:27:20,323 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-09 07:27:20,572 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 07:27:25,043 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:27:25,050 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:27:25,051 [INFO] [REMAX] Buscando alquileres de: departamento
+2026-11-09 07:27:25,052 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-09 07:27:25,053 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-09 07:27:25,343 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 07:27:29,641 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:27:29,651 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:27:29,651 [INFO] [REMAX] Buscando alquileres de: habitacion
+2026-11-09 07:27:29,652 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-09 07:27:29,652 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-09 07:27:29,793 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 07:27:33,989 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:27:33,990 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:27:33,990 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima
+2026-11-09 07:27:33,991 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima
+2026-11-09 07:27:36,148 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 07:27:40,362 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:27:40,363 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:27:40,363 [INFO] 
+[REMAX] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-09 07:27:41,290 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:27:43,082 [INFO] [CENTURY21] Buscando alquileres de: casa
+2026-11-09 07:27:43,100 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-09 07:27:46,634 [INFO]     -> +6 enlaces en esta página | Total acumulados: 6
+2026-11-09 07:27:46,634 [INFO] [CENTURY21] Buscando alquileres de: departamento
+2026-11-09 07:27:46,635 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-09 07:27:50,240 [INFO]     -> +100 enlaces en esta página | Total acumulados: 100
+2026-11-09 07:27:50,240 [INFO] [CENTURY21] Buscando alquileres de: habitacion
+2026-11-09 07:27:50,240 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-09 07:27:54,848 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:27:54,849 [INFO]     [*] Sin resultados en https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:27:54,849 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima/recamaras_1
+2026-11-09 07:27:57,530 [INFO]     -> +31 enlaces en esta página | Total acumulados: 31
+2026-11-09 07:27:57,531 [INFO] 
+[CENTURY21] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 07:27:57,532 [INFO] [1/3] Extrayendo (century21 - casa): https://century21.pe/propiedad/47399_alquilo-casa-en-chacarilla
+2026-11-09 07:27:58,554 [ERROR]   -> Error aislando anuncio https://century21.pe/propiedad/47399_alquilo-casa-en-chacarilla: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:27:58,554 [INFO] [2/3] Extrayendo (century21 - departamento): https://century21.pe/propiedad/47777_alquilo-departamento-de-estreno-pueblo-libre-piso-22-02-dormitorios
+2026-11-09 07:27:59,888 [ERROR]   -> Error aislando anuncio https://century21.pe/propiedad/47777_alquilo-departamento-de-estreno-pueblo-libre-piso-22-02-dormitorios: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:27:59,888 [INFO] [3/3] Extrayendo (century21 - habitacion): https://century21.pe/propiedad/47711_alquilo-departamento-san-miguel
+2026-11-09 07:28:01,329 [ERROR]   -> Error aislando anuncio https://century21.pe/propiedad/47711_alquilo-departamento-san-miguel: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:28:02,373 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:28:04,142 [INFO] [URBANIA] Buscando alquileres de: casa
+2026-11-09 07:28:04,144 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-09 07:28:04,146 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-09 07:28:05,706 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:28:05,706 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-casas-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:28:05,707 [INFO] [URBANIA] Buscando alquileres de: departamento
+2026-11-09 07:28:05,707 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-09 07:28:05,707 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-09 07:28:06,874 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:28:06,874 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-departamentos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:28:06,874 [INFO] [URBANIA] Buscando alquileres de: habitacion
+2026-11-09 07:28:06,875 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-09 07:28:06,875 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-09 07:28:07,884 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:28:07,885 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:28:07,885 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-cuartos-en-lima
+2026-11-09 07:28:07,885 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-cuartos-en-lima
+2026-11-09 07:28:09,327 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:28:09,327 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-cuartos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:28:09,328 [INFO] 
+[URBANIA] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-09 07:28:10,276 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:28:12,480 [INFO] [ADONDEVIVIR] Buscando alquileres de: casa
+2026-11-09 07:28:12,494 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-09 07:28:12,494 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-09 07:28:14,154 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:28:14,155 [INFO] [ADONDEVIVIR] Buscando alquileres de: departamento
+2026-11-09 07:28:14,155 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-09 07:28:14,155 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-09 07:28:15,179 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:28:15,179 [INFO] [ADONDEVIVIR] Buscando alquileres de: habitacion
+2026-11-09 07:28:15,179 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-09 07:28:15,180 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-09 07:28:16,324 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:28:16,325 [INFO] 
+[ADONDEVIVIR] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 07:28:16,326 [INFO] [1/3] Extrayendo (adondevivir - casa): https://www.adondevivir.com/propiedades/clasificado/alclcain-alquilo-casa-de-2-pisos-para-empresas-alonso-de-151479092.html
+2026-11-09 07:28:16,326 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/clasificado/alclcain-alquilo-casa-de-2-pisos-para-empresas-alonso-de-151479092.html
+2026-11-09 07:28:17,086 [ERROR]   -> Error aislando anuncio https://www.adondevivir.com/propiedades/clasificado/alclcain-alquilo-casa-de-2-pisos-para-empresas-alonso-de-151479092.html: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:28:17,086 [INFO] [2/3] Extrayendo (adondevivir - departamento): https://www.adondevivir.com/propiedades/proyecto/ememefin-departamento-en-alquiler-en-miraflores-nomad-ricardo-142583101.html
+2026-11-09 07:28:17,087 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/proyecto/ememefin-departamento-en-alquiler-en-miraflores-nomad-ricardo-142583101.html
+2026-11-09 07:28:17,944 [ERROR]   -> Error aislando anuncio https://www.adondevivir.com/propiedades/proyecto/ememefin-departamento-en-alquiler-en-miraflores-nomad-ricardo-142583101.html: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:28:17,945 [INFO] [3/3] Extrayendo (adondevivir - habitacion): https://www.adondevivir.com/propiedades/proyecto/ememvein-view-park-151123161.html
+2026-11-09 07:28:17,945 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/proyecto/ememvein-view-park-151123161.html
+2026-11-09 07:28:19,251 [ERROR]   -> Error aislando anuncio https://www.adondevivir.com/propiedades/proyecto/ememvein-view-park-151123161.html: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:07,061 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-09 07:30:07,064 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:30:17,724 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-09 07:30:17,725 [INFO] [+] [https://babilonia.pe] Página 1/999: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-09 07:30:26,277 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-09 07:30:26,364 [INFO] [+] [https://babilonia.pe] Página 2/999: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima?page=2
+2026-11-09 07:30:30,797 [INFO]     -> +0 enlaces en esta página | Total acumulados: 18
+2026-11-09 07:30:30,797 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-09 07:30:30,797 [INFO] [+] [https://babilonia.pe] Página 1/999: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-09 07:30:31,952 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-09 07:30:32,033 [INFO] [+] [https://babilonia.pe] Página 2/999: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima?page=2
+2026-11-09 07:30:36,377 [INFO]     -> +0 enlaces en esta página | Total acumulados: 18
+2026-11-09 07:30:36,377 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-09 07:30:36,377 [INFO] [+] [https://babilonia.pe] Página 1/999: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-09 07:30:37,133 [INFO]     -> +11 enlaces en esta página | Total acumulados: 11
+2026-11-09 07:30:37,238 [INFO] [+] [https://babilonia.pe] Página 2/999: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima?page=2
+2026-11-09 07:30:41,648 [INFO]     -> +0 enlaces en esta página | Total acumulados: 11
+2026-11-09 07:30:41,650 [INFO] 
+[BABILONIA] Enlaces totales: 47 | Ya en Base Maestra: 0 | Pendientes por raspar: 47
+2026-11-09 07:30:41,650 [INFO] [1/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-callahuanca-de-5-dormitorios-6-banios-1000m2-area-575-usd-de-citify-inmobiliaria-154213
+2026-11-09 07:30:42,734 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-callahuanca-de-5-dormitorios-6-banios-1000m2-area-575-usd-de-citify-inmobiliaria-154213: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:42,734 [INFO] [2/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-5-dormitorios-4-banios-1200m2-area-3000-usd-de--my-property--162167
+2026-11-09 07:30:43,388 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-5-dormitorios-4-banios-1200m2-area-3000-usd-de--my-property--162167: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:43,388 [INFO] [3/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-san-borja-de-10-dormitorios-4-banios-418m2-area-3500-usd-de-ziom-grupo-inmobiliario-sac-166901
+2026-11-09 07:30:44,006 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-san-borja-de-10-dormitorios-4-banios-418m2-area-3500-usd-de-ziom-grupo-inmobiliario-sac-166901: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:44,007 [INFO] [4/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-chorrillos-de-3-dormitorios-3-banios-200m2-area-2200-usd-de-mier-y-teran-asociados-agentes-inmobiliarios-164712
+2026-11-09 07:30:44,673 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-chorrillos-de-3-dormitorios-3-banios-200m2-area-2200-usd-de-mier-y-teran-asociados-agentes-inmobiliarios-164712: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:44,674 [INFO] [5/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-4-dormitorios-3-banios-311m2-area-3000-usd-de-inmuebles-y-punto-175608
+2026-11-09 07:30:45,282 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-4-dormitorios-3-banios-311m2-area-3000-usd-de-inmuebles-y-punto-175608: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:45,282 [INFO] [6/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-4-dormitorios-3-banios-340m2-area-2800-usd-de-lucy-de-rosas-176988
+2026-11-09 07:30:45,969 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-4-dormitorios-3-banios-340m2-area-2800-usd-de-lucy-de-rosas-176988: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:45,970 [INFO] [7/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-4-dormitorios-4-banios-1200m2-area-8900-usd-de-aicardi-propiedades-171668
+2026-11-09 07:30:46,553 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-4-dormitorios-4-banios-1200m2-area-8900-usd-de-aicardi-propiedades-171668: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:46,553 [INFO] [8/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-santiago-de-surco-de-6-dormitorios-4-banios-300m2-area-2290-usd-de-rosario-rojas-bienes-raices-167835
+2026-11-09 07:30:47,287 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-santiago-de-surco-de-6-dormitorios-4-banios-300m2-area-2290-usd-de-rosario-rojas-bienes-raices-167835: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:47,288 [INFO] [9/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-santiago-de-surco-de-3-dormitorios-5-banios-2500m2-area-6500-usd-de-mier-y-teran-asociados-agentes-inmobiliarios-163939
+2026-11-09 07:30:47,983 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-santiago-de-surco-de-3-dormitorios-5-banios-2500m2-area-6500-usd-de-mier-y-teran-asociados-agentes-inmobiliarios-163939: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:47,983 [INFO] [10/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-san-isidro-de-3-dormitorios-4-banios-640m2-area-6000-usd-de-adela-yanez-agente-156461
+2026-11-09 07:30:48,710 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-san-isidro-de-3-dormitorios-4-banios-640m2-area-6000-usd-de-adela-yanez-agente-156461: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:48,711 [INFO] [11/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-san-borja-de-10-dormitorios-4-banios-418m2-area-3500-usd-de-ziom-grupo-inmobiliario-sac-176138
+2026-11-09 07:30:49,395 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-san-borja-de-10-dormitorios-4-banios-418m2-area-3500-usd-de-ziom-grupo-inmobiliario-sac-176138: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:49,395 [INFO] [12/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-san-isidro-de-3-dormitorios-2-banios-376m2-area-3500-usd-de-lucy-de-rosas-166392
+2026-11-09 07:30:50,033 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-san-isidro-de-3-dormitorios-2-banios-376m2-area-3500-usd-de-lucy-de-rosas-166392: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:50,034 [INFO] [13/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-magdalena-del-mar-de-10-dormitorios-4-banios-385m2-area-3264-usd-de-juan-limo-173514
+2026-11-09 07:30:50,681 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-magdalena-del-mar-de-10-dormitorios-4-banios-385m2-area-3264-usd-de-juan-limo-173514: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:50,681 [INFO] [14/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-3-dormitorios-2-banios-1000m2-area-3800-usd-de-las-casas-inmobiliaria-158356
+2026-11-09 07:30:51,479 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-la-molina-de-3-dormitorios-2-banios-1000m2-area-3800-usd-de-las-casas-inmobiliaria-158356: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:51,480 [INFO] [15/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-asia-de-3-dormitorios-3-banios-200m2-area-3500-usd-de-harmonize-asesoria-inmobiliaria-177241
+2026-11-09 07:30:52,268 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-asia-de-3-dormitorios-3-banios-200m2-area-3500-usd-de-harmonize-asesoria-inmobiliaria-177241: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:52,268 [INFO] [16/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-san-isidro-de-4-dormitorios-3-banios-600m2-area-7000-usd-de-crecer-inmobiliaria-141110
+2026-11-09 07:30:53,288 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-san-isidro-de-4-dormitorios-3-banios-600m2-area-7000-usd-de-crecer-inmobiliaria-141110: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:53,289 [INFO] [17/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-santiago-de-surco-de-6-dormitorios-4-banios-250m2-area-2290-usd-de-rosario-rojas-bienes-raices-108570
+2026-11-09 07:30:54,048 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-santiago-de-surco-de-6-dormitorios-4-banios-250m2-area-2290-usd-de-rosario-rojas-bienes-raices-108570: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:54,048 [INFO] [18/47] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-chorrillos-de-6-dormitorios-7-banios-1000m2-area-5000-usd-de-estela-romero-160033
+2026-11-09 07:30:54,777 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-chorrillos-de-6-dormitorios-7-banios-1000m2-area-5000-usd-de-estela-romero-160033: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:54,777 [INFO] [19/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-miguel-de-1-dormitorios-1-banios-30m2-area-353-usd-de-inmobiliaria-galls-bienes-raices-174143
+2026-11-09 07:30:55,363 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-miguel-de-1-dormitorios-1-banios-30m2-area-353-usd-de-inmobiliaria-galls-bienes-raices-174143: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:55,364 [INFO] [20/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-rimac-de-2-dormitorios-1-banios-51m2-area-422-usd-de-remax-black-158152
+2026-11-09 07:30:56,363 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-rimac-de-2-dormitorios-1-banios-51m2-area-422-usd-de-remax-black-158152: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:56,363 [INFO] [21/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-3-dormitorios-2-banios-165m2-area-2700-usd-de-zegarra-ortiz-maria-teresa-sofia-177235
+2026-11-09 07:30:56,982 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-3-dormitorios-2-banios-165m2-area-2700-usd-de-zegarra-ortiz-maria-teresa-sofia-177235: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:56,983 [INFO] [22/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-bartolo-de-3-dormitorios-3-banios-145m2-area-5750-usd-de-Katherine-Cahuata-118401
+2026-11-09 07:30:57,628 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-bartolo-de-3-dormitorios-3-banios-145m2-area-5750-usd-de-Katherine-Cahuata-118401: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:57,629 [INFO] [23/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-1-dormitorios-1-banios-54m2-area-728-usd-de-remax-family-166840
+2026-11-09 07:30:58,640 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-1-dormitorios-1-banios-54m2-area-728-usd-de-remax-family-166840: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:58,640 [INFO] [24/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-2-dormitorios-2-banios-130m2-area-1600-usd-de-miramar-inmobiliaria-166290
+2026-11-09 07:30:59,383 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-2-dormitorios-2-banios-130m2-area-1600-usd-de-miramar-inmobiliaria-166290: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:30:59,384 [INFO] [25/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-isidro-de-1-dormitorios-1-banios-50m2-area-1200-usd-de-spacio-grupo-inmobiliario-sac-174918
+2026-11-09 07:31:00,003 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-isidro-de-1-dormitorios-1-banios-50m2-area-1200-usd-de-spacio-grupo-inmobiliario-sac-174918: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:00,014 [INFO] [26/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-2-dormitorios-2-banios-65m2-area-932-usd-de-remax-centenario-175620
+2026-11-09 07:31:01,038 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-2-dormitorios-2-banios-65m2-area-932-usd-de-remax-centenario-175620: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:01,038 [INFO] [27/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-3-dormitorios-3-banios-180m2-area-2400-usd-de-velazco-castro-tomas-marcos-jesus-161427
+2026-11-09 07:31:01,674 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-3-dormitorios-3-banios-180m2-area-2400-usd-de-velazco-castro-tomas-marcos-jesus-161427: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:01,675 [INFO] [28/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-jesus-maria-de-3-dormitorios-2-banios-87m2-area-760-usd-de-servicios-empresariales-de-alto-valor-imoy-group-sac-174807
+2026-11-09 07:31:02,308 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-jesus-maria-de-3-dormitorios-2-banios-87m2-area-760-usd-de-servicios-empresariales-de-alto-valor-imoy-group-sac-174807: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:02,309 [INFO] [29/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-surquillo-de-2-dormitorios-2-banios-51m2-area-705-usd-de-medida-inmobiliaria-174733
+2026-11-09 07:31:02,950 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-surquillo-de-2-dormitorios-2-banios-51m2-area-705-usd-de-medida-inmobiliaria-174733: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:02,950 [INFO] [30/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-isidro-de-2-dormitorios-3-banios-160m2-area-3900-usd-de-peru-luxury-properties-168138
+2026-11-09 07:31:03,715 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-isidro-de-2-dormitorios-3-banios-160m2-area-3900-usd-de-peru-luxury-properties-168138: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:03,715 [INFO] [31/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-la-victoria-de-1-dormitorios-1-banios-46m2-area-507-usd-de-connection-inmobiliaria-boutique-165833
+2026-11-09 07:31:04,387 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-la-victoria-de-1-dormitorios-1-banios-46m2-area-507-usd-de-connection-inmobiliaria-boutique-165833: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:04,387 [INFO] [32/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-lince-de-2-dormitorios-2-banios-60m2-area-883-usd-de-Golden-I-131929
+2026-11-09 07:31:04,944 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-lince-de-2-dormitorios-2-banios-60m2-area-883-usd-de-Golden-I-131929: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:04,945 [INFO] [33/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-1-dormitorios-1-banios-61m2-area-1000-usd-de-trizia-inmobiliaria-128813
+2026-11-09 07:31:05,504 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-1-dormitorios-1-banios-61m2-area-1000-usd-de-trizia-inmobiliaria-128813: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:05,504 [INFO] [34/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-santiago-de-surco-de-3-dormitorios-3-banios-173m2-area-1891-usd-de-katherine-cahuata-174978
+2026-11-09 07:31:06,121 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-santiago-de-surco-de-3-dormitorios-3-banios-173m2-area-1891-usd-de-katherine-cahuata-174978: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:06,122 [INFO] [35/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-surquillo-de-2-dormitorios-2-banios-43m2-area-890-usd-de-grupo-osterling-168111
+2026-11-09 07:31:06,731 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-surquillo-de-2-dormitorios-2-banios-43m2-area-890-usd-de-grupo-osterling-168111: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:06,731 [INFO] [36/47] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-38m2-area-645-usd-de-inmuebles-y-punto-167989
+2026-11-09 07:31:07,417 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-miraflores-de-38m2-area-645-usd-de-inmuebles-y-punto-167989: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:07,417 [INFO] [37/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-42m2-area-263-usd-de-chaparro-correa-maria-carmela-172028
+2026-11-09 07:31:08,042 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-42m2-area-263-usd-de-chaparro-correa-maria-carmela-172028: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:08,042 [INFO] [38/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-santiago-de-surco-de-1-dormitorios-1-banios-12m2-area-225-usd-de-doramerlovende-67549
+2026-11-09 07:31:08,810 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-santiago-de-surco-de-1-dormitorios-1-banios-12m2-area-225-usd-de-doramerlovende-67549: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:08,811 [INFO] [39/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-san-miguel-de-1-dormitorios-1-banios-20m2-area-255-usd-de-gina-moore-154498
+2026-11-09 07:31:09,498 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-san-miguel-de-1-dormitorios-1-banios-20m2-area-255-usd-de-gina-moore-154498: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:09,498 [INFO] [40/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-san-borja-de-1-dormitorios-1-banios-25m2-area-410-usd-de-breimar-eirl-158381
+2026-11-09 07:31:10,058 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-san-borja-de-1-dormitorios-1-banios-25m2-area-410-usd-de-breimar-eirl-158381: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:10,060 [INFO] [41/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-17m2-area-192-usd-de-gina-moore-149020
+2026-11-09 07:31:10,715 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-17m2-area-192-usd-de-gina-moore-149020: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:10,715 [INFO] [42/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-cercado-de-lima-de-1-dormitorios-1-banios-15m2-area-190-usd-de-servicios-inmobiliarios-lima-173572
+2026-11-09 07:31:11,374 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-cercado-de-lima-de-1-dormitorios-1-banios-15m2-area-190-usd-de-servicios-inmobiliarios-lima-173572: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:11,374 [INFO] [43/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-18m2-area-200-usd-de-Gina-Moore-148211
+2026-11-09 07:31:12,027 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-18m2-area-200-usd-de-Gina-Moore-148211: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:12,028 [INFO] [44/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-18m2-area-192-usd-de-gina-moore-149013
+2026-11-09 07:31:12,657 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-18m2-area-192-usd-de-gina-moore-149013: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:12,657 [INFO] [45/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-san-borja-de-1-banios-15m2-area--usd-de-chavez-mendoza-estrella-gabriela-158373
+2026-11-09 07:31:13,333 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-san-borja-de-1-banios-15m2-area--usd-de-chavez-mendoza-estrella-gabriela-158373: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:13,333 [INFO] [46/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-lurin-de-1-dormitorios-1-banios-20m2-area-147-usd-de-trizia-inmobiliaria-154699
+2026-11-09 07:31:14,182 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-lurin-de-1-dormitorios-1-banios-20m2-area-147-usd-de-trizia-inmobiliaria-154699: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:31:14,182 [INFO] [47/47] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-miraflores-de-1-banios-20m2-area--usd-de-nassi-guerra-de-conroy-daniela-madeleine-martina-162246
+2026-11-09 07:31:14,845 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-miraflores-de-1-banios-20m2-area--usd-de-nassi-guerra-de-conroy-daniela-madeleine-martina-162246: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:43:25,986 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-09 07:43:25,990 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:43:28,678 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-09 07:43:28,698 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-09 07:43:30,880 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-09 07:43:30,880 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-09 07:43:30,880 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-09 07:43:32,407 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-09 07:43:32,408 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-09 07:43:32,408 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-09 07:43:33,592 [INFO]     -> +11 enlaces en esta página | Total acumulados: 11
+2026-11-09 07:43:33,594 [INFO] 
+[BABILONIA] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 07:43:33,595 [INFO] [1/3] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-callahuanca-de-5-dormitorios-6-banios-1000m2-area-575-usd-de-citify-inmobiliaria-154213
+2026-11-09 07:43:34,794 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/casa-en-alquiler-en-callahuanca-de-5-dormitorios-6-banios-1000m2-area-575-usd-de-citify-inmobiliaria-154213: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:43:34,794 [INFO] [2/3] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-miguel-de-1-dormitorios-1-banios-30m2-area-353-usd-de-inmobiliaria-galls-bienes-raices-174143
+2026-11-09 07:43:35,606 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-miguel-de-1-dormitorios-1-banios-30m2-area-353-usd-de-inmobiliaria-galls-bienes-raices-174143: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:43:35,607 [INFO] [3/3] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-42m2-area-263-usd-de-chaparro-correa-maria-carmela-172028
+2026-11-09 07:43:37,364 [ERROR]   -> Error aislando anuncio https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-42m2-area-263-usd-de-chaparro-correa-maria-carmela-172028: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:43:38,254 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:43:40,062 [INFO] [PROPERATI] Buscando alquileres de: casa
+2026-11-09 07:43:40,095 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/casa/alquiler
+2026-11-09 07:43:43,711 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:43:43,711 [INFO] [PROPERATI] Buscando alquileres de: departamento
+2026-11-09 07:43:43,712 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/departamento/alquiler
+2026-11-09 07:43:46,432 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:43:46,433 [INFO] [PROPERATI] Buscando alquileres de: habitacion
+2026-11-09 07:43:46,433 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/habitacion/alquiler
+2026-11-09 07:43:50,979 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:43:50,979 [INFO]     [*] Sin resultados en https://www.properati.com.pe/s/lima/habitacion/alquiler. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:43:50,980 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/alquiler?q=cuarto
+2026-11-09 07:43:53,482 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:43:53,486 [INFO] 
+[PROPERATI] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 07:43:53,488 [INFO] [1/3] Extrayendo (properati - casa): https://www.properati.com.pe/detalle/14032-32-eceb-a83391df1b2a-199de8f-9343-77ed
+2026-11-09 07:43:54,925 [ERROR]   -> Error aislando anuncio https://www.properati.com.pe/detalle/14032-32-eceb-a83391df1b2a-199de8f-9343-77ed: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:43:54,926 [INFO] [2/3] Extrayendo (properati - departamento): https://www.properati.com.pe/detalle/14032-32-66b4-bfac2bd23f7e-19a3159-b2f1-753f
+2026-11-09 07:43:56,240 [ERROR]   -> Error aislando anuncio https://www.properati.com.pe/detalle/14032-32-66b4-bfac2bd23f7e-19a3159-b2f1-753f: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:43:56,241 [INFO] [3/3] Extrayendo (properati - habitacion): https://www.properati.com.pe/detalle/14032-32-f169-98aa4d3d7254-19a312f-a364-75bc
+2026-11-09 07:43:57,667 [ERROR]   -> Error aislando anuncio https://www.properati.com.pe/detalle/14032-32-f169-98aa4d3d7254-19a312f-a364-75bc: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:43:58,402 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:44:00,330 [INFO] [LAENCONTRE] Buscando alquileres de: casa
+2026-11-09 07:44:00,339 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list
+2026-11-09 07:44:09,087 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:44:09,087 [INFO] [LAENCONTRE] Buscando alquileres de: departamento
+2026-11-09 07:44:09,087 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list
+2026-11-09 07:44:16,160 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:44:16,160 [INFO] [LAENCONTRE] Buscando alquileres de: habitacion
+2026-11-09 07:44:16,160 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list
+2026-11-09 07:44:22,720 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:44:22,721 [INFO] 
+[LAENCONTRE] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 07:44:22,721 [INFO] [1/3] Extrayendo (laencontre - casa): https://www.laencontre.com.pe/inmueble/ed51-93a9-199def5-a83391df1b90-7853
+2026-11-09 07:44:24,367 [ERROR]   -> Error aislando anuncio https://www.laencontre.com.pe/inmueble/ed51-93a9-199def5-a83391df1b90-7853: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:44:24,367 [INFO] [2/3] Extrayendo (laencontre - departamento): https://www.laencontre.com.pe/inmueble/671a-b357-19a31bf-bfac2bd23fe4-75a5
+2026-11-09 07:44:26,147 [ERROR]   -> Error aislando anuncio https://www.laencontre.com.pe/inmueble/671a-b357-19a31bf-bfac2bd23fe4-75a5: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:44:26,147 [INFO] [3/3] Extrayendo (laencontre - habitacion): https://www.laencontre.com.pe/inmueble/36a6-b234-1a0ca75-b3a9bb8cfa63-744a
+2026-11-09 07:44:27,818 [ERROR]   -> Error aislando anuncio https://www.laencontre.com.pe/inmueble/36a6-b234-1a0ca75-b3a9bb8cfa63-744a: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:44:28,864 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:44:30,666 [INFO] [REMAX] Buscando alquileres de: casa
+2026-11-09 07:44:30,669 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-09 07:44:30,670 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-09 07:44:30,857 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 07:44:35,248 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:44:35,248 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:44:35,249 [INFO] [REMAX] Buscando alquileres de: departamento
+2026-11-09 07:44:35,249 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-09 07:44:35,249 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-09 07:44:35,362 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 07:44:39,564 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:44:39,565 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:44:39,565 [INFO] [REMAX] Buscando alquileres de: habitacion
+2026-11-09 07:44:39,565 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-09 07:44:39,566 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-09 07:44:39,677 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 07:44:43,924 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:44:43,925 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:44:43,925 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima
+2026-11-09 07:44:43,926 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima
+2026-11-09 07:44:44,193 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 07:44:48,416 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:44:48,416 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:44:48,416 [INFO] 
+[REMAX] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-09 07:44:49,336 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:44:51,490 [INFO] [CENTURY21] Buscando alquileres de: casa
+2026-11-09 07:44:51,502 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-09 07:44:54,936 [INFO]     -> +6 enlaces en esta página | Total acumulados: 6
+2026-11-09 07:44:54,936 [INFO] [CENTURY21] Buscando alquileres de: departamento
+2026-11-09 07:44:54,937 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-09 07:44:58,764 [INFO]     -> +100 enlaces en esta página | Total acumulados: 100
+2026-11-09 07:44:58,765 [INFO] [CENTURY21] Buscando alquileres de: habitacion
+2026-11-09 07:44:58,765 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-09 07:45:03,398 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:45:03,399 [INFO]     [*] Sin resultados en https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:45:03,399 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima/recamaras_1
+2026-11-09 07:45:06,258 [INFO]     -> +31 enlaces en esta página | Total acumulados: 31
+2026-11-09 07:45:06,259 [INFO] 
+[CENTURY21] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 07:45:06,259 [INFO] [1/3] Extrayendo (century21 - casa): https://century21.pe/propiedad/47399_alquilo-casa-en-chacarilla
+2026-11-09 07:45:07,259 [ERROR]   -> Error aislando anuncio https://century21.pe/propiedad/47399_alquilo-casa-en-chacarilla: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:45:07,259 [INFO] [2/3] Extrayendo (century21 - departamento): https://century21.pe/propiedad/47777_alquilo-departamento-de-estreno-pueblo-libre-piso-22-02-dormitorios
+2026-11-09 07:45:08,368 [ERROR]   -> Error aislando anuncio https://century21.pe/propiedad/47777_alquilo-departamento-de-estreno-pueblo-libre-piso-22-02-dormitorios: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:45:08,368 [INFO] [3/3] Extrayendo (century21 - habitacion): https://century21.pe/propiedad/47711_alquilo-departamento-san-miguel
+2026-11-09 07:45:09,289 [ERROR]   -> Error aislando anuncio https://century21.pe/propiedad/47711_alquilo-departamento-san-miguel: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:45:10,106 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:45:11,868 [INFO] [URBANIA] Buscando alquileres de: casa
+2026-11-09 07:45:11,879 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-09 07:45:11,880 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-09 07:45:13,125 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:45:13,126 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-casas-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:45:13,126 [INFO] [URBANIA] Buscando alquileres de: departamento
+2026-11-09 07:45:13,126 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-09 07:45:13,126 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-09 07:45:14,209 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:45:14,210 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-departamentos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:45:14,210 [INFO] [URBANIA] Buscando alquileres de: habitacion
+2026-11-09 07:45:14,210 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-09 07:45:14,210 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-09 07:45:15,258 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:45:15,258 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:45:15,258 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-cuartos-en-lima
+2026-11-09 07:45:15,259 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-cuartos-en-lima
+2026-11-09 07:45:16,540 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 07:45:16,540 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-cuartos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 07:45:16,540 [INFO] 
+[URBANIA] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-09 07:45:17,292 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 07:45:19,165 [INFO] [ADONDEVIVIR] Buscando alquileres de: casa
+2026-11-09 07:45:19,166 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-09 07:45:19,169 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-09 07:45:20,278 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:45:20,278 [INFO] [ADONDEVIVIR] Buscando alquileres de: departamento
+2026-11-09 07:45:20,278 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-09 07:45:20,279 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-09 07:45:21,245 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:45:21,248 [INFO] [ADONDEVIVIR] Buscando alquileres de: habitacion
+2026-11-09 07:45:21,254 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-09 07:45:21,259 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-09 07:45:22,459 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 07:45:22,461 [INFO] 
+[ADONDEVIVIR] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 07:45:22,461 [INFO] [1/3] Extrayendo (adondevivir - casa): https://www.adondevivir.com/propiedades/clasificado/alclcain-alquiler-de-casa-en-la-molina-condominio-tipo-151522726.html
+2026-11-09 07:45:22,462 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/clasificado/alclcain-alquiler-de-casa-en-la-molina-condominio-tipo-151522726.html
+2026-11-09 07:45:23,771 [ERROR]   -> Error aislando anuncio https://www.adondevivir.com/propiedades/clasificado/alclcain-alquiler-de-casa-en-la-molina-condominio-tipo-151522726.html: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:45:23,772 [INFO] [2/3] Extrayendo (adondevivir - departamento): https://www.adondevivir.com/propiedades/proyecto/ememefin-alquiler-de-departamentos-en-san-isidro-nomad-living-91214947.html
+2026-11-09 07:45:23,772 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/proyecto/ememefin-alquiler-de-departamentos-en-san-isidro-nomad-living-91214947.html
+2026-11-09 07:45:24,772 [ERROR]   -> Error aislando anuncio https://www.adondevivir.com/propiedades/proyecto/ememefin-alquiler-de-departamentos-en-san-isidro-nomad-living-91214947.html: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 07:45:24,772 [INFO] [3/3] Extrayendo (adondevivir - habitacion): https://www.adondevivir.com/propiedades/proyecto/ememvein-view-park-151123161.html
+2026-11-09 07:45:24,772 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/proyecto/ememvein-view-park-151123161.html
+2026-11-09 07:45:25,804 [ERROR]   -> Error aislando anuncio https://www.adondevivir.com/propiedades/proyecto/ememvein-view-park-151123161.html: name 'extraer_texto_robusto_pw' is not defined
+2026-11-09 08:28:24,926 [INFO] [+] Tipo de Cambio BCRP obtenido: S/ 3.452
+2026-11-09 08:28:24,929 [INFO] [+] Estado Histórico Silver cargado: 0 inmuebles únicos ya registrados.
+2026-11-09 08:28:34,698 [INFO] [BABILONIA] Buscando alquileres de: casa
+2026-11-09 08:28:34,709 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima
+2026-11-09 08:28:36,827 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-09 08:28:36,827 [INFO] [BABILONIA] Buscando alquileres de: departamento
+2026-11-09 08:28:36,827 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima
+2026-11-09 08:28:38,346 [INFO]     -> +18 enlaces en esta página | Total acumulados: 18
+2026-11-09 08:28:38,347 [INFO] [BABILONIA] Buscando alquileres de: habitacion
+2026-11-09 08:28:38,348 [INFO] [+] [https://babilonia.pe] Página 1/1: https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima
+2026-11-09 08:28:39,516 [INFO]     -> +11 enlaces en esta página | Total acumulados: 11
+2026-11-09 08:28:39,543 [INFO] 
+[BABILONIA] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 08:28:39,674 [INFO] [1/3] Extrayendo (babilonia - casa): https://babilonia.pe/inmueble/casa-en-alquiler-en-callahuanca-de-5-dormitorios-6-banios-1000m2-area-575-usd-de-citify-inmobiliaria-154213
+2026-11-09 08:28:42,173 [INFO] [2/3] Extrayendo (babilonia - departamento): https://babilonia.pe/inmueble/departamento-en-alquiler-en-san-miguel-de-1-dormitorios-1-banios-30m2-area-353-usd-de-inmobiliaria-galls-bienes-raices-174143
+2026-11-09 08:28:43,313 [INFO] [3/3] Extrayendo (babilonia - habitacion): https://babilonia.pe/inmueble/habitación-en-alquiler-en-pueblo-libre-de-1-dormitorios-1-banios-42m2-area-263-usd-de-chaparro-correa-maria-carmela-172028
+2026-11-09 08:28:44,783 [INFO]   [✓] Guardado incremental Silver (babilonia): +3 anuncios | Total Base Maestra: 3
+2026-11-09 08:28:45,984 [INFO] [+] Estado Histórico Silver cargado: 3 inmuebles únicos ya registrados.
+2026-11-09 08:28:48,278 [INFO] [PROPERATI] Buscando alquileres de: casa
+2026-11-09 08:28:48,284 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/casa/alquiler
+2026-11-09 08:28:51,977 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 08:28:52,037 [INFO] [PROPERATI] Buscando alquileres de: departamento
+2026-11-09 08:28:52,038 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/departamento/alquiler
+2026-11-09 08:28:54,559 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 08:28:54,560 [INFO] [PROPERATI] Buscando alquileres de: habitacion
+2026-11-09 08:28:54,561 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/habitacion/alquiler
+2026-11-09 08:28:59,182 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 08:28:59,182 [INFO]     [*] Sin resultados en https://www.properati.com.pe/s/lima/habitacion/alquiler. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 08:28:59,182 [INFO] [+] [https://www.properati.com.pe] Página 1/1: https://www.properati.com.pe/s/lima/alquiler?q=cuarto
+2026-11-09 08:29:01,592 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 08:29:01,601 [INFO] 
+[PROPERATI] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 08:29:01,601 [INFO] [1/3] Extrayendo (properati - casa): https://www.properati.com.pe/detalle/14032-32-eceb-a83391df1b2a-199de8f-9343-77ed
+2026-11-09 08:29:03,580 [INFO] [2/3] Extrayendo (properati - departamento): https://www.properati.com.pe/detalle/14032-32-66b4-bfac2bd23f7e-19a3159-b2f1-753f
+2026-11-09 08:29:05,428 [INFO] [3/3] Extrayendo (properati - habitacion): https://www.properati.com.pe/detalle/14032-32-f169-98aa4d3d7254-19a312f-a364-75bc
+2026-11-09 08:29:06,999 [INFO]   [✓] Guardado incremental Silver (properati): +3 anuncios | Total Base Maestra: 6
+2026-11-09 08:29:07,943 [INFO] [+] Estado Histórico Silver cargado: 6 inmuebles únicos ya registrados.
+2026-11-09 08:29:09,870 [INFO] [LAENCONTRE] Buscando alquileres de: casa
+2026-11-09 08:29:09,874 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list
+2026-11-09 08:29:18,860 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 08:29:18,860 [INFO] [LAENCONTRE] Buscando alquileres de: departamento
+2026-11-09 08:29:18,860 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list
+2026-11-09 08:29:26,404 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 08:29:26,404 [INFO] [LAENCONTRE] Buscando alquileres de: habitacion
+2026-11-09 08:29:26,404 [INFO] [+] [https://www.laencontre.com.pe] Página 1/1: https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list
+2026-11-09 08:29:33,632 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 08:29:33,633 [INFO] 
+[LAENCONTRE] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 08:29:33,633 [INFO] [1/3] Extrayendo (laencontre - casa): https://www.laencontre.com.pe/inmueble/ed51-93a9-199def5-a83391df1b90-7853
+2026-11-09 08:29:35,689 [INFO] [2/3] Extrayendo (laencontre - departamento): https://www.laencontre.com.pe/inmueble/671a-b357-19a31bf-bfac2bd23fe4-75a5
+2026-11-09 08:29:38,592 [INFO] [3/3] Extrayendo (laencontre - habitacion): https://www.laencontre.com.pe/inmueble/36a6-b234-1a0ca75-b3a9bb8cfa63-744a
+2026-11-09 08:29:40,822 [INFO]   [✓] Guardado incremental Silver (laencontre): +3 anuncios | Total Base Maestra: 9
+2026-11-09 08:29:41,889 [INFO] [+] Estado Histórico Silver cargado: 9 inmuebles únicos ya registrados.
+2026-11-09 08:29:43,834 [INFO] [REMAX] Buscando alquileres de: casa
+2026-11-09 08:29:43,855 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-09 08:29:43,857 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima
+2026-11-09 08:29:44,221 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 08:29:48,675 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 08:29:48,677 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 08:29:48,678 [INFO] [REMAX] Buscando alquileres de: departamento
+2026-11-09 08:29:48,678 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-09 08:29:48,678 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima
+2026-11-09 08:29:48,820 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 08:29:53,163 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 08:29:53,163 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 08:29:53,164 [INFO] [REMAX] Buscando alquileres de: habitacion
+2026-11-09 08:29:53,164 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-09 08:29:53,164 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima
+2026-11-09 08:29:53,385 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 08:29:57,848 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 08:29:57,864 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 08:29:57,880 [INFO] [+] [https://www.remax.pe] Página 1/1: https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima
+2026-11-09 08:29:57,881 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima
+2026-11-09 08:29:58,429 [WARNING] [!] curl_cffi obtuvo estado HTTP 403. Reintentando con Playwright...
+2026-11-09 08:30:02,713 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 08:30:02,713 [INFO]     [*] Sin resultados en https://www.remax.pe/web/search/property?type=alquiler&q=cuarto&department=lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 08:30:02,713 [INFO] 
+[REMAX] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-09 08:30:03,817 [INFO] [+] Estado Histórico Silver cargado: 9 inmuebles únicos ya registrados.
+2026-11-09 08:30:05,700 [INFO] [CENTURY21] Buscando alquileres de: casa
+2026-11-09 08:30:05,701 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-09 08:30:10,269 [INFO]     -> +6 enlaces en esta página | Total acumulados: 6
+2026-11-09 08:30:10,269 [INFO] [CENTURY21] Buscando alquileres de: departamento
+2026-11-09 08:30:10,269 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-09 08:30:16,032 [INFO]     -> +100 enlaces en esta página | Total acumulados: 100
+2026-11-09 08:30:16,032 [INFO] [CENTURY21] Buscando alquileres de: habitacion
+2026-11-09 08:30:16,032 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima
+2026-11-09 08:30:20,606 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 08:30:20,607 [INFO]     [*] Sin resultados en https://century21.pe/v/resultados/tipo_habitacion/operacion_renta/en-pais_peru/en-estado_lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 08:30:20,607 [INFO] [+] [https://century21.pe] Página 1/1: https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima/recamaras_1
+2026-11-09 08:30:24,186 [INFO]     -> +31 enlaces en esta página | Total acumulados: 31
+2026-11-09 08:30:24,187 [INFO] 
+[CENTURY21] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 08:30:24,187 [INFO] [1/3] Extrayendo (century21 - casa): https://century21.pe/propiedad/47399_alquilo-casa-en-chacarilla
+2026-11-09 08:30:25,799 [INFO] [2/3] Extrayendo (century21 - departamento): https://century21.pe/propiedad/47777_alquilo-departamento-de-estreno-pueblo-libre-piso-22-02-dormitorios
+2026-11-09 08:30:27,515 [INFO] [3/3] Extrayendo (century21 - habitacion): https://century21.pe/propiedad/47711_alquilo-departamento-san-miguel
+2026-11-09 08:30:29,303 [INFO]   [✓] Guardado incremental Silver (century21): +3 anuncios | Total Base Maestra: 12
+2026-11-09 08:30:30,113 [INFO] [+] Estado Histórico Silver cargado: 12 inmuebles únicos ya registrados.
+2026-11-09 08:30:32,213 [INFO] [URBANIA] Buscando alquileres de: casa
+2026-11-09 08:30:32,234 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-09 08:30:32,235 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-casas-en-lima
+2026-11-09 08:30:33,691 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 08:30:33,692 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-casas-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 08:30:33,692 [INFO] [URBANIA] Buscando alquileres de: departamento
+2026-11-09 08:30:33,692 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-09 08:30:33,692 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-departamentos-en-lima
+2026-11-09 08:30:34,858 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 08:30:34,858 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-departamentos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 08:30:34,859 [INFO] [URBANIA] Buscando alquileres de: habitacion
+2026-11-09 08:30:34,859 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-09 08:30:34,859 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima
+2026-11-09 08:30:36,256 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 08:30:36,256 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 08:30:36,256 [INFO] [+] [https://urbania.pe] Página 1/1: https://urbania.pe/buscar/alquiler-de-cuartos-en-lima
+2026-11-09 08:30:36,256 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://urbania.pe/buscar/alquiler-de-cuartos-en-lima
+2026-11-09 08:30:37,696 [INFO]     -> +0 enlaces en esta página | Total acumulados: 0
+2026-11-09 08:30:37,696 [INFO]     [*] Sin resultados en https://urbania.pe/buscar/alquiler-de-cuartos-en-lima. Probando búsqueda alternativa (cuartos/general)...
+2026-11-09 08:30:37,697 [INFO] 
+[URBANIA] Enlaces totales: 0 | Ya en Base Maestra: 0 | Pendientes por raspar: 0
+2026-11-09 08:30:38,488 [INFO] [+] Estado Histórico Silver cargado: 12 inmuebles únicos ya registrados.
+2026-11-09 08:30:40,432 [INFO] [ADONDEVIVIR] Buscando alquileres de: casa
+2026-11-09 08:30:40,449 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-09 08:30:40,449 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/casas-en-alquiler-en-lima.html
+2026-11-09 08:30:41,564 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 08:30:41,564 [INFO] [ADONDEVIVIR] Buscando alquileres de: departamento
+2026-11-09 08:30:41,565 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-09 08:30:41,565 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html
+2026-11-09 08:30:42,731 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 08:30:42,731 [INFO] [ADONDEVIVIR] Buscando alquileres de: habitacion
+2026-11-09 08:30:42,732 [INFO] [+] [https://www.adondevivir.com] Página 1/1: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-09 08:30:42,732 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html
+2026-11-09 08:30:43,922 [INFO]     -> +30 enlaces en esta página | Total acumulados: 30
+2026-11-09 08:30:43,923 [INFO] 
+[ADONDEVIVIR] Enlaces totales: 3 | Ya en Base Maestra: 0 | Pendientes por raspar: 3
+2026-11-09 08:30:43,923 [INFO] [1/3] Extrayendo (adondevivir - casa): https://www.adondevivir.com/propiedades/clasificado/alclcain-alquilo-casa-en-cieneguilla-146857335.html
+2026-11-09 08:30:43,924 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/clasificado/alclcain-alquilo-casa-en-cieneguilla-146857335.html
+2026-11-09 08:30:45,101 [INFO] [2/3] Extrayendo (adondevivir - departamento): https://www.adondevivir.com/propiedades/proyecto/ememvein-marsano-2669-148792588.html
+2026-11-09 08:30:45,101 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/proyecto/ememvein-marsano-2669-148792588.html
+2026-11-09 08:30:46,976 [INFO] [3/3] Extrayendo (adondevivir - habitacion): https://www.adondevivir.com/propiedades/proyecto/ememvein-view-park-151123161.html
+2026-11-09 08:30:46,976 [INFO] [*] Usando Bypass TLS (curl_cffi) para portal protegido: https://www.adondevivir.com/propiedades/proyecto/ememvein-view-park-151123161.html
+2026-11-09 08:30:48,762 [INFO]   [✓] Guardado incremental Silver (adondevivir): +3 anuncios | Total Base Maestra: 15

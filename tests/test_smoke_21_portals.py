@@ -5,8 +5,8 @@ import pandas as pd
 
 from config.settings import PERFILES_PORTALES, BASE_DIR
 from src.scraping.bcrp_client import obtener_tc_bcrp
-from src.scraping.parsers import recolectar_enlaces_portal as recolectar_original
 import src.scraping.storage as storage_module
+from src.scraping.parsers import BaseParser, NaventParser, RemaxParser
 
 from importlib import import_module
 orquestador = import_module("pipelines.01_run_portals_scraper")
@@ -16,15 +16,23 @@ TEST_INTERIM_DIR = BASE_DIR / "data" / "interim" / "test_env"
 
 URLS_ELEGIDAS_EN_TEST = set()
 
+# Guardamos los métodos originales en memoria
+orig_base = BaseParser.recolectar_enlaces
+orig_navent = NaventParser.recolectar_enlaces
+orig_remax = RemaxParser.recolectar_enlaces
 
-def recolectar_solo_1_por_tipo(engine, perfil_portal: dict, url_semilla: str, max_paginas: int) -> list:
-    """Ejecuta el recolector real en la página 1 y devuelve el primer enlace no repetido."""
-    enlaces = recolectar_original(engine, perfil_portal, url_semilla, max_paginas=1)
-    for enlace in enlaces:
-        if enlace not in URLS_ELEGIDAS_EN_TEST:
-            URLS_ELEGIDAS_EN_TEST.add(enlace)
-            return [enlace]
-    return enlaces[:1]
+def _mock_recolector(orig_func, self, engine, url_semilla, perfil):
+    """Ejecuta el método original y devuelve estrictamente 1 enlace no repetido."""
+    enlaces = orig_func(self, engine, url_semilla, perfil)
+    for e in enlaces:
+        if e not in URLS_ELEGIDAS_EN_TEST:
+            URLS_ELEGIDAS_EN_TEST.add(e)
+            return [e]
+    return enlaces[:1] if enlaces else []
+
+def mock_base_recolectar(self, engine, url_semilla, perfil): return _mock_recolector(orig_base, self, engine, url_semilla, perfil)
+def mock_navent_recolectar(self, engine, url_semilla, perfil): return _mock_recolector(orig_navent, self, engine, url_semilla, perfil)
+def mock_remax_recolectar(self, engine, url_semilla, perfil): return _mock_recolector(orig_remax, self, engine, url_semilla, perfil)
 
 
 class TestSmoke21Portals(unittest.TestCase):
@@ -47,21 +55,22 @@ class TestSmoke21Portals(unittest.TestCase):
 
     @patch.object(storage_module, "RAW_DIR", TEST_RAW_DIR)
     @patch.object(storage_module, "INTERIM_DIR", TEST_INTERIM_DIR)
-    @patch.object(orquestador, "recolectar_enlaces_portal", side_effect=recolectar_solo_1_por_tipo)
-    def test_extraer_21_anuncios_multiportal(self, mock_recolector):
+    @patch.object(BaseParser, "recolectar_enlaces", new=mock_base_recolectar)
+    @patch.object(NaventParser, "recolectar_enlaces", new=mock_navent_recolectar)
+    @patch.object(RemaxParser, "recolectar_enlaces", new=mock_remax_recolectar)
+    def test_extraer_21_anuncios_multiportal(self):
         """
         Prueba 01_run_portals_scraper.py limitando desde el test a 1 anuncio
         por categoría (casa, departamento, habitación) en los 7 portales (21 en total).
         """
         portales = list(PERFILES_PORTALES.keys())
-        print(f"\n[*] Iniciando Smoke Test en entorno aislado para {len(portales)} portales...")
+        print(f"\n[*] Iniciando Smoke Test Modular en entorno aislado para {len(portales)} portales...")
 
         for portal in portales:
             print(f"\n---> Probando portal: {portal.upper()} (1 por categoría)")
+            # La nueva firma de la función procesar_portal ya no requiere headless ni max_paginas
             orquestador.procesar_portal(
                 nombre_portal=portal,
-                max_paginas=1,
-                headless=False,
                 tc_bcrp=self.tc_bcrp
             )
 
