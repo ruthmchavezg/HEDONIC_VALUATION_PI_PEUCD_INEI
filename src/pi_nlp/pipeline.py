@@ -19,6 +19,7 @@ from .adaptadores import ADAPTADORES
 from .anonimizar import anonimizar
 from .calidad import banderas, fuga_precio, reporte_cobertura
 from .config import settings
+from .costos import extraer_mantenimiento
 from .dedup import marcar_duplicados
 from .extraccion import extraer_campos
 from .geografia import clasificar_distrito
@@ -45,6 +46,15 @@ def _num_o_none(v):
     except (TypeError, ValueError):
         return None
     return x if x == x else None
+
+
+def _anio_captura(valor, por_defecto: int = 2026) -> int:
+    """Año de la fecha de captura ('2026-11-08', '2026-11-10T06:14:04'); por_defecto si no se puede leer."""
+    try:
+        anio = int(str(valor)[:4])
+        return anio if 2000 <= anio <= 2100 else por_defecto
+    except (TypeError, ValueError):
+        return por_defecto
 
 
 def _procesar_fila(r: pd.Series, cfg_cal: dict, cfg_ext: dict) -> dict:
@@ -135,6 +145,26 @@ def _procesar_fila(r: pd.Series, cfg_cal: dict, cfg_ext: dict) -> dict:
             cfg_ext,
         )
     )
+    # Mantenimiento mensual (campo estructurado del portal o texto libre) y si viene incluido en el precio
+    fila.update(
+        extraer_mantenimiento(
+            [titulo, caract, descr],
+            r.get("mantenimiento_texto"),
+        )
+    )
+
+    # Año de construcción: el explícito del anuncio; si no, año de captura menos antigüedad
+    antig = fila.get("antiguedad_anios")
+    if fila.get("anio_construccion_texto"):
+        fila["anio_construccion"] = fila["anio_construccion_texto"]
+        fila["anio_construccion_fuente"] = "texto"
+    elif antig is not None and antig == antig:
+        fila["anio_construccion"] = _anio_captura(fila["fecha_captura"]) - int(antig)
+        fila["anio_construccion_fuente"] = "antiguedad"
+    else:
+        fila["anio_construccion"] = None
+        fila["anio_construccion_fuente"] = None
+
     # Homologación del tipo de inmueble informado por la fuente.
     tipo_fuente = normalizar(limpiar_texto(r.get("tipo_inmueble_fuente")))
 
@@ -332,6 +362,12 @@ def ejecutar(
         "piso_departamento",
         "pisos_edificio",
         "antiguedad_anios",
+        "anio_construccion",
+        "banos_propios",
+        "banos_compartidos",
+        "banos_visita",
+        "mantenimiento_pen",
+        "mantenimiento_usd",
         "descripcion_anon",
         "latitud",
         "longitud",

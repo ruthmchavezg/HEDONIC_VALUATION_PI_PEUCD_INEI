@@ -57,6 +57,15 @@ def _negado(
         "incluida",
         "incluidos",
         "incluidas",
+        "permitido",
+        "permitida",
+        "permitidos",
+        "permitidas",
+        "aceptan",
+        "aceptadas",
+        "aceptados",
+        "permiten",
+        "admiten",
     }
 
     for i, token in enumerate(posteriores):
@@ -70,40 +79,88 @@ def _negado(
 
 
 
+# "Permite mascotas: No"  ->  "sin permite mascotas"  (campos tipo etiqueta de los portales)
+RE_ETIQUETA_NO = re.compile(
+    r"([a-z0-9][a-z0-9 /\-]{2,40}?)\s*:\s*(?:no|n/a|ninguno|ninguna)\s*(?=[|,;.\n]|$)"
+)
+
+
+def _igual(token: str, termino: str) -> bool:
+    """Igualdad de palabras tolerando plural simple (terraza/terrazas, ascensor/ascensores)."""
+    if token == termino:
+        return True
+    if len(termino) < 4:
+        return False
+    return token in (termino + "s", termino + "es") or termino in (token + "s", token + "es")
+
+
+def _longitud_coincidencia(tokens: list[str], inicio: int, patron: list[str]) -> int | None:
+    """Palabras del texto que consume `patron` desde `inicio`, o None. "*" admite 0 a 2 palabras."""
+
+    def rec(pi: int, ti: int) -> int | None:
+        if pi == len(patron):
+            return ti - inicio
+        if patron[pi] == "*":
+            for k in range(3):
+                if ti + k <= len(tokens):
+                    r = rec(pi + 1, ti + k)
+                    if r is not None:
+                        return r
+            return None
+        if ti < len(tokens) and _igual(tokens[ti], patron[pi]):
+            return rec(pi + 1, ti + 1)
+        return None
+
+    return rec(0, inicio)
+
+
+def _tokens_termino(term: str) -> list[str]:
+    return re.findall(r"[a-z0-9*]+", normalizar(term).replace("*", " * "))
+
+
 def extraer_atributos(texto: str | None) -> dict[str, int]:
     """Devuelve {'attr_<nombre>': 0/1} para todos los atributos."""
 
     lex = lexicon()
     negadores = set(lex["negadores"])
     ventana = lex["ventana_negacion"]
+    exclusiones = lex.get("exclusiones") or {}
+
+    t_norm = RE_ETIQUETA_NO.sub(r"sin \1 ", normalizar(texto))
 
     clausulas = [
         re.findall(r"[a-z0-9]+", c)
-        for c in re.split(r"[,.;:|()\n]", normalizar(texto))
+        for c in re.split(r"[,.;:|()\n]", t_norm)
     ]
     clausulas = [c for c in clausulas if c]
 
     out: dict[str, int] = {}
 
     for nombre, terminos in lex["atributos"].items():
+        patrones = [p for p in (_tokens_termino(x) for x in terminos) if p and p[0] != "*" and p[-1] != "*"]
+        excl = [p for p in (_tokens_termino(x) for x in exclusiones.get(nombre, [])) if p]
         afirmado = False
 
-        for term in terminos:
-            term_tokens = re.findall(r"[a-z0-9]+", normalizar(term))
+        for tokens in clausulas:
+            # tramos del texto que anulan una coincidencia (ej. "jardin de infancia")
+            tramos_excl = []
+            for pe in excl:
+                for i in range(len(tokens)):
+                    n = _longitud_coincidencia(tokens, i, pe)
+                    if n:
+                        tramos_excl.append((i, i + n))
 
-            if not term_tokens:
-                continue
+            for patron in patrones:
+                for i in range(len(tokens)):
+                    n = _longitud_coincidencia(tokens, i, patron)
 
-            n = len(term_tokens)
-
-            for tokens in clausulas:
-                for i in range(len(tokens) - n + 1):
-                    if tokens[i:i + n] != term_tokens:
+                    if not n:
                         continue
 
-                    if not _negado(
-                        tokens, i, n, negadores, ventana
-                    ):
+                    if any(a <= i and i + n <= b or i < b and a < i + n for a, b in tramos_excl):
+                        continue
+
+                    if not _negado(tokens, i, n, negadores, ventana):
                         afirmado = True
                         break
 

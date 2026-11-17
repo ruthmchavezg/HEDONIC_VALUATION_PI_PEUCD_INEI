@@ -18,6 +18,7 @@ Decisiones documentadas:
 """
 from __future__ import annotations
 
+import numpy as np
 import pandas as pd
 
 from .calidad import banderas
@@ -137,7 +138,13 @@ def cargar_silver(ruta, anio_actual: int = ANIO_ACTUAL) -> pd.DataFrame:
     out["distrito"] = distrito
     out["ambito"] = ambito
     out["dormitorios"] = _num(c["dormitorios_num"])
-    out["banos"] = _num(c["banos_num"])
+    banos_num = _num(c["banos_num"])
+    out["banos"] = banos_num
+    # El silver guarda los medios baños como decimales (1.5 = 1 baño + 1 medio baño)
+    entero = np.floor(banos_num)
+    out["banos_propios"] = entero.where(banos_num.notna())
+    out["banos_visita"] = ((banos_num - entero).round(2) == 0.5).astype(float).where(banos_num.notna())
+    out["banos_compartidos"] = None
     out["estacionamientos"] = _num(c["estacionamientos_num"])
     out["area_total_m2"] = areas["area_total_m2"]
     out["area_construida_m2"] = areas["area_construida_m2"]
@@ -146,11 +153,13 @@ def cargar_silver(ruta, anio_actual: int = ANIO_ACTUAL) -> pd.DataFrame:
     out["tipo_inmueble_homologado"] = tipo
     es_dpto = tipo.eq("departamento")
     out["piso_departamento"] = _num(c["piso_inmueble"]).where(es_dpto)
-    out["pisos_edificio"] = _num(c["pisos_edificio"]).where(es_dpto)
+    out["pisos_edificio"] = _num(c["pisos_edificio"])
     anio = _num(c["anio_construccion"])
+    out["anio_construccion"] = anio.where(anio.between(1900, 2027))
     antig = (anio_actual - anio).clip(lower=0)
     estreno = _num(c["de_estreno"]).eq(1)
     out["antiguedad_anios"] = antig.mask(estreno & antig.isna(), 0)
+    out["anio_construccion"] = out["anio_construccion"].fillna(anio_actual - out["antiguedad_anios"])
     out["latitud"], out["longitud"] = lat, lon
     out["precision_coord"] = precision_coordenadas(c["latitud"], c["longitud"], c["direccion"])
     out["tipo_inmueble_detalle"] = c["tipo_inmueble_homologado"]
@@ -163,6 +172,17 @@ def cargar_silver(ruta, anio_actual: int = ANIO_ACTUAL) -> pd.DataFrame:
         out[f"attr_{nombre}"] = (_num(c[col]).fillna(0) > 0).astype(int)
     for col in ATRIBUTOS_EXTRA:
         out[f"attr_{col}"] = (_num(c[col]).fillna(0) > 0).astype(int)
+
+    # Seguridad = vigilancia 24 h, alarma, etc.: se une la alarma al atributo seguridad
+    out["attr_seguridad"] = ((out["attr_seguridad"] > 0) | (out["attr_alarma"] > 0)).astype(int)
+
+    # Servicios basicos (dummy): 1 si el alquiler los incluye (monto informado = 0); si el anuncio
+    # informa un monto aparte (> 0) o no dice nada, 0. El monto se conserva en servicios_basicos_pen.
+    sbp = _num(c["servicios_basicos_pen"])
+    out["attr_servicios_basicos"] = sbp.eq(0).astype(int)
+    out["mantenimiento_incluido"] = (
+        _num(c["mantenimiento_pen"]).eq(0) | _num(c["mantenimiento_usd"]).eq(0)
+    )
 
     # --- banderas de calidad con la misma funcion que los portales
     filas_flags = []

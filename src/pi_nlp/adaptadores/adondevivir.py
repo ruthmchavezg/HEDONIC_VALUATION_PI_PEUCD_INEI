@@ -126,4 +126,7 @@ class AdaptadorAdondeVivir(Adaptador):
         # Tipo de inmueble informado por el portal (Departamento / Casa / Habitación)
         resultado["tipo_inmueble_fuente"] = crudo.get("tipo_inmueble")
 
+        # Mantenimiento: Adondevivir lo publica en su propia columna ("S/ 80")
+        resultado["mantenimiento_texto"] = crudo.get("mantenimiento")
+
         return resultado

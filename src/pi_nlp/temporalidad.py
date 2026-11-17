@@ -57,6 +57,9 @@ PATRON_TEMPORAL = re.compile(
     r"alquiler\s+(?:de\s+)?temporada"
     r"|alquiler\s+exclusivo\s+de\s+temporada"
     r"|alquilo\s+por\s+temporada"
+    r"|alquiler\s+por\s+temporada"
+    r"|\bpor\s+temporada\b"
+    r"|temporada\s+de\s+(?:verano|playa)"
     r"|precio\s+por\s+toda\s+la\s+temporada"
     r"|alquiler\s+por\s+toda\s+la\s+temporada"
     r"|alquiler\s+por\s+dias"
@@ -93,6 +96,9 @@ def clasificar_temporalidad(
     4. Una modalidad temporal explicita se clasifica como temporal.
     5. Si no hay evidencia de temporalidad, se asume alquiler mensual.
     6. Si no existe texto, se clasifica como indeterminado.
+
+    `ofrece_temporal` indica que el anuncio, ademas de su tarifa mensual, menciona una modalidad
+    temporal (alquiler "mensual y por temporada"): en la base final es ec_tipo_alquiler = "temporal/mensual".
     """
 
     partes = [
@@ -107,6 +113,7 @@ def clasificar_temporalidad(
         return {
             "tipo_alquiler": "indeterminado",
             "motivo_temporalidad": "sin_texto",
+            "ofrece_temporal": False,
         }
 
     texto = _normalizar(texto_original)
@@ -128,6 +135,7 @@ def clasificar_temporalidad(
         return {
             "tipo_alquiler": "mensual",
             "motivo_temporalidad": "tarifa_mensual_identificada",
+            "ofrece_temporal": evidencia_temporal,
         }
 
     # Una oferta anual y temporal sin tarifa identificable requiere revision.
@@ -135,6 +143,7 @@ def clasificar_temporalidad(
         return {
             "tipo_alquiler": "indeterminado",
             "motivo_temporalidad": "oferta_anual_y_temporal_sin_tarifa_mensual",
+            "ofrece_temporal": True,
         }
 
     # Una oferta anual sin evidencia temporal se conserva.
@@ -142,6 +151,7 @@ def clasificar_temporalidad(
         return {
             "tipo_alquiler": "mensual",
             "motivo_temporalidad": "oferta_anual",
+            "ofrece_temporal": False,
         }
 
     # Se clasifica como temporal cuando existe evidencia explicita.
@@ -149,10 +159,12 @@ def clasificar_temporalidad(
         return {
             "tipo_alquiler": "temporal",
             "motivo_temporalidad": "modalidad_temporal_explicita",
+            "ofrece_temporal": True,
         }
 
     # Criterio por defecto: se asume alquiler mensual.
     return {
         "tipo_alquiler": "mensual",
         "motivo_temporalidad": "mensual_por_defecto",
+        "ofrece_temporal": False,
     }

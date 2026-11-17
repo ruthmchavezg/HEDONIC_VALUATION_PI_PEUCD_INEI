@@ -20,8 +20,8 @@ Pasos:
 Uso (desde la raiz del repositorio, con el parche de pi_nlp ya copiado):
     python scripts/construir_base_final.py
 """
-from __future__ import annotations
 
+from __future__ import annotations
 import json
 import math
 import re
@@ -29,7 +29,6 @@ import sys
 import unicodedata
 import warnings
 from pathlib import Path
-
 import numpy as np
 import pandas as pd
 

@@ -1,0 +1,73 @@
+# Amplia config/lexicon.yaml SIN reemplazarlo: los terminos de aqui se SUMAN a los que ya tengas
+# (si el atributo ya existe en lexicon.yaml) o crean el atributo (si no existe).
+#
+# Reglas de escritura (el texto se compara en minusculas y sin tildes):
+#   * una frase son varias palabras seguidas: "vista al mar"
+#   * "*" dentro de una frase admite 0, 1 o 2 palabras cualquiera: "vista * mar" cubre
+#     "vista mar", "vista al mar", "vista panoramica al mar"
+#   * plurales simples (s / es) se reconocen solos: "terraza" tambien detecta "terrazas"
+#   * negaciones (sin, no, carece...) anulan el atributo: "sin ascensor", "mascotas: no"
+#   * "exclusiones": frases que anulan una coincidencia aunque contengan el termino
+negadores: [carece, carecen, falta, ausencia]
+
+atributos:
+  amoblado: [amoblado, amueblado, full amoblado, full amueblado, totalmente amoblado, totalmente amueblado,
+             completamente amoblado, completamente amueblado, incluye mobiliario, mobiliario completo,
+             furnished, fully furnished]
+  # Parcialmente amoblado: NO cuenta como amoblado (ver exclusiones); se guarda aparte
+  semi_amoblado: [semi amoblado, semi amueblado, semiamoblado, semiamueblado, medio amoblado,
+                  parcialmente amoblado, parcialmente amueblado, semi equipado y amoblado]
+  linea_blanca: [linea blanca, refrigeradora, refrigerador, nevera, microondas, electrodomesticos,
+                 cocina equipada, lavasecadora, lavadora secadora, cocina con electrodomesticos]
+  agua_caliente: [agua caliente, terma, terma electrica, terma a gas, termotanque, calentador de agua,
+                  calentador a gas, calentador electrico, calefon, therma, fuente de agua caliente]
+  walk_in_closet: [walk in closet, walkin closet, walking closet, walking in closet, walk closet,
+                   closet vestidor, closet tipo vestidor, vestidor]
+  ascensor: [ascensor, elevador, ascensor privado]
+  piscina: [piscina, alberca, piscina temperada, piscina climatizada, piscina privada, swimming pool]
+  gimnasio: [gimnasio, gym, sala de ejercicios, sala de fitness, zona fitness, area fitness, fitness center,
+             sala de pesas, area de ejercicios, zona de ejercicios]
+  lavanderia: [lavanderia, area de lavanderia, zona de lavanderia, area de lavado, zona de lavado,
+               cuarto de lavado, patio de lavado, cuarto de lavanderia, laundry]
+  seguridad: [seguridad, vigilancia, vigilante, guardiania, personal de seguridad, guardia de seguridad,
+              sistema de seguridad, seguridad privada, seguridad 24, vigilancia 24, camaras de seguridad,
+              camaras de vigilancia, video vigilancia, videovigilancia, cctv, circuito cerrado, garita,
+              conserje, porteria, portero, portero electrico, control de acceso, control de accesos,
+              cerco electrico, condominio cerrado, alarma de seguridad, alarmas de seguridad,
+              sistema de alarma de seguridad, alarma monitoreada, alarma contra robo]
+  mascotas: [mascota, pet friendly, petfriendly, pets friendly, pet-friendly, acepta mascotas,
+             se aceptan mascotas, admite mascotas, se admiten mascotas, permite mascotas,
+             se permiten mascotas, mascotas permitidas, mascotas bienvenidas]
+  vista_mar: [vista al mar, vista mar, vista * mar, vista * oceano, vista al pacifico, vista a la playa,
+              vista * playa, frente al mar, frente al oceano, primera fila de playa, primera linea de playa,
+              ocean view, sea view]
+  coworking: [coworking, co working, cowork, co work, espacio de coworking, sala de coworking,
+              zona de coworking, area de coworking, espacio de trabajo compartido, area de trabajo compartido,
+              zona de trabajo compartido, business center, centro de negocios]
+  zona_parrilla: [parrilla, zona de parrilla, area de parrilla, area de parrillas, zona de parrillas, zona bbq,
+                  area bbq, bbq, barbacoa, barbecue, parrillero, asador, churrasquera, zona de asador]
+  jardin: [jardin, jardin privado, jardin propio, jardin interior, jardin exclusivo, jardin comun,
+           patio jardin, garden, area de jardin]
+  terraza: [terraza, terraza privada, terraza techada, terraza amplia, terraza exclusiva, terraza comun,
+            terrace, rooftop, roof top, azotea]
+  # Servicios basicos INCLUIDOS en el alquiler (ec_servicios_basicos). La casilla "Servicios basicos (agua/luz)"
+  # de los portales NO va aqui: solo dice que el inmueble tiene conexion, no que esten incluidos en la renta.
+  servicios_basicos: [servicios basicos incluidos, servicios incluidos, servicio incluido,
+                      incluye servicios basicos, incluye los servicios basicos, incluidos los servicios,
+                      incluye servicios de agua, incluye servicios de luz, incluye agua y luz, incluye luz y agua,
+                      incluye agua luz, agua y luz incluido, luz y agua incluido, agua luz incluido,
+                      agua luz e internet incluido, agua luz y internet incluido, internet agua y luz incluido,
+                      servicios de agua y luz incluido, todo incluido, precio incluye servicios,
+                      renta incluye servicios, alquiler incluye servicios]
+  # El inmueble cuenta con conexion de servicios basicos (casilla del portal); no implica que esten incluidos
+  servicios_basicos_disponibles: [servicios basicos, cuenta con servicios basicos, con servicios basicos,
+                                  servicios de agua y luz]
+  # adicionales (existian solo en redes sociales; ahora tambien en portales)
+  vista_ciudad: [vista a la ciudad, vista ciudad, vista panoramica, vista * ciudad]
+  internet: [internet, wifi, wi fi, fibra optica]
+
+exclusiones:
+  amoblado: [semi amoblado, semi amueblado, semiamoblado, semiamueblado, medio amoblado, parcialmente amoblado,
+             parcialmente amueblado, amoblado opcional, opcion a amoblado, sin amoblar]
+  jardin: [jardin de infancia, jardin de ninos, jardin infantil, jardin de infantes, jardin nido, jardin inicial]
+  seguridad: [seguridad social]
