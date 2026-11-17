@@ -5,15 +5,16 @@ Cada conteo (dormitorios, baños, estacionamientos) se busca por prioridad de fu
 título > características > descripción. Se registra la fuente usada y si otra fuente
 discrepa (conflicto), para contrastar el texto con los campos del portal.
 
-Los pisos se separan en tres variables:
-- n_pisos: niveles de la vivienda.
-- piso_departamento: ubicación del departamento dentro del edificio.
-- pisos_edificio: número total de pisos del edificio.
+Los pisos (pisos.py) se separan en dos variables:
+- piso_departamento: piso donde está el departamento o la habitación (casa = 0).
+- cant_pisos: pisos totales de la casa o del edificio que contiene el departamento/habitación.
 """
 from __future__ import annotations
 
 import re
 
+from .banos import extraer_banos
+from .pisos import extraer_pisos
 from .texto import normalizar, parse_numero
 
 
@@ -29,8 +30,9 @@ PATRONES_CONTEO = {
     "dormitorios": re.compile(
         rf"\b{_NUM}\s*(?:dormitorios?|dorms?\b\.?|habitaciones|habitacion|hab\b\.?)"
     ),
+    # "2.5 baños" cuenta 2 (el medio baño va aparte); sin el lookbehind se leia "5 baños"
     "banos": re.compile(
-        rf"\b{_NUM}\s*(?:banos?|bano\s+completo)"
+        rf"(?<![\d.,])\b{_NUM}(?:[.,]5)?\s*(?:banos?|bano\s+completo)"
     ),
     "estacionamientos": re.compile(
         rf"\b{_NUM}\s*(?:estacionamientos?|cocheras?|garajes?|estac\b\.?)"
@@ -63,58 +65,6 @@ RE_AREA_TOTAL = re.compile(
 
 RE_AREA_TITULO = re.compile(_AREA)
 
-# Patrones para pisos
-# Viviendas: se utilizan principalmente características estructuradas.
-RE_PISOS_VIVIENDA = re.compile(
-    r"(?:numero de pisos|niveles construidos|pisos del edificio|pisos de la casa|numero de niveles)\s*:\s*(\d{1,2})",
-    re.IGNORECASE
-)
-
-# "casa de 3 pisos", "de dos niveles", "2 plantas" (solo se usa para casas)
-RE_PISOS_TEXTO = re.compile(rf"\b{_NUM}\s*(?:pisos|niveles|plantas)\b(?!\s+(?:de\s+)?altura)")
-
-# Departamentos: piso específico donde se encuentra la unidad.
-
-RE_PISO_DEPTO = re.compile(
-    r"piso en el que se encuentra\s*:\s*(\d{1,2})"
-    r"|piso de la unidad\s*:\s*(\d{1,2})"
-    r"|(?:piso|en el piso)\s*(\d{1,2})\b"
-    r"|(\d{1,2})\s*(?:to|ro|er|do|mo|vo|no|ero|mo)\.?\s*piso\b"
-    r"|(\d{1,2})\s*[°º?]?\s*piso\b"
-    r"|\b(primer|primero|segundo|tercer|tercero|cuarto|quinto|"
-    r"sexto|septimo|octavo|noveno|decimo)\s+piso\b",
-    re.IGNORECASE
-)
-
-
-# Número total de pisos del edificio.
-RE_PISOS_EDIFICIO = re.compile(
-    r"edificio\s+(?:cuenta\s+con|de|con)\s*(\d{1,2})\s+pisos\b"
-    r"|pisos del edificio\s*:\s*(\d{1,2})"
-    r"|(?:edificio|torre)\s+de\s+(\d{1,2})\s+(?:pisos|niveles)\b"
-    r"|(\d{1,2})\s+pisos\s+(?:en\s+)?(?:el\s+)?edificio\b",
-    re.IGNORECASE
-)
-
-# "Numero de pisos: N" en un departamento es ambiguo: casi siempre son los niveles de la unidad (1 = flat,
-# 2 = duplex) y no los del edificio. Solo se acepta como pisos del edificio si N >= 3 y no es menor al piso
-# donde esta la unidad.
-RE_NUM_PISOS_AMBIGUO = re.compile(r"numero de pisos\s*:\s*(\d{1,2})", re.IGNORECASE)
-
-ORDINALES_PISO = {
-    "primer": 1,
-    "primero": 1,
-    "segundo": 2,
-    "tercer": 3,
-    "tercero": 3,
-    "cuarto": 4,
-    "quinto": 5,
-    "sexto": 6,
-    "septimo": 7,
-    "octavo": 8,
-    "noveno": 9,
-    "decimo": 10,
-}
 
 # Otros patrones
 RE_ANTIG = re.compile(
@@ -181,83 +131,6 @@ def _extraer_cochera_sin_numero(fuentes: list[tuple[str, str]]) -> tuple[int | N
     return None, None
 
 
-# ---- banos por tipo: propios / compartidos / de visita
-_BANO = r"banos?"
-RE_BANO_VISITA = re.compile(
-    rf"\b{_NUM}\s*(?:medios?\s+banos?|1\s*/\s*2\s*banos?)"
-    rf"|\bmedios?\s+banos?\s*[:\-]?\s*(\d)\b"
-    rf"|\b{_NUM}\s*{_BANO}\s+(?:de\s+|para\s+)?(?:visitas?|invitados|social(?:es)?)\b"
-    rf"|\b{_BANO}\s+(?:de\s+|para\s+)?(?:visitas?|invitados|social(?:es)?|cortesia)\b"
-    rf"|\bmedios?\s+banos?\b|\btoilet(?:te)?s?\b|\bhalf\s+baths?\b"
-)
-RE_BANO_COMPARTIDO = re.compile(
-    rf"\b{_NUM}\s*{_BANO}\s+(?:compartid\w+|comunes?|en\s+comun|externos?)\b"
-    rf"|\b{_BANO}\s+(?:compartid\w+|comunes?|en\s+comun|externos?)\b"
-    rf"|\bcompart\w+\s+(?:el\s+|un\s+)?{_BANO}\b"
-)
-RE_BANO_SERVICIO = re.compile(rf"\b{_NUM}?\s*{_BANO}\s+(?:de\s+|del\s+)?(?:servicio|empleada|personal)\b")
-RE_BANO_DECIMAL = re.compile(r"\b(\d{1,2})[.,]5\s*banos?\b")
-RE_BANO_PROPIO = re.compile(
-    rf"\b{_NUM}\s*(?:banos?(?:\s+completos?)?|duchas?)\b"
-    rf"|\b{_BANO}\s*[:\-]\s*(\d{{1,2}})\b"
-    rf"|\bbanos?\s+(?:propios?|privados?|independientes?|en\s+suite|incorporados?|dentro\s+de\s+(?:la\s+)?habitacion)\b"
-)
-
-
-def _n_de(m: re.Match) -> int:
-    for g in m.groups():
-        if g:
-            v = _entero(g)
-            if v is not None:
-                return v
-    return 1
-
-
-def _contar(regex: re.Pattern, texto: str) -> int | None:
-    vistos = [_n_de(m) for m in regex.finditer(texto)]
-    return min(sum(vistos), 6) if vistos else None
-
-
-def extraer_banos_detalle(fuentes: list[tuple[str, str]]) -> dict:
-    """Baños propios, compartidos y de visita (medio baño), sin contar los de servicio.
-
-    Se evita contar dos veces: primero se retiran del texto los baños de visita, compartidos y de
-    servicio, y los que quedan (N banos, bano propio/privado, "banos: 2") son los propios.
-    '3.5 banos' = 3 propios + 1 de visita.
-    """
-    out = {"banos_propios": None, "banos_compartidos": None, "banos_visita": None}
-
-    for _, texto in fuentes:
-        if not texto:
-            continue
-
-        visita = _contar(RE_BANO_VISITA, texto)
-        compartido = _contar(RE_BANO_COMPARTIDO, texto)
-        limpio = RE_BANO_VISITA.sub(" ", texto)
-        limpio = RE_BANO_COMPARTIDO.sub(" ", limpio)
-        limpio = RE_BANO_SERVICIO.sub(" ", limpio)
-
-        decimal = RE_BANO_DECIMAL.search(limpio)
-        if decimal:
-            propios = int(decimal.group(1))
-            visita = visita or 1
-            limpio = RE_BANO_DECIMAL.sub(" ", limpio)
-        else:
-            m = RE_BANO_PROPIO.search(limpio)
-            propios = _n_de(m) if m else None
-            if propios is not None and propios > 15:
-                propios = None
-
-        if out["banos_propios"] is None and propios is not None:
-            out["banos_propios"] = propios
-        if out["banos_compartidos"] is None and compartido is not None:
-            out["banos_compartidos"] = compartido
-        if out["banos_visita"] is None and visita is not None:
-            out["banos_visita"] = visita
-
-    return out
-
-
 def _entero(tok: str) -> int | None:
     return int(tok) if tok.isdigit() else NUM_PALABRA.get(tok)
 
@@ -321,24 +194,6 @@ def _primer_grupo(m: re.Match) -> str | None:
     return next((g for g in m.groups() if g is not None), None)
 
 
-def _extraer_piso_departamento(texto: str) -> int | None:
-    """Extrae el piso del departamento, incluyendo ordinales escritos."""
-    m = RE_PISO_DEPTO.search(texto)
-
-    if not m:
-        return None
-
-    valor = _primer_grupo(m)
-
-    if valor is None:
-        return None
-
-    if valor.isdigit():
-        return int(valor)
-
-    return ORDINALES_PISO.get(valor)
-
-
 def detectar_tipo(titulo_n: str, resto_n: str) -> str | None:
     """Tipo de inmueble: primero la palabra inicial del título; si no, la palabra más mencionada."""
     for tok in re.findall(r"[a-z]+", titulo_n)[:3]:
@@ -354,11 +209,63 @@ def detectar_tipo(titulo_n: str, resto_n: str) -> str | None:
     return max(conteo, key=conteo.get) if conteo else None
 
 
+def _tipo_en_titulo(titulo_n: str, n_palabras: int = 6) -> str | None:
+    """Primer tipo de inmueble que nombra el título (acepta plurales: habitaciones, cuartos, deptos).
+
+    Una palabra precedida por un número ("4 habitaciones", "dos habitaciones") cuenta dormitorios, no
+    nombra el tipo: "Dúplex remodelado 4 habitaciones 2.5 baños" es un departamento.
+    """
+    toks = re.findall(r"[a-z0-9]+", titulo_n)[:n_palabras]
+    for i, tok in enumerate(toks):
+        if tok.isdigit():
+            continue
+        previo = toks[i - 1] if i else ""
+        if previo.isdigit() or previo in NUM_PALABRA:
+            continue
+        for forma in (tok, tok[:-1] if tok.endswith("s") else "", tok[:-2] if tok.endswith("es") else ""):
+            if forma in TIPOS:
+                return TIPOS[forma]
+    return None
+
+
+def es_habitacion(tipo: str | None, tipo_fuente: str | None, titulo_n: str) -> bool:
+    """¿El anuncio alquila una habitación/cuarto suelto? (único caso donde se distingue el tipo de baño).
+
+    Prioridad: la categoría del portal o el título dicen "habitación" -> sí. Si la categoría o el título
+    nombran otro tipo (departamento, casa...) -> no, aunque la descripción mencione "cuarto de servicio" o
+    "habitaciones". Si no hay ninguna de las dos pistas, se usa el tipo detectado en el texto.
+    """
+    fuente = (tipo_fuente or "").strip()
+    if fuente in ("habitacion", "cuarto"):
+        return True
+    en_titulo = _tipo_en_titulo(titulo_n)
+    if en_titulo == "cuarto":
+        return True
+    if fuente in ("casa", "departamento") or en_titulo:
+        return False
+    return tipo == "cuarto"
+
+
+def tipo_para_pisos(tipo: str | None, tipo_fuente: str | None, titulo_n: str) -> str | None:
+    """'casa' | 'departamento' | 'cuarto' | None para decidir cómo se leen los pisos.
+
+    Misma prioridad que el tipo final de la tabla: habitación (categoría o título) > categoría del portal
+    (casa / departamento) > tipo detectado en el texto.
+    """
+    if es_habitacion(tipo, tipo_fuente, titulo_n):
+        return "cuarto"
+    fuente = (tipo_fuente or "").strip()
+    if fuente in ("casa", "departamento"):
+        return fuente
+    return tipo if tipo in ("casa", "departamento") else None
+
+
 def extraer_campos(
     titulo: str | None,
     estructurado: str | None,
     descripcion: str | None,
-    cfg: dict
+    cfg: dict,
+    tipo_fuente: str | None = None,
 ) -> dict:
     """Aplica todas las reglas de extracción a un anuncio (textos ya limpios y anonimizados)."""
 
@@ -392,9 +299,6 @@ def extraer_campos(
         v, f = _extraer_cochera_sin_numero(fuentes)
         out["estacionamientos"], out["estacionamientos_fuente"] = v, f
 
-    # 1c. Baños propios / compartidos / de visita
-    out.update(extraer_banos_detalle(fuentes))
-
     # 2. Áreas
     unido = " | ".join(x for x in (e, d) if x)
 
@@ -408,66 +312,15 @@ def extraer_campos(
     tipo = detectar_tipo(t, unido)
     out["tipo_inmueble"] = tipo
 
-    # "Baño compartido" solo tiene sentido al alquilar una habitacion/cuarto suelto. En una casa o
-    # departamento completo ("dos dormitorios comparten un baño") el baño sigue siendo del inquilino.
-    if tipo != "cuarto":
-        out["banos_compartidos"] = None
+    # Baños propios / compartidos / de visita (banos.py). El tipo de baño solo se discute en habitaciones o
+    # cuartos (por el texto o por la categoria del portal); en una casa o departamento completo
+    # ("dos dormitorios comparten un baño") el baño sigue siendo del inquilino.
+    habitacion = es_habitacion(tipo, tipo_fuente, t)
+    out.update(extraer_banos(fuentes, es_habitacion=habitacion, total=out["banos"]))
+    out["es_habitacion"] = habitacion      # la tabla final usa este mismo criterio para habitacion / cuarto
 
-    # 4. Pisos: variables diferenciadas
-    out["n_pisos"] = None
-    out["piso_departamento"] = None
-    out["pisos_edificio"] = None
-
-    if tipo == "casa":
-        m = RE_PISOS_VIVIENDA.search(e)
-
-        if m:
-            valor = int(m.group(1))
-            out["n_pisos"] = valor if valor > 0 else None
-        else:
-            for texto_p in (t, d):
-                mp = RE_PISOS_TEXTO.search(texto_p)
-                if mp:
-                    valor = _entero(mp.group(1))
-                    out["n_pisos"] = valor if valor and 0 < valor <= 8 else None
-                    break
-
-    elif tipo == "departamento":
-        # Piso donde se encuentra la unidad.
-        out["piso_departamento"] = _extraer_piso_departamento(e)
-
-        if out["piso_departamento"] is None:
-            out["piso_departamento"] = _extraer_piso_departamento(d)
-
-        # Número total de pisos del edificio.
-        m = RE_PISOS_EDIFICIO.search(d)
-
-        if not m:
-            m = RE_PISOS_EDIFICIO.search(e)
-
-        if m:
-            valor = int(_primer_grupo(m))
-            out["pisos_edificio"] = valor if valor > 0 else None
-
-    # "Numero de pisos: N" en departamento: solo si es plausible como pisos del edificio
-    if tipo == "departamento" and out["pisos_edificio"] is None:
-        for texto_p in (e, d):
-            mp = RE_NUM_PISOS_AMBIGUO.search(texto_p)
-            if mp:
-                valor = int(mp.group(1))
-                piso = out["piso_departamento"] or 0
-                if 3 <= valor <= 80 and valor >= piso:
-                    out["pisos_edificio"] = valor
-                break
-
-    # Numero de pisos del edificio declarado de forma explicita (tambien en casas: "Pisos del edificio: 3")
-    if out["pisos_edificio"] is None:
-        for texto_p in (e, d):
-            m = RE_PISOS_EDIFICIO.search(texto_p)
-            if m:
-                valor = int(_primer_grupo(m))
-                out["pisos_edificio"] = valor if 0 < valor <= 80 else None
-                break
+    # 4. Pisos (pisos.py): piso donde está la unidad (casa = 0) y cantidad total de pisos
+    out.update(extraer_pisos(t, e, d, tipo_para_pisos(tipo, tipo_fuente, t)))
 
     # 5. Año de construcción y antigüedad
     out["anio_construccion_texto"] = None

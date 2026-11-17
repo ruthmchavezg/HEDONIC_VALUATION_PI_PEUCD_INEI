@@ -145,15 +145,26 @@ def cargar_silver(ruta, anio_actual: int = ANIO_ACTUAL) -> pd.DataFrame:
     out["banos_propios"] = entero.where(banos_num.notna())
     out["banos_visita"] = ((banos_num - entero).round(2) == 0.5).astype(float).where(banos_num.notna())
     out["banos_compartidos"] = None
+    out["banos_tipo"] = None
+    out["banos_evidencia"] = None
     out["estacionamientos"] = _num(c["estacionamientos_num"])
     out["area_total_m2"] = areas["area_total_m2"]
     out["area_construida_m2"] = areas["area_construida_m2"]
     out["area_techada_m2"] = areas["area_techada_m2"]
     out["tipo_inmueble"] = tipo
     out["tipo_inmueble_homologado"] = tipo
-    es_dpto = tipo.eq("departamento")
-    out["piso_departamento"] = _num(c["piso_inmueble"]).where(es_dpto)
-    out["pisos_edificio"] = _num(c["pisos_edificio"])
+    # En habitaciones el silver solo trae CUANTOS baños hay (banos_num), no si son propios o compartidos
+    # (no hay texto): no se supone propio. El total sigue en `banos`; el tipo queda "sin_dato".
+    es_hab = tipo.eq("cuarto")
+    out.loc[es_hab, "banos_propios"] = np.nan
+    out["banos_tipo"] = out["banos_tipo"].mask(es_hab, "sin_dato")
+    out["es_habitacion"] = es_hab
+    # piso_departamento = piso donde esta el departamento o la habitacion; en una casa vale 0
+    piso = _num(c["piso_inmueble"]).where(tipo.isin(["departamento", "cuarto"]))
+    out["piso_departamento"] = piso.mask(tipo.eq("casa"), 0)
+    # cant_pisos = pisos totales de la casa o del edificio (nunca menos que el piso de la unidad)
+    cant = _num(c["pisos_edificio"])
+    out["cant_pisos"] = cant.mask(cant < out["piso_departamento"])
     anio = _num(c["anio_construccion"])
     out["anio_construccion"] = anio.where(anio.between(1900, 2027))
     antig = (anio_actual - anio).clip(lower=0)

@@ -136,6 +136,9 @@ def _procesar_fila(r: pd.Series, cfg_cal: dict, cfg_ext: dict) -> dict:
         limpiar_texto(r["distrito_fuente"]),
     )
 
+    # Categoría de inmueble informada por la fuente (también orienta el tipo de baño en habitaciones)
+    tipo_fuente = normalizar(limpiar_texto(r.get("tipo_inmueble_fuente")))
+
     # Extracción de características estructuradas
     fila.update(
         extraer_campos(
@@ -143,6 +146,7 @@ def _procesar_fila(r: pd.Series, cfg_cal: dict, cfg_ext: dict) -> dict:
             a_car.texto,
             a_des.texto,
             cfg_ext,
+            tipo_fuente=tipo_fuente,
         )
     )
     # Mantenimiento mensual (campo estructurado del portal o texto libre) y si viene incluido en el precio
@@ -166,8 +170,6 @@ def _procesar_fila(r: pd.Series, cfg_cal: dict, cfg_ext: dict) -> dict:
         fila["anio_construccion_fuente"] = None
 
     # Homologación del tipo de inmueble informado por la fuente.
-    tipo_fuente = normalizar(limpiar_texto(r.get("tipo_inmueble_fuente")))
-
     homologacion_tipos = {
         "casa": "casa",
         "departamento": "departamento",
@@ -358,9 +360,8 @@ def ejecutar(
         "area_construida_m2",
         "area_techada_m2",
         "area_total_m2",
-        "n_pisos",
         "piso_departamento",
-        "pisos_edificio",
+        "cant_pisos",
         "antiguedad_anios",
         "anio_construccion",
         "banos_propios",

@@ -17,12 +17,22 @@ atributos:
   # Parcialmente amoblado: NO cuenta como amoblado (ver exclusiones); se guarda aparte
   semi_amoblado: [semi amoblado, semi amueblado, semiamoblado, semiamueblado, medio amoblado,
                   parcialmente amoblado, parcialmente amueblado, semi equipado y amoblado]
+  # Linea blanca / cocina equipada con utensilios. "equipado" a secas NO cuenta (puede ser cualquier cosa).
   linea_blanca: [linea blanca, refrigeradora, refrigerador, nevera, microondas, electrodomesticos,
-                 cocina equipada, lavasecadora, lavadora secadora, cocina con electrodomesticos]
+                 cocina equipada, cocina * equipada, cocina implementada, cocina * implementada,
+                 kitchenette equipada, kitchenette * equipada, lavasecadora, lavadora secadora,
+                 cocina con electrodomesticos, utensilios de cocina, utensilios para cocinar, menaje,
+                 menaje de cocina, vajilla, totalmente equipado, completamente equipado, full equipado,
+                 equipado y amoblado, amoblado y equipado, amueblado y equipado, equipado con utensilios]
   agua_caliente: [agua caliente, terma, terma electrica, terma a gas, termotanque, calentador de agua,
                   calentador a gas, calentador electrico, calefon, therma, fuente de agua caliente]
+  # Walk-in closet o ropero empotrado "o similar": closet (cualquiera), vestidor, placard, guardarropa y
+  # ropero/armario SOLO si es empotrado (un "ropero" suelto es mueble, no cuenta).
   walk_in_closet: [walk in closet, walkin closet, walking closet, walking in closet, walk closet,
-                   closet vestidor, closet tipo vestidor, vestidor]
+                   closet, closet vestidor, closet tipo vestidor, vestidor, placard, placar, guardarropa,
+                   ropero empotrado, ropero * empotrado, ropero incorporado, ropero embutido,
+                   armario empotrado, armario * empotrado, armario incorporado, armario embutido,
+                   closet empotrado, closet incorporado]
   ascensor: [ascensor, elevador, ascensor privado]
   piscina: [piscina, alberca, piscina temperada, piscina climatizada, piscina privada, swimming pool]
   gimnasio: [gimnasio, gym, sala de ejercicios, sala de fitness, zona fitness, area fitness, fitness center,
@@ -33,7 +43,7 @@ atributos:
               sistema de seguridad, seguridad privada, seguridad 24, vigilancia 24, camaras de seguridad,
               camaras de vigilancia, video vigilancia, videovigilancia, cctv, circuito cerrado, garita,
               conserje, porteria, portero, portero electrico, control de acceso, control de accesos,
-              cerco electrico, condominio cerrado, alarma de seguridad, alarmas de seguridad,
+              cerco electrico, condominio cerrado, alarma, alarma de seguridad, sistema de alarma,
               sistema de alarma de seguridad, alarma monitoreada, alarma contra robo]
   mascotas: [mascota, pet friendly, petfriendly, pets friendly, pet-friendly, acepta mascotas,
              se aceptan mascotas, admite mascotas, se admiten mascotas, permite mascotas,
@@ -70,4 +80,7 @@ exclusiones:
   amoblado: [semi amoblado, semi amueblado, semiamoblado, semiamueblado, medio amoblado, parcialmente amoblado,
              parcialmente amueblado, amoblado opcional, opcion a amoblado, sin amoblar]
   jardin: [jardin de infancia, jardin de ninos, jardin infantil, jardin de infantes, jardin nido, jardin inicial]
-  seguridad: [seguridad social]
+  # alarma de incendio / humo es un equipo contra incendios, no seguridad del inmueble
+  seguridad: [seguridad social, alarma contra incendio, alarma de incendio, alarma antiincendio,
+              alarma contra incendios, alarma de humo, alarma contra humo, alarma de gas, alarma contra gas,
+              sistema contra incendio, sistema contra incendios, detector de humo]
