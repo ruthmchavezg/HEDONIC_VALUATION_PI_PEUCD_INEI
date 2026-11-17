@@ -1,0 +1,20 @@
+# Configuración central del módulo NLP.
+seed: 42
+modalidad_objetivo: alquiler
+incluir_callao: false
+
+calidad:
+  tolerancia_fuga: 0.01
+  ratio_pen_usd: [3.0, 4.0]
+  area_max_m2: 10000
+  area_min_revision_m2: 5
+  max_dormitorios: 15
+  max_banos: 15
+  max_estacionamientos: 20
+  texto_min_chars: 60
+
+dedup:
+  umbral_texto: 0.85
+  tol_area: 0.05
+  tol_precio: 0.10
+  min_chars_texto: 200

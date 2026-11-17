@@ -1,27 +1,11 @@
 carpetas.bat
-/venv/
-/data/facebook_session
-/data/tiktok_session
-/data/raw/sessions/chrome_cdp_profile/optimization_guide_model_store/15/EFB5C153BB14D509/418E242AE8F41A3E
-/data/raw/sessions
-/data/raw/sessions
-/data/raw/sessions
-/data/raw/sessions
-/data/raw/sessions
-/data/raw/sessions
-/data/raw/sessions
-/data/raw/sessions
-.env
-/data/raw/sessions
-/data/raw/sessions/chrome_cdp_profile/CertificateRevocation/10885
-/data/raw/sessions/chrome_cdp_profile/CertificateRevocation
-/data/raw/sessions/chrome_cdp_profile
-/data/raw/sessions
-/data/raw/sessions
-lista.txt
+
+# Datos locales
+data/raw/
+data/interim/
+data/processed/
+
+# Archivos temporales
 __pycache__/
 *.py[cod]
-*.pyc
-tests/__pycache__/test_smoke_21_portals.cpython-313.pyc
-tests/__pycache__/test_smoke_21_portals.cpython-313.pyc
-*.pyc
+.pytest_cache/
