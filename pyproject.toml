@@ -17,17 +17,8 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["src"]
-include = [
-    "pi_nlp*",
-    "cleaning*",
-    "dashboard*",
-    "features*",
-    "modeling*",
-    "schemas*",
-    "scraping*",
-    "social_scraping*",
-]
+include = ["src*", "config*", "pipelines*"]
 
 [tool.setuptools.package-dir]
-"" = "src"
+"" = "."
+

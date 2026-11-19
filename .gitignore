@@ -1,11 +1,15 @@
 carpetas.bat
-
-# Datos locales
-data/raw/
-data/interim/
-data/processed/
-
-# Archivos temporales
+/venv/
+/data/facebook_session
+/data/tiktok_session
+/data/raw/sessions
+.env
+lista.txt
 __pycache__/
 *.py[cod]
-.pytest_cache/
+*.pyc
+tests/__pycache__/test_smoke_21_portals.cpython-313.pyc
+# Perfiles y sesiones temporales de navegador
+*session*/
+*chrome_cdp*/
+/data/raw/sessions/

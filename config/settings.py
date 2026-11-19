@@ -1,151 +1,139 @@
 import re
+import os
 from pathlib import Path
+from dotenv import load_dotenv
 
-# [COMENTARIO] IMPORTACIÓN DE LIBRERÍAS
-# - Lo que hace: Importa 're' para expresiones regulares y 'Path' para manipulación dinámica de rutas del sistema operativo.
-# - Para qué sirve: Prepara las herramientas nativas de Python necesarias para limpiar textos y gestionar archivos.
-# - Metodología: Uso estricto de librerías estándar nativas para evitar exceso de dependencias externas y asegurar la portabilidad del código entre los diferentes miembros del equipo.
 
-# Rutas de la Arquitectura Medallion (Bronze, Silver, Gold)
-# [COMENTARIO] DEFINICIÓN DE RUTAS BASE
-# - Lo que hace: Establece las rutas absolutas donde se guardarán los HTML crudos, respaldos temporales, tablas finales y bitácoras (logs).
-# - Para qué sirve: Centraliza el almacenamiento para que el orquestador sepa exactamente dónde guardar o leer la información extraída.
-# - Metodología: Arquitectura Medallion (Data Lake). Permite desacoplar el almacenamiento en capas para fines de auditoría del INEI: datos crudos inmutables (Bronze), datos limpios (Silver) y base analítica estructurada para los modelos (Gold)[cite: 12].
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 RAW_DIR = BASE_DIR / "data" / "raw"
 INTERIM_DIR = BASE_DIR / "data" / "interim"
 PROCESSED_DIR = BASE_DIR / "data" / "processed"
 LOG_DIR = BASE_DIR / "logs"
 
-# [COMENTARIO] CREACIÓN AUTOMÁTICA DE DIRECTORIOS
-# - Lo que hace: Itera sobre las rutas definidas y crea las carpetas físicamente si no existen en la computadora.
-# - Para qué sirve: Evita que el script colapse con errores de "File Not Found" al ejecutarse por primera vez en un entorno nuevo.
-# - Metodología: Programación Defensiva (exist_ok=True) para garantizar un despliegue seguro y autónomo del pipeline de datos[cite: 12].
-for d in [RAW_DIR, INTERIM_DIR, PROCESSED_DIR, LOG_DIR]:
+for d in [RAW_DIR / "portals", RAW_DIR / "sessions", RAW_DIR / "sessions" / "chrome_cdp_profile", 
+          INTERIM_DIR / "portals_clean", INTERIM_DIR / "checkpoints", PROCESSED_DIR, LOG_DIR / "scraping"]:
     d.mkdir(parents=True, exist_ok=True)
 
-# API Oficial del Banco Central de Reserva del Perú (BCRP)
-# [COMENTARIO] CONTROL CAMBIARIO (BCRP)
-# - Lo que hace: Define la URL de la API oficial del BCRP y establece un valor de rescate (fallback) en caso de caída del servidor.
-# - Para qué sirve: Permite transformar dinámicamente precios ofertados en dólares a soles peruanos según la cotización exacta del día de la captura.
-# - Metodología: Integración de variables macroeconómicas de fuentes oficiales (benchmark) para controlar la heterogeneidad monetaria del mercado inmobiliario limeño antes del modelamiento[cite: 14].
 BCRP_API_URL = "https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PD04640PD/json"
 TIPO_CAMBIO_FALLBACK = 3.75
 
-# Parámetros de Resiliencia, Control de Velocidad y Proxies Libres
-# [COMENTARIO] PARÁMETROS DE RESILIENCIA Y EVASIÓN ANTIBLOQUEO
-# - Lo que hace: Configura las variables para la recolección masiva (999 páginas), puntos de guardado cada 20 registros, rotación de identidad cada 60 y el activador de proxies libres.
-# - Para qué sirve: Protege la dirección IP del servidor contra baneos de portales como Urbania/Babilonia y asegura que ante un corte de red no se pierdan los datos ya raspados.
-# - Metodología: Control de Concurrencia y Resiliencia (Rate Limiting). Aplica el principio de idempotencia mediante "checkpoints" y evasión activa mediante rotación preventiva de huella digital y red[cite: 11, 14].
-MAX_PAGINAS_DEFAULT = 999        # 999 = extrae el 100% de páginas disponibles automáticamente
-CHECKPOINT_INTERVAL = 20         # Guardar respaldo de emergencia cada 20 inmuebles
-ROTATE_CONTEXT_EVERY = 60        # Renovar huella de navegador y proxy cada 60 anuncios
-USE_FREE_PROXIES = True          # True = descarga y rota proxies libres automáticamente
-PROXY_SERVER = None              # Opcional: proxy privado fijo si algún día lo usas
+MAX_PAGINAS_DEFAULT = 999
+CHECKPOINT_INTERVAL = 10
+ROTATE_CONTEXT_EVERY = 50
 
-# [COMENTARIO] LISTA DE USER-AGENTS
-# - Lo que hace: Almacena cadenas de texto que simulan ser navegadores Chrome reales y recientes en sistemas Windows/Mac.
-# - Para qué sirve: Engaña a los firewalls (como Cloudflare) haciéndoles creer que la conexión proviene de un humano normal y no de un script automatizado (Playwright).
-# - Metodología: Suplantación de identidad (Spoofing) y ofuscación en la capa de navegación HTTP[cite: 11, 14].
-USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+DISTRITOS_LIMA = [
+    "Ancón", "Ate", "Barranco", "Breña", "Carabayllo", "Chaclacayo", "Chorrillos", "Cieneguilla", "Comas", 
+    "El Agustino", "Independencia", "Jesús María", "La Molina", "La Victoria", "Cercado de Lima", "Lince", 
+    "Los Olivos", "Lurigancho", "Lurín", "Magdalena del Mar", "Miraflores", "Pachacámac", 
+    "Pucusana", "Pueblo Libre", "Puente Piedra", "Punta Hermosa", "Punta Negra", "Rímac", "San Bartolo", 
+    "San Borja", "San Isidro", "San Juan de Lurigancho", "San Juan de Miraflores", "San Luis", "San Martín de Porres", 
+    "San Miguel", "Santa Anita", "Santa María del Mar", "Santa Rosa", "Santiago de Surco", "Surquillo", 
+    "Villa El Salvador", "Villa María del Triunfo"
 ]
 
-# Expresiones Regulares (Regex) universales para variables hedónicas del INEI
-# [COMENTARIO] PATRONES DE EXTRACCIÓN ESTRUCTURAL (REGEX)
-# - Lo que hace: Compila reglas matemáticas de búsqueda de texto (Regex) que ignoran mayúsculas/minúsculas.
-# - Para qué sirve: Aísla y extrae únicamente los valores numéricos limpios (metros cuadrados, números de habitaciones, baños, etc.) que están enterrados dentro de descripciones textuales desordenadas.
-# - Metodología: Procesamiento de Lenguaje Natural (NLP) y normalización tipológica. Transforma texto crudo no estructurado en las variables estructurales discretas que exige la matriz (X) del modelo de regresión hedónica[cite: 11, 14].
 REGEX_PATTERNS = {
-    "id_anuncio": re.compile(r"(?:-|_id_|/)(\d{5,12})(?:\.html|/|$)"),
-    "area_total": re.compile(
-    r"(\d+(?:[.,]\d+)?)\s*m(?:2|²)\s*(?:totales|total|de\s+terreno|terreno)\b",
-    re.IGNORECASE
-),
-    "area_construida": re.compile(
-    r"(\d+(?:[.,]\d+)?)\s*m(?:2|²)\s*(?:construidos|techados|cubiertos|construida)\b",
-    re.IGNORECASE
-),
-    "dormitorios": re.compile(r"(\d+)\s*(?:dorm|hab|cuarto)", re.IGNORECASE),
-    "banos": re.compile(r"(\d+)\s*(?:baño|bano)", re.IGNORECASE),
-    "estacionamientos": re.compile(r"(\d+)\s*(?:estac|cochera|garaje)", re.IGNORECASE),
+    "id_anuncio": re.compile(r"(?:-|_id_|/|id=)(\d{5,12})(?:\.html|/|&|$)", re.IGNORECASE),
+    "area_total": re.compile(r"(\d+(?:[.,]\d+)?)\s*(?:m²|m2|mt2|mts2)\s*(?:totales|total|de terreno|terreno)?", re.IGNORECASE),
+    "area_construida": re.compile(r"(\d+(?:[.,]\d+)?)\s*(?:m²|m2|mt2|mts2)\s*(?:construidos|techados|cubiertos|construida|construcción)", re.IGNORECASE),
+    "dormitorios": re.compile(r"(\d+)\s*(?:dormitorios?|dorms?|habitaciones?|hab|cuartos?|rec[áa]maras?|rec\.)", re.IGNORECASE),
+    "banos": re.compile(r"(\d+)\s*(?:baños?|banos?)", re.IGNORECASE),
+    "estacionamientos": re.compile(r"(\d+)\s*(?:estacionamientos?|estac\.?|cocheras?|garajes?)", re.IGNORECASE),
     "antiguedad": re.compile(r"(\d+)\s*años?\s*(?:de\s*antigüedad)?", re.IGNORECASE),
+    "mantenimiento": re.compile(r"mantenimiento\s*[:.]?\s*(?:s/|s/\.|usd|\$)?\s*(\d+(?:[.,]\d+)?)", re.IGNORECASE),
 }
 
-# ==============================================================================
-# PERFILES DE PORTALES: Un solo motor universal para múltiples sitios web
-# ==============================================================================
-# [COMENTARIO] DICCIONARIO UNIVERSAL DE CONFIGURACIÓN DE PORTALES
-# - Lo que hace: Estructura un diccionario anidado que contiene las URLs objetivo y los selectores CSS/XPath específicos para cada plataforma inmobiliaria (Babilonia y Urbania).
-# - Para qué sirve: Le dicta al orquestador principal (main.py) exactamente dónde hacer clic y de qué etiquetas HTML raspar los datos sin necesidad de programar un bot diferente por cada portal.
-# - Metodología: Patrón de Diseño Guiado por Configuración (Configuration-Driven Architecture). Desacopla la lógica algorítmica de extracción de las reglas visuales estáticas, lo que otorga selectores semánticos robustos ante rediseños web (evitando el colapso del scraper)[cite: 14].
+# SE AÑADEN LAS REGLAS GENÉRICAS PARA QUE EL PARSER PUEDA IMPORTARLAS
+REGLAS_GENERICAS = {
+    "titulo": ['h1', '[class*="title"]', '[class*="header-title"]'],
+    "estado_proyecto": ['[class*="status"]', '[class*="badge"]', '[class*="tag"]', '[class*="operation"]'],
+    "bloque_precio": ['[class*="price"]', '[data-qa*="price"]', '[class*="precio"]', '[class*="valor"]'],
+    "ubicacion": ['[class*="address"]', '[class*="location"]', '[class*="ubicacion"]', 'h2[class*="subtitle"]', '#map-section'],
+    "datos_principales_generales": ['[class*="features"]', '[class*="details"]', '[class*="characteristics"]', '[class*="caracteristicas"]', 'ul[class*="main"]'],
+    "otras_caracteristicas": ['[class*="amenities"]', '[class*="facilities"]', '[class*="other-features"]', '[class*="adicionales"]'],
+    "caracteristicas": ['[class*="general-features"]', '[class*="property-details"]', 'section[class*="features"]', '[class*="specs"]'],
+    "comodidades": ['[class*="comforts"]', '[class*="amenities-list"]', '[class*="icons-grid"]', '[class*="equipamiento"]'],
+    "descripcion": ['[class*="description"]', '#description', '#longDescription', '[class*="descripcion"]', 'article']
+}
+
+# Configurador maestro
 PERFILES_PORTALES = {
     "babilonia": {
-        # [COMENTARIO] PARÁMETROS DE NAVEGACIÓN Y PAGINACIÓN (BABILONIA)
-        # - Lo que hace: Mapea las rutas base de búsqueda de inmuebles y define las clases de los botones para cambiar de página.
-        # - Para qué sirve: Orienta al bot por las secciones de casas, departamentos y terrenos, e identifica visualmente cómo avanzar a la siguiente pestaña de resultados.
-        # - Metodología: Rastreo automatizado escalable (Web Crawling) mediante reconocimiento de patrones de paginación asíncrona.
+        "motor_red": "playwright",
         "dominio": "https://babilonia.pe",
         "urls_semilla": [
-            ("casa", "https://babilonia.pe/inmuebles/casas-en-venta-en-lima"),
-            ("departamento", "https://babilonia.pe/inmuebles/departamentos-en-venta-en-lima"),
-            ("terreno", "https://babilonia.pe/inmuebles/terrenos-en-venta-en-lima"),
+            ("casa", ["https://babilonia.pe/inmuebles/casas-en-alquiler-en-lima"]),
+            ("departamento", ["https://babilonia.pe/inmuebles/departamentos-en-alquiler-en-lima"]),
+            ("habitacion", ["https://babilonia.pe/inmuebles/habitaciones-en-alquiler-en-lima", "https://babilonia.pe/inmuebles/propiedades-en-alquiler-en-lima?q=cuarto"]),
         ],
-        "selector_enlaces_listado": 'a[href*="/inmueble/"], a[href*="/propiedades/"], div[class*="card"] a[href]',
-        "filtro_url_inmueble": "/inmueble/",
-        "selector_siguiente_pagina": [
-            'a[rel="next"]',
-            'button[aria-label*="Next"]',
-            'button[aria-label*="Siguiente"]',
-            'li.pagination-next a',
-            'a:has-text("Siguiente")'
+        "filtro_url": ["/inmueble/", "/propiedades/"]
+    },
+    "properati": {
+        "motor_red": "playwright",
+        "dominio": "https://www.properati.com.pe",
+        "urls_semilla": [
+            ("casa", ["https://www.properati.com.pe/s/lima/casa/alquiler"]),
+            ("departamento", ["https://www.properati.com.pe/s/lima/departamento/alquiler"]),
+            ("habitacion", ["https://www.properati.com.pe/s/lima/habitacion/alquiler", "https://www.properati.com.pe/s/lima/alquiler?q=cuarto"]),
         ],
-        # [COMENTARIO] REGLAS DE EXTRACCIÓN SEMÁNTICA (BABILONIA)
-        # - Lo que hace: Almacena listas de posibles selectores CSS priorizados para capturar cada atributo clave del inmueble en el detalle de la página.
-        # - Para qué sirve: Provee un mecanismo de respaldo (fallback); si el portal cambia el nombre de la clase '.price' a '.data-qa-price', el bot intentará automáticamente con la siguiente regla sin detenerse.
-        # - Metodología: Extracción de datos resiliente tipo "Fail-over" basado en jerarquía de selectores DOM[cite: 14].
-        "reglas_extraccion": {
-            "titulo": ['h1', '[class*="title-property"]', '[class*="header-title"]'],
-            "estado_proyecto": ['[class*="project-status"]', '[class*="badge"]', '[class*="tag"]'],
-            "precio_general": ['[class*="price"]', '[data-qa*="price"]', 'h2:has-text("$")', 'h2:has-text("S/")'],
-            "ubicacion": ['[class*="address"]', '[class*="location"]', 'h2[class*="subtitle"]', '#map-section'],
-            "datos_principales_generales": ['[class*="features"]', '[class*="details-grid"]', 'ul[class*="characteristics"]'],
-            "otras_caracteristicas": ['[class*="amenities"]', '[class*="facilities"]', '[class*="other-features"]'],
-            "caracteristicas": ['[class*="general-features"]', '[class*="property-details"]', 'section[class*="features"]'],
-            "comodidades": ['[class*="comforts"]', '[class*="amenities-list"]', '[class*="icons-grid"]'],
-            "descripcion": ['[class*="description"]', '#description', 'article', 'div[class*="read-more"]']
-        }
+        "filtro_url": ["/detalle/"]
+    },
+    "laencontre": {
+        "motor_red": "playwright",
+        "dominio": "https://www.laencontre.com.pe",
+        "urls_semilla": [
+            ("casa", ["https://www.laencontre.com.pe/alquiler/casas/lima-departamento/list"]),
+            ("departamento", ["https://www.laencontre.com.pe/alquiler/departamentos/lima-departamento/list"]),
+            ("habitacion", ["https://www.laencontre.com.pe/alquiler/habitaciones/lima-departamento/list", "https://www.laencontre.com.pe/alquiler/cuartos/lima-departamento/list"]),
+        ],
+        "filtro_url": ["/inmueble/"]
+    },
+    "century21": {
+        "motor_red": "playwright",
+        "dominio": "https://century21.pe",
+        "urls_semilla": [
+            ("casa", ["https://century21.pe/v/resultados/tipo_casa/operacion_renta/en-pais_peru/en-estado_lima"]),
+            ("departamento", ["https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima"]),
+            ("habitacion", ["https://century21.pe/v/resultados/tipo_departamento/operacion_renta/en-pais_peru/en-estado_lima/recamaras_1"]),
+        ],
+        "filtro_url": ["/propiedad/"]
     },
     "urbania": {
-        # [COMENTARIO] CONFIGURACIÓN REPLICABLE (URBANIA)
-        # - Lo que hace: Mantiene la misma estructura algorítmica del diccionario "babilonia", pero adaptando los selectores (incluyendo XPaths) a la infraestructura visual particular del grupo Navent/Urbania.
-        # - Para qué sirve: Facilita que el mismo orquestador procese indistintamente portales con diseños internos totalmente distintos, integrando todo en una base maestra única.
-        # - Metodología: Pipeline desacoplado con estandarización de contratos de datos.
+        "motor_red": "curl_cffi",  # BYPASS CLOUDFLARE
         "dominio": "https://urbania.pe",
         "urls_semilla": [
-            ("casa", "https://urbania.pe/buscar/venta-de-casas-en-lima"),
-            ("departamento", "https://urbania.pe/buscar/venta-de-departamentos-en-lima"),
-            ("terreno", "https://urbania.pe/buscar/venta-de-terrenos-en-lima"),
+            ("casa", ["https://urbania.pe/buscar/alquiler-de-casas-en-lima"]),
+            ("departamento", ["https://urbania.pe/buscar/alquiler-de-departamentos-en-lima"]),
+            ("habitacion", ["https://urbania.pe/buscar/alquiler-de-habitaciones-en-lima", "https://urbania.pe/buscar/alquiler-de-cuartos-en-lima"]),
         ],
-        "selector_enlaces_listado": '[data-to-posting], a[href*="/propiedades/"]',
-        "filtro_url_inmueble": "/propiedades/",
-        "selector_siguiente_pagina": ['a[data-qa="PAGING_NEXT"]'],
-        "reglas_extraccion": {
-            "titulo": ['.title-h1-development', '.title-property', 'h1'],
-            "estado_proyecto": ['.status-delivery-and-financing', '.status-delivery'],
-            "precio_general": ['.price-operation-type', '.unitPrice', '.price-items', '.transaction-price'],
-            "ubicacion": ['#ref-map', '.section-location-property', '.title-location'],
-            "datos_principales_generales": ['.development-features-grid', '.main-features-grid', 'ul.main-features', '#section-icon-features-property'],
-            "otras_caracteristicas": [
-                'xpath=//h4[contains(text(), "Otras características")]/following-sibling::div',
-                'xpath=//h3[contains(text(), "Otras características")]/following-sibling::div',
-                'div[class*="other-features"]'
-            ],
-            "caracteristicas": ['#reactGeneralFeatures', '.main-features', 'ul.features-list'],
-            "comodidades": ['div[class*="devFeaturesNew-module__icons-grid"]', '#reactGeneralFeatures', '.section-features', 'ul.features-list'],
-            "descripcion": ['div[class*="description-module__wrapper-description"]', '#longDescription', '.box-description', '.box-descritpion']
-        }
+        "filtro_url": ["/propiedades/"]
+    },
+    "adondevivir": {
+        "motor_red": "curl_cffi",  # BYPASS CLOUDFLARE
+        "dominio": "https://www.adondevivir.com",
+        "urls_semilla": [
+            ("casa", ["https://www.adondevivir.com/casas-en-alquiler-en-lima.html"]),
+            ("departamento", ["https://www.adondevivir.com/departamentos-en-alquiler-en-lima.html"]),
+            ("habitacion", ["https://www.adondevivir.com/habitaciones-en-alquiler-en-lima.html", "https://www.adondevivir.com/cuartos-en-alquiler-en-lima.html"]),
+        ],
+        "filtro_url": ["/propiedades/"]
+    },
+    "remax": {
+        "motor_red": "curl_cffi",  # BYPASS CLOUDFLARE
+        "dominio": "https://www.remax.pe",
+        "urls_semilla": [
+            ("casa", ["https://www.remax.pe/web/search/property?type=alquiler&property_type=casa&department=lima"]),
+            ("departamento", ["https://www.remax.pe/web/search/property?type=alquiler&property_type=departamento&department=lima"]),
+            ("habitacion", ["https://www.remax.pe/web/search/property?type=alquiler&property_type=habitacion&department=lima"]),
+        ],
+        "filtro_url": ["propiedad", "inmueble", "alquiler"]
     }
 }
+
+
+load_dotenv()
+
+INTERIM_DIR = BASE_DIR / "data" / "interim"
+REPORTS_DIR = BASE_DIR / "reports"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GOOGLE_MAPS_API_KEY = os.getenv("GOOGLE_MAPS_API_KEY", "")

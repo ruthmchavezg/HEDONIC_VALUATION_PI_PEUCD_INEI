@@ -3,7 +3,7 @@ import logging
 from config.settings import RAW_DIR
 
 def obtener_urls_procesadas_facebook() -> set:
-    archivo_bronce = RAW_DIR / "social" / "alquileres_facebook.csv"
+    archivo_bronce = RAW_DIR / "social" / "bronce_alquileres_facebook.csv"
     if archivo_bronce.exists():
         try:
             df = pd.read_csv(archivo_bronce, usecols=["url"], low_memory=False)
@@ -18,7 +18,7 @@ def guardar_lote_facebook(nuevos_registros: list):
     if not nuevos_registros:
         return
 
-    archivo_bronce = RAW_DIR / "social" / "alquileres_facebook.csv"
+    archivo_bronce = RAW_DIR / "social" / "bronce_alquileres_facebook.csv"
     archivo_bronce.parent.mkdir(parents=True, exist_ok=True)
     
     df_lote = pd.DataFrame(nuevos_registros)
