@@ -8,7 +8,7 @@ lista.txt
 __pycache__/
 *.py[cod]
 *.pyc
-tests/__pycache__/test_smoke_21_portals.cpython-313.pyc
+
 # Perfiles y sesiones temporales de navegador
 *session*/
 *chrome_cdp*/
