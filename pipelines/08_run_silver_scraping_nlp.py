@@ -175,7 +175,7 @@ def correr_pipeline(entradas, carpeta, exigir_coordenadas=True):
 
 def procesar_descartados():
     """Crudo de descartados -> pipeline NLP. Devuelve (df, reporte, n_filas_crudo) o None."""
-    from pi_nlp.pipeline import Entrada
+    from cleaning.cleaning_silver.pipeline import Entrada
 
     ruta = _buscar(SOCIAL_DESCARTADOS)
     if ruta is None:
