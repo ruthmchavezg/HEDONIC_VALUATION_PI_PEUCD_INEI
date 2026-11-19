@@ -12,5 +12,7 @@ curl_cffi
 setuptools
 opencv-python
 pytesseract
-pytesseract geopy
-matplotlib seaborn
+matplotlib
+seaborn
+PyYAML
+scikit-learn

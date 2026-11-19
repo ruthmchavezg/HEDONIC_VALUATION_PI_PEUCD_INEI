@@ -45,14 +45,14 @@ sys.path.insert(0, str(RAIZ / "src"))
 # ============================== CONFIGURACION (edita aqui) ==============================
 ENTRADAS = [
     # (portal, ruta del CSV, fecha_captura  |  None si el CSV ya la trae)
-    ("adondevivir", "mydata/alquileres_lima_metropolitana_a_donde_vivir.csv", None),
-    ("urbania", "mydata/dataset_hedonico_urbania_departamentos.csv", "2026-11-08"),
-    ("urbania", "mydata/dataset_hedonico_urbania_casas.csv", "2026-11-11"),
-    ("babilonia", "mydata/alquileres_babilonia.csv", None),
+    ("adondevivir", "data/raw/portals/bronce_alquileres_adondevivir.csv", None),
+    ("urbania", "data/raw/portals/bronce_alquileres_urbania_casas.csv", "2026-11-08"),
+    ("urbania", "data/raw/portals/bronce_alquileres_urbania_departamentos.csv", "2026-11-11"),
+    ("babilonia", "data/raw/portals/bronce_alquileres_babilonia.csv", None),
 ]
 # Redes sociales (si un archivo no existe, se omite con un aviso y el resto sigue igual)
-SOCIAL_SILVER = "mydata/alquileres_social_silver.csv"
-SOCIAL_DESCARTADOS = "mydata/alquileres_social_descartados.csv"
+SOCIAL_SILVER = "data/interim/social_clean/alquileres_social_silver.csv"
+SOCIAL_DESCARTADOS = "data/interim/social_clean/alquileres_social_descartados.csv"
 RESCATAR_DESCARTADOS = False
 # Del crudo de descartados solo se rescata el motivo "3. Sin precio" (el pipeline encuentra el precio
 # en la cabecera o en el texto). Los motivos 2 (venta), 4 y 5 (ubicacion dudosa / fuera de Lima) no
@@ -61,8 +61,8 @@ MOTIVOS_RESCATABLES = ("3",)
 
 CARPETA_INTERMEDIA = RAIZ / "data" / "interim"
 CARPETA_PROCESADA = RAIZ / "data" / "processed"
-CARPETA_FINAL = RAIZ / "datafinal"
-NOMBRE_FINAL = "base_final_alquileres"
+CARPETA_FINAL = RAIZ / "data/interim"
+NOMBRE_FINAL = "silver_alquileres_scraping_nlp"
 
 AMBITO = "lima_metropolitana"
 # Para el modelo principal deja solo departamentos: TIPOS_INCLUIDOS = ("departamento",)
@@ -134,7 +134,7 @@ def _buscar(ruta):
 
 
 def preparar_entradas():
-    from pi_nlp.pipeline import Entrada
+    from cleaning.cleaning_silver.pipeline import Entrada
 
     CARPETA_INTERMEDIA.mkdir(parents=True, exist_ok=True)
     entradas = []
@@ -146,7 +146,7 @@ def preparar_entradas():
             df = pd.read_csv(origen, encoding="utf-8-sig", dtype=str,
                              keep_default_na=False, na_values=[""])
             df["fecha_captura"] = fecha
-            destino = CARPETA_INTERMEDIA / f"{origen.stem}_con_fecha.csv"
+            destino = origen.parent / f"{origen.stem}_con_fecha.csv"
             df.to_csv(destino, index=False, encoding="utf-8-sig")
             origen = destino
         entradas.append(Entrada(portal, origen, "alquiler"))
@@ -154,7 +154,7 @@ def preparar_entradas():
 
 
 def correr_pipeline(entradas, carpeta, exigir_coordenadas=True):
-    from pi_nlp.pipeline import ejecutar
+    from cleaning.cleaning_silver.pipeline import ejecutar
 
     df = ejecutar(entradas, carpeta)
     if df.empty:

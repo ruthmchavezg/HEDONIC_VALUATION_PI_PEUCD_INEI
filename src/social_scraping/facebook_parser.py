@@ -69,79 +69,116 @@ class FacebookParser:
 
     def extraer_publicacion(self, page, url: str) -> dict:
         try:
-            page.goto(url, wait_until="domcontentloaded", timeout=6000)
-        except:
-            pass 
-            
-        page.wait_for_timeout(1500) 
-        
+            page.goto(url, wait_until="domcontentloaded", timeout=15000)
+        except Exception:
+            pass
+
+        # 1. Esperar a que aparezca el título real del anuncio en el panel derecho
+        try:
+            page.wait_for_function('''() => {
+                const ignorar = new Set(['Marketplace', 'Notificaciones', 'Facebook', 'Chats']);
+                return Array.from(document.querySelectorAll('h1')).some(h => {
+                    const t = (h.innerText || '').trim();
+                    return t.length > 2 && !ignorar.has(t);
+                });
+            }''', timeout=8000)
+        except Exception:
+            page.wait_for_timeout(2000)
+
+        # 2. Hacer clic en "Ver más" para desplegar toda la descripción antes de leer
+        try:
+            for selector in ['div[role="button"]:has-text("Ver más")', 'div[role="button"]:has-text("See more")']:
+                btn = page.locator(selector).first
+                if btn.count() > 0 and btn.is_visible():
+                    btn.click(timeout=1500)
+                    page.wait_for_timeout(600)
+                    break
+        except Exception:
+            pass
+
+        # 3. Capturar únicamente el panel derecho: desde el título hasta antes de "Información del vendedor"
         datos_dinamicos = page.evaluate('''() => {
             let result = {
-                descripcion: "", 
+                descripcion: "",
                 fecha: "",
                 id_contenido: ""
             };
-            
-            // Clic en "Ver más"
-            let btns = Array.from(document.querySelectorAll('div[role="button"]'));
-            let btnVerMas = btns.find(b => b.innerText && (b.innerText.includes("Ver más") || b.innerText.includes("See more")));
-            if(btnVerMas) btnVerMas.click();
 
-            let h1 = document.querySelector('h1');
+            const ignorarH1 = new Set(['Marketplace', 'Notificaciones', 'Facebook', 'Chats']);
+            const h1 = Array.from(document.querySelectorAll('h1')).find(h => {
+                const t = (h.innerText || '').trim();
+                return t.length > 2 && !ignorarH1.has(t);
+            });
+
             if (h1) {
+                const titulo = h1.innerText.trim();
                 let current = h1;
-                let bestContainer = current;
-                
-                // Subimos contenedor por contenedor
+                let panelDerecho = h1;
+
+                // Subir solo hasta el contenedor que engloba el anuncio completo del panel derecho
                 while (current.parentElement) {
                     current = current.parentElement;
-                    let text = current.innerText;
-                    
-                    if (text.includes("Sugerencias de hoy") || text.includes("Today's suggestions") || text.includes("Más publicaciones")) {
+                    const txt = current.innerText || "";
+                    panelDerecho = current;
+
+                    if (
+                        txt.includes("Información del vendedor") ||
+                        txt.includes("Detalles del vendedor") ||
+                        txt.includes("Reporta esta publicación")
+                    ) {
                         break;
                     }
-                    bestContainer = current;
                 }
-                
-                // Limpieza de renglones
-                let lines = bestContainer.innerText.split('\\n').map(x => x.trim()).filter(x => x.length > 0);
-                let cleanLines = lines.filter(l => !["Ver más", "Ver menos", "Enviar mensaje", "Guardar", "Compartir", "Enviar", "See more", "See less"].includes(l));
-                
-                // 🚀 CORTE EXACTO ANTES DE LA INFORMACIÓN DEL VENDEDOR
-                let endIdx = cleanLines.findIndex(l => l.includes("Información del vendedor") || l.includes("Detalles del vendedor") || l.includes("Reporta esta publicación"));
+
+                let lines = (panelDerecho.innerText || "")
+                    .split('\\n')
+                    .map(x => x.trim())
+                    .filter(x => x.length > 0);
+
+                // Empezar exactamente en el título del anuncio
+                const startIdx = lines.findIndex(l => l === titulo);
+                if (startIdx !== -1) {
+                    lines = lines.slice(startIdx);
+                }
+
+                // Cortar exactamente antes de "Información del vendedor"
+                const endIdx = lines.findIndex(l =>
+                    l.includes("Información del vendedor") ||
+                    l.includes("Detalles del vendedor") ||
+                    l.includes("Reporta esta publicación")
+                );
                 if (endIdx !== -1) {
-                    cleanLines = cleanLines.slice(0, endIdx);
+                    lines = lines.slice(0, endIdx);
                 }
-                
+
+                // Limpiar botones de la interfaz
+                const botones = new Set([
+                    "Enviar mensaje", "Guardar", "Compartir", "Enviar",
+                    "Ver más", "Ver menos", "See more", "See less"
+                ]);
+                const cleanLines = lines.filter(l => !botones.has(l));
+
                 result.descripcion = cleanLines.join(' | ');
-            } else {
-                let mainDiv = document.querySelector('div[role="main"]');
-                if (mainDiv) {
-                    result.descripcion = mainDiv.innerText.replace(/\\n/g, ' | ');
-                }
             }
-            
-            // 2. FECHA DE PUBLICACIÓN OCULTA
-            let html = document.documentElement.innerHTML;
-            let matchTime = html.match(/"creation_time":(\\d{10})/);
-            if(matchTime) {
-                let date = new Date(parseInt(matchTime[1]) * 1000);
+
+            // Fecha de publicación oculta en el HTML
+            const html = document.documentElement.innerHTML;
+            const matchTime = html.match(/"creation_time":(\\d{10})/);
+            if (matchTime) {
+                const date = new Date(parseInt(matchTime[1]) * 1000);
                 result.fecha = date.toISOString().split('T')[0];
             }
-            
-            // 3. ID CONTENIDO
-            let matchId = window.location.href.match(/\\/item\\/(\\d+)/);
-            if(matchId) result.id_contenido = matchId[1];
-            
+
+            // ID del anuncio
+            const matchId = window.location.href.match(/\\/item\\/(\\d+)/);
+            if (matchId) result.id_contenido = matchId[1];
+
             return result;
         }''')
 
         descripcion = datos_dinamicos.get("descripcion", "")
-        
-        fecha_pub = datos_dinamicos.get("fecha", "")
-        if not fecha_pub:
-            fecha_pub = datetime.now().strftime('%Y-%m-%d')
-            
+        fecha_pub = datos_dinamicos.get("fecha", "") or datetime.now().strftime('%Y-%m-%d')
+
         id_contenido = datos_dinamicos.get("id_contenido", "")
         if not id_contenido:
             match_id = re.search(r'/marketplace/item/(\d+)', url)
